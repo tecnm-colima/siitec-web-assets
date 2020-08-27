@@ -1,54 +1,55 @@
-jQuery.cookie = (function(name) {
-    function getCookies() {
-        if (!document.cookie) return;
-        let cookies = {};
-        let cs = document.cookie.split(';');
-        for (let i = 0, c, n, v; c = cs[i]; i++) {
-            n = c.substring(0, c.indexOf('='));
-            v = c.substring(c.indexOf('=')+1);
-            cookies[n] = v;
-        }
-        return cookies;
-    }
-    let cookies = getCookies();
-    return cookies[name];
-});
+'use strict'
+import * as $ from 'jquery';
 
-// CSRF Handling
-jQuery.csrf = (function(token_name, cookie_name) {
-    let _$ = this;
-    function getTokenHash() {
-        return _$.cookie(cookie_name);
-    }
-    function ajaxPrefilter(opts, oOpts, jqXHR) {
-        if (oOpts.data instanceof FormData) {
-            oOpts.data.append(token_name, getTokenHash());
-        } else {
-            opts.data += '&'+token_name+'='+getTokenHash();
-        }
-    }
-    _$(function() {
-        _$.ajaxPrefilter(ajaxPrefilter);
-        _$(document).on('submit', 'form:not(.ajax)', function(ev) {
-            let $this = _$(this);
-            let $input = $this.find(':input[name='+token_name+']');
-            if ($input.length === 0) {
-                $input = _$('<input type=hidden>').prop('name',token_name);
-                $this.append($input)
+$.extend({
+    cookie: function(name) {
+        function getCookies() {
+            if (!document.cookie) return;
+            let cookies = {};
+            let cs = document.cookie.split(';');
+            for (let i = 0, c, n, v; c = cs[i]; i++) {
+                n = c.substring(0, c.indexOf('='));
+                v = c.substring(c.indexOf('=')+1);
+                cookies[n] = v;
             }
-            $input.val(getTokenHash());
+            return cookies;
+        }
+        let cookies = getCookies();
+        return cookies[name];
+    },
+    csrf: function(token_name, cookie_name) {
+        let _$ = this;
+        function getTokenHash() {
+            return _$.cookie(cookie_name);
+        }
+        function ajaxPrefilter(opts, oOpts, jqXHR) {
+            if (oOpts.data instanceof FormData) {
+                oOpts.data.append(token_name, getTokenHash());
+            } else {
+                opts.data += '&'+token_name+'='+getTokenHash();
+            }
+        }
+        _$(function() {
+            _$.ajaxPrefilter(ajaxPrefilter);
+            _$(document).on('submit', 'form:not(.ajax)', function(ev) {
+                let $this = _$(this);
+                let $input = $this.find(':input[name='+token_name+']');
+                if ($input.length === 0) {
+                    $input = _$('<input type=hidden>').prop('name',token_name);
+                    $this.append($input)
+                }
+                $input.val(getTokenHash());
+            });
         });
-    });
-});
-
-// https://stackoverflow.com/a/1909508/1152446
-jQuery.hold = function(ms, fn) {
-    let timer = 0;
-    return function(...args) {
-        clearTimeout(timer);
-        timer = setTimeout(fn.bind(this, ...args), ms || 0);
+    },
+    hold: function(ms, fn) {
+        let timer = null;
+        return function(...args) {
+            clearTimeout(timer);
+            timer = setTimeout(fn.bind(this, ...args), ms || 0);
+        }
     }
-}
+});
 
 $(function(ev) {
     let $el = $('.textarea[contenteditable]');
@@ -78,7 +79,7 @@ $(function(ev) {
 
     $('body').on('change',':radio', function() {
         let $this = $(this);
-        $this.attr('chkd', true);
+        $this.attr('chkd', 'true');
         $this.trigger('check');
 
         let name = $this.prop('name');
@@ -103,8 +104,8 @@ $(function(ev) {
         let action = $this.prop('action');
         let data = {};
         $inputs.each(function(i, el) {
-            if (el.name) {
-                data[el.name] = el.value;
+            if ('name' in el && 'value' in el) {
+                data[el['name']] = el['value'];
             }
         });
         $submits.prop('disabled', true);
@@ -115,19 +116,19 @@ $(function(ev) {
             "complete"  : function(jqXHR) {
                 $submits.prop('disabled', false);
                 let completeEvent = $.Event('ajax-complete');
-                completeEvent.jqXHR = jqXHR;
+                completeEvent['jqXHR'] = jqXHR;
                 $this.trigger(completeEvent);
             },
             "error"     : function(jqXHR) {
                 let errorEvent = $.Event('ajax-error');
-                errorEvent.jqXHR = jqXHR;
+                errorEvent['jqXHR'] = jqXHR;
                 $this.trigger(errorEvent);
             },
             "success"   : function(data, textStatus, jqXHR) {
                 let successEvent = $.Event('ajax-success');
-                successEvent.response = data;
-                successEvent.textStatus = textStatus;
-                successEvent.jqXHR = jqXHR;
+                successEvent['response'] = data;
+                successEvent['textStatus'] = textStatus;
+                successEvent['jqXHR'] = jqXHR;
                 $this.trigger(successEvent);
             }
         })

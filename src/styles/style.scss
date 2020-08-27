@@ -5,11 +5,11 @@ $accent-color: #f2b90d;
 
 @font-face{
     font-family: 'WebSymbolsLigaRegular';
-        src: url('./font/websymbols/websymbolsligaregular.eot');
-        src: url('./font/websymbols/websymbolsligaregular.eot?#iefix') format('embedded-opentype'),
-            url('./font/websymbols/websymbolsligaregular.woff') format('woff'),
-            url('./font/websymbols/websymbolsligaregular.ttf') format('truetype'),
-            url('./font/websymbols/websymbolsligaregular.svg#WebSymbolsRegular') format('svg');
+        src: url('./fonts/websymbols/websymbolsligaregular.eot');
+        src: url('./fonts/websymbols/websymbolsligaregular.eot?#iefix') format('embedded-opentype'),
+            url('./fonts/websymbols/websymbolsligaregular.woff') format('woff'),
+            url('./fonts/websymbols/websymbolsligaregular.ttf') format('truetype'),
+            url('./fonts/websymbols/websymbolsligaregular.svg#WebSymbolsRegular') format('svg');
 }
 
 body {
@@ -306,6 +306,7 @@ form {
 #shell-header {
     $bgcolor: #323232;
     --shadow-opacity: 1;
+    --text-color: white;
     height: 60px;
     background-color: $bgcolor;
     position: sticky;
