@@ -1,0 +1,135 @@
+jQuery.cookie = (function(name) {
+    function getCookies() {
+        if (!document.cookie) return;
+        let cookies = {};
+        let cs = document.cookie.split(';');
+        for (let i = 0, c, n, v; c = cs[i]; i++) {
+            n = c.substring(0, c.indexOf('='));
+            v = c.substring(c.indexOf('=')+1);
+            cookies[n] = v;
+        }
+        return cookies;
+    }
+    let cookies = getCookies();
+    return cookies[name];
+});
+
+// CSRF Handling
+jQuery.csrf = (function(token_name, cookie_name) {
+    let _$ = this;
+    function getTokenHash() {
+        return _$.cookie(cookie_name);
+    }
+    function ajaxPrefilter(opts, oOpts, jqXHR) {
+        if (oOpts.data instanceof FormData) {
+            oOpts.data.append(token_name, getTokenHash());
+        } else {
+            opts.data += '&'+token_name+'='+getTokenHash();
+        }
+    }
+    _$(function() {
+        _$.ajaxPrefilter(ajaxPrefilter);
+        _$(document).on('submit', 'form:not(.ajax)', function(ev) {
+            let $this = _$(this);
+            let $input = $this.find(':input[name='+token_name+']');
+            if ($input.length === 0) {
+                $input = _$('<input type=hidden>').prop('name',token_name);
+                $this.append($input)
+            }
+            $input.val(getTokenHash());
+        });
+    });
+});
+
+// https://stackoverflow.com/a/1909508/1152446
+jQuery.hold = function(ms, fn) {
+    let timer = 0;
+    return function(...args) {
+        clearTimeout(timer);
+        timer = setTimeout(fn.bind(this, ...args), ms || 0);
+    }
+}
+
+$(function(ev) {
+    let $el = $('.textarea[contenteditable]');
+    $el.each(function(i, e) {
+        let $e = $(e);
+        let $ta = $('<textarea>');
+        $ta.attr('name', $e.attr('name'));
+        $ta.prop('required',$e.attr('required'));
+        $ta.hide().appendTo($e.parent());
+        $ta.val(e.innerText);
+        $e.on('input', function(ev) {
+            $ta.val(this.innerText);
+        });
+    });
+
+    let selector = 'input[type=checkbox][data-toggle]';
+    $(document).on('change', selector, function(ev) {
+        let $this = $(this);
+        let $toggle = $($this.attr('data-toggle'));
+        if ($this.prop('checked')) {
+            $toggle.show().find(':input[required]').prop('disabled',false);
+        } else {
+            $toggle.hide().find(':input[required]').prop('disabled',true);
+        }
+    })
+    $(selector).trigger('change');
+
+    $('body').on('change',':radio', function() {
+        let $this = $(this);
+        $this.attr('chkd', true);
+        $this.trigger('check');
+
+        let name = $this.prop('name');
+        if (!name) return;
+        $(':radio[name='+name+'][chkd]').not($this).removeAttr('chkd').trigger('uncheck');
+    });
+
+    $('body').on('change', ':checkbox', function(e) {
+        if (this.checked) {
+            $(this).trigger('check');
+        } else {
+            $(this).trigger('uncheck');
+        }
+    });
+
+    $(document).on('submit.ajax', 'form.ajax', function(ev) {
+        ev.preventDefault();
+        let $this = $(this);
+        let $submits = $this.find(':submit');
+        let $inputs = $this.find(':input:not(:disabled)');
+        let method = $this.prop('method');
+        let action = $this.prop('action');
+        let data = {};
+        $inputs.each(function(i, el) {
+            if (el.name) {
+                data[el.name] = el.value;
+            }
+        });
+        $submits.prop('disabled', true);
+        $.ajax({
+            "type"      : method,
+            "url"       : action,
+            "data"      : data,
+            "complete"  : function(jqXHR) {
+                $submits.prop('disabled', false);
+                let completeEvent = $.Event('ajax-complete');
+                completeEvent.jqXHR = jqXHR;
+                $this.trigger(completeEvent);
+            },
+            "error"     : function(jqXHR) {
+                let errorEvent = $.Event('ajax-error');
+                errorEvent.jqXHR = jqXHR;
+                $this.trigger(errorEvent);
+            },
+            "success"   : function(data, textStatus, jqXHR) {
+                let successEvent = $.Event('ajax-success');
+                successEvent.response = data;
+                successEvent.textStatus = textStatus;
+                successEvent.jqXHR = jqXHR;
+                $this.trigger(successEvent);
+            }
+        })
+    });
+});

@@ -1,0 +1,448 @@
+$line-color: #d8d8d8;
+$line-color: rgba(128,128,128, 0.4);
+$focus-color: #2704c4;
+$accent-color: #f2b90d;
+
+@font-face{
+    font-family: 'WebSymbolsLigaRegular';
+        src: url('./font/websymbols/websymbolsligaregular.eot');
+        src: url('./font/websymbols/websymbolsligaregular.eot?#iefix') format('embedded-opentype'),
+            url('./font/websymbols/websymbolsligaregular.woff') format('woff'),
+            url('./font/websymbols/websymbolsligaregular.ttf') format('truetype'),
+            url('./font/websymbols/websymbolsligaregular.svg#WebSymbolsRegular') format('svg');
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container {
+    margin: 0px auto;
+    width: 1024px;
+    max-width: calc(100vw - 24px);
+}
+:target {
+    background-color: rgba(187, 221, 255, 0.4);
+}
+.ta {
+    &-left { text-align: left; }
+    &-right { text-align: right; }
+    &-center { text-align: center; }
+    &-justify { text-align: justify; }
+}
+
+button,
+input[type=button],
+input[type=submit],
+input[type=reset],
+.button {
+    font-size: 10px;
+    padding: 12px 16px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    background-color: #d8d8d8;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 4px;
+    min-width: 120px;
+    text-align: center;
+    transition: box-shadow 600ms, background-image 600ms;
+    vertical-align: baseline;
+    &:hover {
+        background-image: linear-gradient(rgba(255,255,255,0.3), transparent 70%);
+        box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.1);
+    }
+    &:active {
+        background-image: linear-gradient(rgba(0,0,0,0.1), transparent 70%);
+    }
+    &:disabled {
+        opacity: 0.5;
+    }
+    &.accent {
+        background-color: $accent-color;
+    }
+    &.small {
+        padding: 8px 12px;
+    }
+}
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=date],
+input[type=time],
+select,
+textarea,
+.textarea {
+    padding: 8px;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 2px solid $line-color;
+    border-radius: 4px;
+    &:focus {
+        border-color: $focus-color;
+        outline: none;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.2) inset;
+    }
+    &.small {
+        padding: 4px;
+    }
+}
+input[type=checkbox],
+input[type=radio] {
+    vertical-align: baseline;
+    &:focus {
+        outline: 2px solid $focus-color;
+    }
+    + label {
+        display: inline;
+        vertical-align: baseline;
+    }
+}
+select:focus {
+    background-image: linear-gradient(transparent 30%, rgba(0,0,0,0.05));
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
+}
+.textarea {
+    &[rows] {
+        --rows: 1;
+        min-height: calc(var(--rows) * 1em + 16px);
+    }
+    &[rows="2"] { --rows: 2; }
+    &[rows="3"] { --rows: 3; }
+    &[rows="4"] { --rows: 4; }
+    &[rows="5"] { --rows: 5; }
+    &[rows="6"] { --rows: 6; }
+    &[rows="7"] { --rows: 7; }
+    &[rows="8"] { --rows: 8; }
+}
+form {
+    .form-group {
+        margin-top: 12px;
+        > label {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    }
+    .form-buttons {
+        text-align: right;
+        margin: 8px 0px;
+    }
+    &.inline {
+        display: flex;
+        .form-group {
+            position: relative;
+            display: inline-block;
+            display: flex;
+            margin: 4px 0px;
+            align-items: baseline;
+            flex-grow: 1;
+            align-content: stretch;
+            > label {
+                display: inline;
+                vertical-align: baseline;
+                margin: 0px 1ex;
+            }
+            > input,
+            > select,
+            > textarea,
+            > .textarea {
+                display: inline-block;
+                flex-grow: 1;
+                padding: 4px;
+                vertical-align: baseline;
+            }
+        }
+        .form-buttons {
+            flex-grow: 1;
+            display: inline-block;
+            margin: 0px;
+            align-items: baseline;
+            button,
+            input[type=button],
+            input[type=submit],
+            input[type=reset],
+            .button {
+                padding: 8px 12px;
+                width: auto;
+                margin: 4px 0px 4px 1ex;
+            }
+        }
+    }
+}
+.data-table {
+    border-collapse: collapse;
+    outline: 1px solid $line-color;
+    outline-offset: 7px;
+    margin: 24px auto;
+    &.wide {
+        width: 100%;
+    }
+    thead {
+        background-color: $line-color;
+        text-align: left;
+    }
+    th, td {
+        font-weight: normal;
+        padding: 8px 12px;
+        vertical-align: baseline;
+    }
+    tr {
+        border-bottom: 1px solid $line-color;
+        &:hover {
+            background-color: rgba(128, 128, 128, 0.1);
+        }
+    }
+}
+.breadcrumbs {
+    display: block;
+    margin: 8px 0px;
+    padding: 0px;
+    font-size: 12px;
+    > li {
+        display: inline;
+        padding: 0px;
+        &:not(:first-child)::before {
+            content: "| ";
+            display: inline;
+        }
+        > a {
+            display: inline-block;
+            padding: 8px;
+            color: inherit;
+            text-decoration: none;
+        }
+        &:last-child > a {
+            padding: 8px 12px;
+            border-radius: 4px;
+            background-color: #e8e8e8;
+        }
+    }
+}
+.metadata {
+    display: table;
+    font-size: 16px;
+    > div {
+        display: table-row;
+        > dt, > dd {
+            padding: 4px 8px;
+        }
+        > dt {
+            display: table-cell;
+            font-weight: bold;
+            text-align: right;
+            text-align: end;
+            &::after {
+                content: ":";
+                display: inline;
+            }
+        }
+        > dd {
+            display: table-cell;
+            font-weight: normal;
+            text-align: left;
+            text-align: start;
+        }
+    }
+}
+.panel-frame {
+    border: 1px solid $line-color;
+    padding: 12px;
+    margin: 12px 0px;
+    border-radius: 8px;
+    > header {
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+.command-bar {
+    text-align: right;
+}
+.flex {
+    display: flex;
+    &-v {
+        flex-direction: column;
+    }
+    &-wrap {
+        flex-wrap: wrap;
+    }
+    > .fill {
+        flex-grow: 9999 !important;
+    }
+}
+.heading {
+    background-color: #323232;
+    color: white;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.user-info {
+    margin: 24px 0px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    color: #3e3e3e;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block;
+    em {
+        color: #61960d;
+    }
+}
+
+#shell-header {
+    $bgcolor: #323232;
+    --shadow-opacity: 1;
+    height: 60px;
+    background-color: $bgcolor;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    color: #aaa;
+    box-shadow: 4px 0px 36px -16px black;
+    box-shadow: 4px 0px 36px -16px rgba(black, calc(var(--shadow-opacity) * 0.4));
+
+    @supports (backdrop-filter: blur(12px)) {
+        backdrop-filter: blur(12px) brightness(20%);
+        background-color: transparent;
+    }
+    a {
+        text-decoration: none;
+        &:link, &:visited {
+            color: inherit;
+        }
+    }
+    %item {
+        cursor: pointer;
+        box-sizing: border-box;
+        height: 60px;
+        border: 1px solid transparent;
+        user-select: none;
+        display: inline-block;
+        transition: border-color 600ms, background-color 600ms, color 100ms;
+        &:hover {
+            color: white;
+            border-color: #666;
+            background-color: transparentize($color: #888, $amount: 0.75);
+        }
+        &:active {
+            color: var(--itcolima-yellow);
+        }
+    }
+    .item {
+        @extend %item;
+        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        text-align: center;
+    }
+    .logo-siitec {
+        width: 160px;
+        height: 60px;
+    }
+}
+#shell-footer {
+    min-height: 200px;
+    flex-grow: 1;
+    background-color: $line-color;
+}
+.s2-ws {
+    font-family: 'WebSymbolsLigaRegular';
+    font-size: 22px;
+    text-align: center;
+    &::before {
+        content: attr(data-char);
+        display: inline;
+    }
+}
+#welcomePanel {
+    position: relative;
+    box-sizing: border-box;
+    /* min-height: calc(90vh - 60px); */
+    box-shadow: 0px 8px 64px -32px rgba(0,0,0,0.3);
+    font-size: 16px;
+    padding: 48px 0px;
+    margin-bottom: 48px;
+    .container { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding: 16px;
+    }
+    .message {
+        display: block;
+        max-width: 640px;
+        text-align: justify;
+    }
+}
+.content-panel {
+    max-width: 640px;
+}
+.button-panel {
+    padding: 24px;
+}
+.preguntas {
+    > li {
+        padding: 24px;
+        &.error {
+            background-color: rgba(255,0,0,0.2);
+        }
+    }
+}
+.opciones {
+    list-style: none;
+    padding: 0px;
+    > li {
+        padding: 8px;
+        display: flex;
+        align-items: baseline;
+        justify-content: stretch;
+        border-radius: 128px;
+        flex-wrap: wrap;
+        &:last-child {
+            flex-grow: 9999;
+        }
+        > input:checked {
+            + label {
+                color: #00D;
+            }
+        }
+        > label {
+            display: block;
+            cursor: pointer;
+            margin-left: 1ex;
+            margin-right: 1ex;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        > input[type=text] {
+            padding: 4px;
+            width: auto;
+            flex-grow: 2;
+        }
+    }
+}
+// @media (prefers-color-scheme: dark) {
+//     :root {
+//         background-color: black;
+//         color: #ccc;
+//     }
+// }

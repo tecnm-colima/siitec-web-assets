@@ -1,0 +1,10 @@
+LICENCIA DE USO EXCLUSIVO
+=======================================
+
+Se autoriza el uso del contenido en este paquete y sus componentes única
+y exclusivamente para el desarrollo de aplicaciones del Instituto Tecnológico
+de Colima y cuyo derecho de distribución está regulado por el Departamento
+de Centro de Cómputo o quien esté encargado del desarrollo, mantenimiento y
+actualización del Software del Instituto.
+
+Todas las modificaciones y fallas detectadas deberán ser notificadas.
