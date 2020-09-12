@@ -1,6 +1,8 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 
+const DIST_PATH = process.env.DIST_PATH || path.resolve(__dirname, 'dist');
+
 process.traceDeprecation = true;
 
 module.exports = {
@@ -30,7 +32,7 @@ module.exports = {
     },
     output: {
         filename: 'script.min.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: DIST_PATH,
         library: 's2'
     },
     optimization: {
