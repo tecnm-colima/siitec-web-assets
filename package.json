@@ -8,6 +8,7 @@
         }
     ],
     "scripts": {
+        "postinstall": "npm run build",
         "watch": "run-p watch:*",
         "watch:styles": "gulp watch:styles",
         "watch:fonts": "gulp watch:fonts",
