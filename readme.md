@@ -44,6 +44,30 @@ Posterior a la actualización de paquetes deberá ejecutarse de nuevo el comando
 `npm run build`, el cual generará las nuevas versiones de archivos compilados en
 el directorio "dist".
 
+Instalación directa en otras aplicaciones
+---------------------------------------
+
+Para incluir el contenido de este paquete automáticamente se puede hacer
+mediante implementación automatizada de nodejs.
+
+Agregar el script `postinstall` en el archivo **package.json**
+```
+{
+    "scripts": {
+        "postinstall": "cpx \"./node_modules/itcolima-web-assets/dist/**/*\" \"./public/assets/itcolima\""
+    }
+}
+```
+
+Posterior a ello ejecutar el siguiente comando:
+```
+npm install cpx git://github.com/francerz/itcolima_webapp_assets.git"
+```
+
+Una vez realizado lo anterior los assets serán añadidos en el directorio:
+*public/assets/itcolima*, puede cambiar la ubicación modificando el script
+`postinstall`.
+
 Ejemplos de utilización del código
 ---------------------------------------
 
