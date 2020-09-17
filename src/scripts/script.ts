@@ -1,5 +1,6 @@
 'use strict'
 import * as $ from 'jquery';
+import 'bootstrap';
 
 $.extend({
     cookie: function(name) {

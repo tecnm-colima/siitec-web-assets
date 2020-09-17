@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/style.min.css" />
+    <script src="../dist/script.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(function() {
+            $('[data-toggle=popover]').popover();
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <main role="main">
+            <ul class="nav">
+                <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <button type="button"
+                    class="btn btn-lg btn-danger"
+                    data-toggle="popover"
+                    title="Popover title"
+                    data-content="And here's some amazing content. It's very engaging. Right?">
+                    Click to toggle popover
+            </button>
+        </main>
+    </div>
+</body>
+</html>
