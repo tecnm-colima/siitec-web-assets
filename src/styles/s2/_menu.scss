@@ -49,6 +49,12 @@
         > .desc {
             font-size: 11px;
         }
+        > .icon {
+            position: absolute;
+            font-size: 32px;
+            top: 20px;
+            left: 40px;
+        }
         .reveal-spot {
             opacity: 0.2;
             background-color: var(--itcolima-yellow);
