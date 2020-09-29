@@ -1,0 +1,31 @@
+.a-start {
+    display: block;
+    margin-right: auto;
+    .d-flex & {
+        align-self: flex-start;
+    }
+}
+.a-end {
+    display: block;
+    margin-left: auto;
+    .d-flex & {
+        align-self: flex-end;
+    }
+}
+.a-center {
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+    .d-flex & {
+        justify-self: center;
+    }
+}
+.a-middle {
+    .d-flex & {
+        align-self: center;
+    }
+}
+
+@for $i from 1 through 120 {
+    .max-w#{$i*10} { max-width: $i*10px; }
+}

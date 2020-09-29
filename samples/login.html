@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de inicio de sesión de SIITEC 2">
+    <title>Inicio de sesión - SIITEC 2</title>
+    <link rel="stylesheet" href="../dist/style.min.css" />
+    <script src="../dist/script.min.js" async></script>
+</head>
+<body class="login-screen">
+    <div class="d-flex min-vh-100">
+        <div class="max-w480 a-middle a-center">
+            <svg class="a-center">
+                <use href="../dist/graphics.svg#logo-siitec2" />
+            </svg>
+            <form class="container max-w280" action="">
+                <main>
+                    <div class="form-group">
+                        <label for="txtUser" class="sr-only">Usuario</label>
+                        <input type="text" name="user" id="txtUser" placeholder="Usuario" required autofocus />
+                    </div>
+                    <div class="form-group">
+                        <label for="txtPw" class="sr-only">Contraseña</label>
+                        <input type="password" name="pw" id="txtPw" placeholder="Contraseña" required />
+                    </div>
+                    <button type="submit" class="wide">Entrar</button>
+                </main>
+                <div class="links-group m-3">
+                    <a href="#">Olvidé mi contraseña</a>
+                </div>
+            </form>
+            <p class="m-5">&copy; 2013 SIITEC 2. Todos los derechos reservados ITColima.</p>
+        </div>
+    </div>
+</body>
+</html>
