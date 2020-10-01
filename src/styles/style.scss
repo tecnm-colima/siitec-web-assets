@@ -143,30 +143,6 @@ form {
         }
     }
 }
-.data-table {
-    border-collapse: collapse;
-    outline: 1px solid $line-color;
-    outline-offset: 7px;
-    margin: 24px auto;
-    &.wide {
-        width: 100%;
-    }
-    thead {
-        background-color: $line-color;
-        text-align: left;
-    }
-    th, td {
-        font-weight: normal;
-        padding: 8px 12px;
-        vertical-align: baseline;
-    }
-    tr {
-        border-bottom: 1px solid $line-color;
-        &:hover {
-            background-color: rgba(128, 128, 128, 0.1);
-        }
-    }
-}
 .breadcrumbs {
     display: block;
     margin: 8px 0px;
@@ -415,3 +391,4 @@ form {
 @import './s2/menu';
 @import './s2/button';
 @import './s2/login';
+@import './s2/table';

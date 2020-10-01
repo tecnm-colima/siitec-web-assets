@@ -1,0 +1,50 @@
+table.s2-table {
+    border-collapse: collapse;
+    outline: 1px solid $line-color;
+    outline-offset: 7px;
+    margin: 24px auto;
+    font-size: 12px;
+    %table-cell {
+        font-weight: normal;
+        padding: 4px 8px;
+        vertical-align: baseline;
+    }
+    thead {
+        background-color: $line-color;
+        text-align: left;
+    }
+    th, td {
+        @extend %table-cell;
+    }
+    tr {
+        border-bottom: 1px solid $line-color;
+        &:hover {
+            background-color: rgba(128, 128, 128, 0.1);
+        }
+    }
+    &.wide {
+        width: 100%;
+    }
+    &.numerated {
+        counter-reset: s2-table-counter;
+
+        thead > tr:nth-of-type(1)::before {
+            content: "#";
+            display: table-cell;
+            text-align: center;
+            @extend %table-cell;
+            
+        }
+        tbody > tr::before {
+            counter-increment: s2-table-counter;
+            content: counter(s2-table-counter);
+            display: table-cell;
+            text-align: right;
+            text-align: end;
+            @extend %table-cell;
+        }
+        .reset-counter {
+            counter-reset: s2-table-counter;
+        }
+    }
+}
