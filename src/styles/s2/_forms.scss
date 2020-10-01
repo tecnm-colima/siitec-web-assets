@@ -1,0 +1,16 @@
+.s2-form {
+    border-radius: 5px;
+    border: 1px solid $line-color;
+    padding: 1.5em;
+}
+.form-inline {
+    .form-row {
+        align-items: start;
+    }
+}
+.form-hide-labels
+{
+    label {
+        @extend .sr-only;
+    }
+}

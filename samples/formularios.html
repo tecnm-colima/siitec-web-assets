@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../dist/style.min.css">
+    <script src="../dist/script.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Estilos de formularios</h1>
+        <p>Para brindar a los formularios una apariencia al estilo SIITEC 2
+        se debe utilizar la clase <code>s2-form</code> en la etiqueta
+        <code>&lt;form&gt;</code> o cualquier otro elemento que sea el
+        contenedor que lo represente.
+        </p>
+        <h2>Formulario regular</h2>
+        <form class="s2-form" action="">
+            <div class="form-row">
+                <div class="form-group col-sm-4 col-md-3">
+                    <label for="txtNumControl">Número de control</label>
+                    <input type="text" name="num_control" placeholder="Ej. 17460832" />
+                </div>
+                <div class="form-group col-sm-8 col-md-6">
+                    <label for="txtNombre">Nombre</label>
+                    <input type="text" name="nombre" placeholder="Ejemplo: Carolina Fuentes" aria-describedby="txtHelpNombre" />
+                    <small id="txtHelpNombre" class="form-text text-muted">Nombre de el o la estudiante a buscar.</small>
+                </div>
+            </div>
+            <div class="form-buttons">
+                <button type="submit" class="btn-siitec2">Buscar</button>
+            </div>
+        </form>
+        <h2>Formulario en línea</h2>
+        <p>Este formulario se caracteriza por ser más compacto y presentar la mayor
+        cantidadposible de controles en una sola línea de la interfaz.
+        </p>
+        <p>Para hacer un formulario en una línea hay que usar la clase
+            <code>form-inline</code> en la etiqueta <code>form</code>.
+        </p>
+        <p>Adicionalmente también se pueden ocultar las etiquetas, sin perder
+            la funcionalidad de lectores en pantalla utilizando la clase
+            <code>form-hide-labels</code>.
+        </p>
+        <form class="s2-form form-inline" action="">
+            <div class="form-row">
+                <div class="form-group col-sm-4 col-md-3">
+                    <label for="txtNumControl">Número de control</label>
+                    <input type="text" name="num_control" placeholder="Ej. 17460832" />
+                </div>
+                <div class="form-group col-sm-8 col-md-6">
+                    <label for="txtNombre">Nombre</label>
+                    <input type="text" name="nombre" placeholder="Ejemplo: Carolina Fuentes" aria-describedby="txtHelpNombre" />
+                    <small id="txtHelpNombre" class="form-text text-muted">Nombre de el o la estudiante a buscar.</small>
+                </div>
+            </div>
+            <div class="form-buttons">
+                <button type="submit" class="btn-siitec2">Buscar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

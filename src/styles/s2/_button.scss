@@ -5,7 +5,7 @@ input[type=reset],
 .button {
     color: #555;
     background-color: #e7e7e7;
-    font-size: 12px;
+    font-size: 14px;
     padding: 8px 12px;
     box-sizing: border-box;
     display: inline-block;
@@ -26,5 +26,16 @@ input[type=reset],
     &.wide {
         display: block;
         width:100%;
+    }
+}
+.btn-siitec2 {
+    color: white;
+    background-color: #f5b300;
+    min-width: 150px;
+    max-width: 100%;
+    border: 1px solid rgba(black, 0.1);
+    &:hover {
+        background-color: #2d2d2d;
+        color: white;
     }
 }
