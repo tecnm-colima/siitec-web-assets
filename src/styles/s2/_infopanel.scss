@@ -1,0 +1,23 @@
+
+
+.info-panel {
+    border: 1px solid #e4e4e4;
+    border-radius: 8px;
+    dl {
+        padding: 8px 16px;
+        margin-bottom: 0px;
+        div {
+            display: inline-block;
+        }
+        dt {
+            font-weight: normal;
+            color: #808080;
+            display: inline;
+        }
+        dd {
+            display: inline;
+            margin-left: 4px;
+            margin-right: 12px;
+        }
+    }
+}
