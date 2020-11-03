@@ -66,6 +66,14 @@ $(function(ev) {
         });
     });
 
+    $el = $('.auto-height')
+        .each(function(i, el) {
+            el.style.height = (el.scrollHeight) + 'px';
+            el.style.overflowY = 'hidden';
+        }).on('input keypress paste', function(e) {
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+
     let selector = 'input[type=checkbox][data-toggle]';
     $(document).on('change', selector, function(ev) {
         let $this = $(this);
