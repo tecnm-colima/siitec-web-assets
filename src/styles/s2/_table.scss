@@ -23,7 +23,7 @@ table.s2-table {
         }
     }
     &.wide {
-        width: 100%;
+        width: calc(100% - 16px);
     }
     &.numerated {
         counter-reset: s2-table-counter;
@@ -45,6 +45,19 @@ table.s2-table {
         }
         .reset-counter {
             counter-reset: s2-table-counter;
+        }
+    }
+    &.table-fixed {
+        table-layout: fixed;
+        @for $i from 1 to 12 {
+            .col-#{$i} { display: table-cell; width: $i * (100% / 12); }
+        }
+        @each $brk, $size in $grid-breakpoints {
+            @media screen and (max-width: $size) {
+                @for $i from 1 to 12 {
+                    .col-#{$brk}-#{$i} { display: table-cell; width: $i * (100% / 12); }
+                }
+            }
         }
     }
 }
