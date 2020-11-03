@@ -5,3 +5,16 @@
     margin-top: 16px;
     margin-bottom: 16px;
 }
+
+.section-title {
+    margin: 12px 0px;
+    color: white;
+    background: #333;
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+    * {
+        font-weight: bold;
+        font-size: 16px;
+        padding: 14px 8px;
+    }
+}
