@@ -37,58 +37,6 @@ body {
     &-justify { text-align: justify; }
 }
 
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=date],
-input[type=time],
-input[type=number],
-select,
-textarea,
-.textarea {
-    padding: 8px;
-    box-sizing: border-box;
-    display: block;
-    width: 100%;
-    border: 2px solid $line-color;
-    border-radius: 4px;
-    &:focus {
-        border-color: $focus-color;
-        outline: none;
-        box-shadow: 0px 2px 8px rgba(0,0,0,0.2) inset;
-    }
-    &.small {
-        padding: 4px;
-    }
-}
-input[type=checkbox],
-input[type=radio] {
-    vertical-align: baseline;
-    &:focus {
-        outline: 2px solid $focus-color;
-    }
-    + label {
-        display: inline;
-        vertical-align: baseline;
-    }
-}
-select:focus {
-    background-image: linear-gradient(transparent 30%, rgba(0,0,0,0.05));
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.2);
-}
-.textarea {
-    &[rows] {
-        --rows: 1;
-        min-height: calc(var(--rows) * 1em + 16px);
-    }
-    &[rows="2"] { --rows: 2; }
-    &[rows="3"] { --rows: 3; }
-    &[rows="4"] { --rows: 4; }
-    &[rows="5"] { --rows: 5; }
-    &[rows="6"] { --rows: 6; }
-    &[rows="7"] { --rows: 7; }
-    &[rows="8"] { --rows: 8; }
-}
 form {
     .form-group {
         margin-top: 12px;
