@@ -106,12 +106,12 @@ form {
         }
         > a {
             display: inline-block;
-            padding: 8px;
+            padding: 4px 8px;
             color: inherit;
             text-decoration: none;
         }
         &:last-child > a {
-            padding: 8px 12px;
+            padding: 4px 12px;
             border-radius: 4px;
             background-color: #e8e8e8;
         }
@@ -179,16 +179,25 @@ form {
 }
 
 .user-info {
-    margin: 24px 0px;
+    margin: 24px 0px 8px;
     background-color: #f1f1f1;
     border-radius: 5px;
     color: #3e3e3e;
-    padding: 8px 12px;
+    padding: 4px 12px;
     font-weight: bold;
     font-size: 16px;
     display: inline-block;
     em {
+        font-style: normal;
         color: #61960d;
+    }
+    span.sep {
+        &::after {
+            content: "|";
+            color: #aaaaaa;
+            margin-left: 1ex;
+            margin-right: 1ex;
+        }
     }
 }
 
@@ -196,6 +205,7 @@ form {
     $bgcolor: #323232;
     --shadow-opacity: 1;
     --text-color: white;
+    overflow: hidden;
     height: 60px;
     background-color: $bgcolor;
     position: sticky;
