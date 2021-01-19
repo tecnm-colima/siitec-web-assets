@@ -104,6 +104,13 @@ $(function(ev) {
         }
     });
 
+    $('body').on('input', '[data-autocheck-fill]', function(e) {
+        let $this = $(this);
+        let chkId = $this.data('autocheck-fill');
+        let $chk = $('#'+chkId);
+        $chk.prop('checked', this.value.trim() !== '');
+    });
+
     $(document).on('submit.ajax', 'form.ajax', function(ev) {
         ev.preventDefault();
         let $this = $(this);
