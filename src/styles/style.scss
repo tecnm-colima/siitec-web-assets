@@ -36,62 +36,6 @@ body {
     &-center { text-align: center; }
     &-justify { text-align: justify; }
 }
-
-form {
-    .form-group {
-        margin-top: 12px;
-        > label {
-            display: block;
-            font-size: 12px;
-            font-weight: bold;
-        }
-    }
-    .form-buttons {
-        text-align: right;
-        margin: 8px 0px;
-    }
-    &.inline {
-        display: flex;
-        .form-group {
-            position: relative;
-            display: inline-block;
-            display: flex;
-            margin: 4px 0px;
-            align-items: baseline;
-            flex-grow: 1;
-            align-content: stretch;
-            > label {
-                display: inline;
-                vertical-align: baseline;
-                margin: 0px 1ex;
-            }
-            > input,
-            > select,
-            > textarea,
-            > .textarea {
-                display: inline-block;
-                flex-grow: 1;
-                padding: 4px;
-                vertical-align: baseline;
-            }
-        }
-        .form-buttons {
-            flex-grow: 1;
-            display: inline-block;
-            margin: 0px;
-            align-items: baseline;
-            button,
-            input[type=button],
-            input[type=submit],
-            input[type=reset],
-            .button {
-                padding: 8px 12px;
-                width: auto;
-                margin: 4px 0px 4px 1ex;
-            }
-        }
-    }
-}
 .breadcrumbs {
     display: block;
     margin: 8px 0px;

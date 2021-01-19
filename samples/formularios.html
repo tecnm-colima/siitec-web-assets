@@ -29,6 +29,17 @@
                     <input type="text" name="nombre" placeholder="Ejemplo: Carolina Fuentes" aria-describedby="txtHelpNombre" />
                     <small id="txtHelpNombre" class="form-text text-muted">Nombre de el o la estudiante a buscar.</small>
                 </div>
+                <fieldset class="form-group col-sm-4 col-md-3">
+                    <legend class="form-label">Visibilidad</legend>
+                    <div class="form-check">
+                        <input type="radio" name="visible" id="rdbVisibleYes" class="form-check-input" />
+                        <label for="rdbVisibleYes" class="form-check-label">Visible para los estudiantes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="visible" id="rdbVisibleNo" class="form-check-input" />
+                        <label for="rdbVisibleNo" class="form-check-label">Sólo visible en plantillas</label>
+                    </div>
+                </fieldset>
             </div>
             <div class="form-buttons">
                 <button type="submit" class="btn-siitec2">Buscar</button>
@@ -38,7 +49,7 @@
             <h2>Formulario en línea</h2>
         </div>
         <p>Este formulario se caracteriza por ser más compacto y presentar la mayor
-        cantidadposible de controles en una sola línea de la interfaz.
+        cantidad posible de controles en una sola línea de la interfaz.
         </p>
         <p>Para hacer un formulario en una línea hay que usar la clase
             <code>form-inline</code> en la etiqueta <code>form</code>.
