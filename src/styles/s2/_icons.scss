@@ -1,0 +1,36 @@
+%s2-websymbols-before {
+    font-family: 'WebSymbolsLigaRegular';
+    text-align: center;
+    display: inline;
+}
+.s2-icon {
+    font-size: 1em;
+    &-plus-circle::before {
+        content: "Á";
+        @extend %s2-websymbols-before;
+    }
+    &-arrow-back::before {
+        content: ",";
+        @extend %s2-websymbols-before;
+    }
+    &-pencil::before {
+        content: "?";
+        @extend %s2-websymbols-before;
+    }
+    &-check-circle::before {
+        content: "ô";
+        @extend %s2-websymbols-before;
+    }
+    &-list::before {
+        content: "I";
+        @extend %s2-websymbols-before;
+    }
+    &-arrow-up-circle::before {
+        content: "Æ";
+        @extend %s2-websymbols-before;
+    }
+    &-pencil-square::before {
+        content: "ì";
+        @extend %s2-websymbols-before;
+    }
+}

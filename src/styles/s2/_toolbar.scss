@@ -1,0 +1,18 @@
+.s2-toolbar {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    .s2-item {
+        color: #3e3e3e;
+        text-decoration: none;
+        border: 1px solid transparent;
+        padding: 12px;
+        border-radius: 4px;
+        &:hover {
+            color: white;
+            background-color: $accent-color;
+        }
+    }
+    .s2-icon {
+        font-size: 16px;
+    }
+}
