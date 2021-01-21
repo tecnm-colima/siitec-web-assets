@@ -12,9 +12,30 @@
     background: #333;
     font-family: Arial, sans-serif;
     border-radius: 5px;
-    * {
+    position: relative;
+    h1,h2,h3,h4,h5,h6 {
         font-weight: bold;
         font-size: 16px;
+        margin-bottom: 0px;
         padding: 14px 8px;
+    }
+    .s2-toolbar {
+        background-color: #1a1a1a;
+        border-radius: 4px;
+        margin: 0px;
+        min-height: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+        .s2-item {
+            color: white;
+            padding: 10px 14px;
+            &:link:hover {
+                background-color: transparent;
+                color: $accent-color !important;
+            }
+        }
+        .s2-icon {
+            color: inherit;
+        }
     }
 }

@@ -24,6 +24,7 @@
 }
 .s2-icon {
     font-size: 1em;
+    display: inline-block;
     &-plus-circle::before {
         content: "Á";
         @extend %s2-websymbols-before;
