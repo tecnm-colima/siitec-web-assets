@@ -5,15 +5,6 @@ $line-color: rgba(128,128,128, 0.4);
 $focus-color: #2704c4;
 $accent-color: #f2b90d;
 
-@font-face{
-    font-family: 'WebSymbolsLigaRegular';
-        src: url('./fonts/websymbols/websymbolsligaregular.eot');
-        src: url('./fonts/websymbols/websymbolsligaregular.eot?#iefix') format('embedded-opentype'),
-            url('./fonts/websymbols/websymbolsligaregular.woff') format('woff'),
-            url('./fonts/websymbols/websymbolsligaregular.ttf') format('truetype'),
-            url('./fonts/websymbols/websymbolsligaregular.svg#WebSymbolsRegular') format('svg');
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
@@ -98,9 +89,6 @@ body {
         text-transform: uppercase;
     }
 }
-.command-bar {
-    text-align: right;
-}
 .flex {
     display: flex;
     &-v {
@@ -145,75 +133,6 @@ body {
     }
 }
 
-#shell-header {
-    $bgcolor: #323232;
-    --shadow-opacity: 1;
-    --text-color: white;
-    overflow: hidden;
-    height: 60px;
-    background-color: $bgcolor;
-    position: sticky;
-    top: 0px;
-    z-index: 1000;
-    color: #aaa;
-    box-shadow: 4px 0px 36px -16px black;
-    box-shadow: 4px 0px 36px -16px rgba(black, calc(var(--shadow-opacity) * 0.4));
-
-    @supports (backdrop-filter: blur(12px)) {
-        backdrop-filter: blur(12px) brightness(20%);
-        background-color: transparent;
-    }
-    a {
-        text-decoration: none;
-        &:link, &:visited {
-            color: inherit;
-        }
-    }
-    %item {
-        cursor: pointer;
-        box-sizing: border-box;
-        height: 60px;
-        border: 1px solid transparent;
-        user-select: none;
-        display: inline-block;
-        transition: border-color 600ms, background-color 600ms, color 100ms;
-        &:hover {
-            color: white;
-            border-color: #666;
-            background-color: transparentize($color: #888, $amount: 0.75);
-        }
-        &:active {
-            color: var(--itcolima-yellow);
-        }
-    }
-    .item {
-        @extend %item;
-        display: inline-block;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 48px;
-        text-align: center;
-    }
-    .logo-siitec {
-        width: 160px;
-        height: 60px;
-    }
-}
-#shell-footer {
-    min-height: 200px;
-    flex-grow: 1;
-    background-color: $line-color;
-}
-.s2-ws {
-    font-family: 'WebSymbolsLigaRegular';
-    font-size: 22px;
-    text-align: center;
-    &::before {
-        content: attr(data-char);
-        display: inline;
-    }
-}
 #welcomePanel {
     position: relative;
     box-sizing: border-box;
@@ -284,14 +203,9 @@ body {
         }
     }
 }
-// @media (prefers-color-scheme: dark) {
-//     :root {
-//         background-color: black;
-//         color: #ccc;
-//     }
-// }
 @import './s2/icons';
 @import './s2/layout';
+@import './s2/shell_sections';
 @import './s2/menu';
 @import './s2/button';
 @import './s2/login';

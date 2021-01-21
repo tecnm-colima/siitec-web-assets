@@ -1,3 +1,22 @@
+
+@font-face{
+    font-family: 'WebSymbolsLigaRegular';
+        src: url('./fonts/websymbols/websymbolsligaregular.eot');
+        src: url('./fonts/websymbols/websymbolsligaregular.eot?#iefix') format('embedded-opentype'),
+            url('./fonts/websymbols/websymbolsligaregular.woff') format('woff'),
+            url('./fonts/websymbols/websymbolsligaregular.ttf') format('truetype'),
+            url('./fonts/websymbols/websymbolsligaregular.svg#WebSymbolsRegular') format('svg');
+}
+
+.s2-ws {
+    font-family: 'WebSymbolsLigaRegular';
+    font-size: 22px;
+    text-align: center;
+    &::before {
+        content: attr(data-char);
+        display: inline;
+    }
+}
 %s2-websymbols-before {
     font-family: 'WebSymbolsLigaRegular';
     text-align: center;

@@ -1,0 +1,60 @@
+#shell-header {
+    $bgcolor: #323232;
+    --shadow-opacity: 1;
+    --text-color: white;
+    overflow: hidden;
+    height: 60px;
+    background-color: $bgcolor;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    color: #aaa;
+    box-shadow: 4px 0px 36px -16px black;
+    box-shadow: 4px 0px 36px -16px rgba(black, calc(var(--shadow-opacity) * 0.4));
+
+    @supports (backdrop-filter: blur(12px)) {
+        backdrop-filter: blur(12px) brightness(20%);
+        background-color: transparent;
+    }
+    a {
+        text-decoration: none;
+        &:link, &:visited {
+            color: inherit;
+        }
+    }
+    %item {
+        cursor: pointer;
+        box-sizing: border-box;
+        height: 60px;
+        border: 1px solid transparent;
+        user-select: none;
+        display: inline-block;
+        transition: border-color 600ms, background-color 600ms, color 100ms;
+        &:hover {
+            color: white;
+            border-color: #666;
+            background-color: transparentize($color: #888, $amount: 0.75);
+        }
+        &:active {
+            color: var(--itcolima-yellow);
+        }
+    }
+    .item {
+        @extend %item;
+        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        text-align: center;
+    }
+    .logo-siitec {
+        width: 160px;
+        height: 60px;
+    }
+}
+#shell-footer {
+    margin-top: 4em;
+    min-height: 200px;
+    flex-grow: 1;
+}
