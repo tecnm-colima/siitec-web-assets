@@ -120,7 +120,7 @@ $(function(ev) {
         let action = $this.prop('action');
         let data = {};
         $inputs.each(function(i, el) {
-            if (el instanceof HTMLInputElement && el.type === 'check') {
+            if (el instanceof HTMLInputElement && (el.type === 'checkbox' || el.type === 'radio')) {
                 if (el.checked && 'name' in el) {
                     data[el['name']] = ('value' in el ? el['value'] : 'on');
                 }
