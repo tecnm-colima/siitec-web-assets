@@ -120,6 +120,12 @@ $(function(ev) {
         let action = $this.prop('action');
         let data = {};
         $inputs.each(function(i, el) {
+            if (el instanceof HTMLInputElement && el.type === 'check') {
+                if (el.checked) {
+                    data[el['name']] = el['value'];
+                }
+                return;
+            }
             if ('name' in el && 'value' in el) {
                 data[el['name']] = el['value'];
             }
