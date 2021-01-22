@@ -121,8 +121,8 @@ $(function(ev) {
         let data = {};
         $inputs.each(function(i, el) {
             if (el instanceof HTMLInputElement && el.type === 'check') {
-                if (el.checked) {
-                    data[el['name']] = el['value'];
+                if (el.checked && 'name' in el) {
+                    data[el['name']] = ('value' in el ? el['value'] : 'on');
                 }
                 return;
             }
