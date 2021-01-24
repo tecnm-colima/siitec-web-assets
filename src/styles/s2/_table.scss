@@ -6,12 +6,8 @@ table.s2-table {
     font-size: 12px;
     %table-cell {
         font-weight: normal;
-        padding: 4px 8px;
+        padding: 8px 8px;
         vertical-align: baseline;
-    }
-    thead {
-        background-color: $line-color;
-        text-align: left;
     }
     th, td {
         @extend %table-cell;
@@ -21,6 +17,13 @@ table.s2-table {
         &:hover {
             background-color: rgba(128, 128, 128, 0.1);
         }
+    }
+    thead {
+        background-color: $line-color;
+        text-align: left;
+    }
+    thead, tfoot {
+        th, td { font-weight: bold; }
     }
     &.wide {
         width: calc(100% - 16px);
