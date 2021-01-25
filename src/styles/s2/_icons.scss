@@ -22,35 +22,185 @@
     text-align: center;
     display: inline;
 }
+$websymbol-icons: (
+    "refresh": "!",
+    "refresh-square": "\"",
+    "search": "#",
+    "signal": "$",
+    "upload-circle-fill": "%",
+    "download-circle-fill": "&",
+    "upload-circle": "'",
+    "download-circle": "(",
+    "upload": ")",
+    "download": "*",
+    "arrow-back-double": "+",
+    "arrow-back": ",",
+    "arrow-forward": "-",
+    "contact": ".",
+    "windows": "/",
+    "progress-0": "0",
+    "progress-1": "1",
+    "progress-2": "2",
+    "progress-3": "3",
+    "progress-4": "4",
+    "progress-5": "5",
+    "progress-6": "6",
+    "progress-7": "7",
+    "mail": "8",
+    "empty": "9",
+    "clock": ":",
+    "calendar": ";",
+    "arrows-inward": "<",
+    "paper-clip": "=",
+    "arrows-outward": ">",
+    "pencil": "?",
+    "export": "@",
+    "view-tiles": "A",
+    "view-list": "B",
+    "view-names": "C",
+    "text-align-right": "D",
+    "text-align-center": "E",
+    "text-align-left": "F",
+    "indent-add": "G",
+    "indent-rem": "H",
+    "list-bullet": "I",
+    "list-number": "J",
+    "text-balloon": "K",
+    "text-balloon-dots": "L",
+    "legend-jbn": "M",
+    "logo-dots": "N",
+    "logo-be": "O",
+    "logo-blogger": "P",
+    "logo-msg": "Q",
+    "logo-github": "R",
+    "hearth-fill": "S",
+    "hearth": "T",
+    "reload": "U",
+    "reload-circle-fill": "V",
+    "reload-circle": "W",
+    "eye":"X",
+    "wallet":"Y",
+    "text-input":"Z",
+    "arrow-down-":"[",
+    "warning":"\\",
+    "arrow-right-":"]",
+    "gear":"^",
+    "code":"_",
+    "leave": "`",
+    "picture": "a",
+    "video": "b",
+    "film": "c",
+    "preview": "d",
+    "cli": "e",
+    "photos": "f",
+    "width":"g",
+    "height": "h",
+    "grid": "i",
+    "folder": "j",
+    "cloud": "k",
+    "cloud-upload": "l",
+    "doc-portrait": "m",
+    "doc-landscape": "n",
+    "link": "o",
+    "size": "p",
+    "signal-bars": "q",
+    "tag": "r",
+    "chat": "s",
+    "star": "t",
+    "location": "u",
+    "lock-open": "v",
+    "lock-close": "w",
+    "volume-mute": "x",
+    "volume-low": "y",
+    "volume-high": "z",
+    "arrow-low": "{",
+    "phone": "|",
+    "arrow-high":"}",
+    "shuffle":"~",
+    "empty-2":" ",
+    "people":"¡",
+    "logo-evernote":"¢",
+    "logo-picasa":"£",
+    "logo-dribbble": "¤",
+    "logo-weibo":"¥",
+    "logo-lastfm":"¦",
+    "logo-soundcloud":"§",
+    "logo-dropbox":"¨",
+    "turn-clockwise":"©",
+    "turn-clockwise-reverse": "ª",
+    "contact-add":"«",
+    "repeat":"¬",
+    "re":"®",
+    "k":"¯",
+    "plus-circle":"À",
+    "plus-circle-fill":"Á",
+    "plus": "Â",
+    "less-circle":"Ã",
+    "less-circle-fill":"Ä",
+    "less":"Å",
+    "arrow-up-circle":"Æ",
+    "arrow-up-circle-fill":"Ç",
+    "arrow-up":"È",
+    "arrow-down-circle":"É",
+    "arrow-down-circle-fill":"Ê",
+    "arrow-down":"Ë",
+    "x-circle": "Ì",
+    "x-circle-fill": "Í",
+    "x": "Î",
+    "outward-circle":"Ï",
+    "outward-circle-fill":"Ð",
+    "outward":"Ñ",
+    "arrow-left-circle":"Ò",
+    "arrow-left-circle-fill":"Ó",
+    "arrow-left":"Ô",
+    "arrow-right-circle":"Õ",
+    "arrow-right-circle-fill":"Ö",
+    "arrow-right":"×",
+    "play-circle":"Ø",
+    "play-circle-fill":"Ù",
+    "play":"Ú",
+    "pause-circle":"Û",
+    "pause-circle-fill":"Ü",
+    "pause":"Ý",
+    "stop-circle":"Þ",
+    "stop-circle-fill":"ß",
+    "stop":"à",
+    "sort-circle":"á",
+    "sort-circle-fill":"â",
+    "sort":"ã",
+    "logo-facebook":"ä",
+    "logo-twitter":"å",
+    "logo-b":"æ",
+    "logo-linkedin":"ç",
+    "logo-google-plus":"è",
+    "logo-ok":"é",
+    "logo-tumblr":"ê",
+    "logo-instagram":"ë",
+    "logo-pencil":"ì",
+    "logo-pinterest":"í",
+    "logo-vimeo":"î",
+    "logo-skype":"ï",
+    "logo-youtube":"ð",
+    "logo-rss":"ñ",
+    "logo-google":"ò",
+    "check-circle-fill":"ó",
+    "check-circle":"ô",
+    "check":"õ",
+    "rewind-circle-fill":"ö",
+    "rewind-circle":"÷",
+    "rewind":"ø",
+    "forward-circle-fill":"ù",
+    "forward-circle":"ú",
+    "forward":"û",
+    "square": ""
+);
 .s2-icon {
     font-size: 1em;
     display: inline-block;
-    &-plus-circle::before {
-        content: "Á";
-        @extend %s2-websymbols-before;
-    }
-    &-arrow-back::before {
-        content: ",";
-        @extend %s2-websymbols-before;
-    }
-    &-pencil::before {
-        content: "?";
-        @extend %s2-websymbols-before;
-    }
-    &-check-circle::before {
-        content: "ô";
-        @extend %s2-websymbols-before;
-    }
-    &-list::before {
-        content: "I";
-        @extend %s2-websymbols-before;
-    }
-    &-arrow-up-circle::before {
-        content: "Æ";
-        @extend %s2-websymbols-before;
-    }
-    &-pencil-square::before {
-        content: "ì";
-        @extend %s2-websymbols-before;
+    @each $name, $symbol in $websymbol-icons {
+        &-#{$name}::before {
+            content: $symbol;
+            @extend %s2-websymbols-before;
+        }
     }
 }
