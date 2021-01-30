@@ -121,7 +121,7 @@ body {
     display: inline-block;
     em {
         font-style: normal;
-        color: #61960d;
+        color: #4F7A0B;
     }
     span.sep {
         &::after {
@@ -215,3 +215,4 @@ body {
 @import './s2/titles';
 @import './s2/toolbar';
 @import './s2/infopanel';
+@import './s2/banner';

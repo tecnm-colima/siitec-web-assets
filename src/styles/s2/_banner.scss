@@ -1,0 +1,29 @@
+.s2-banner {
+    .s2-panel {
+        background-color: #363636;
+        border-radius: 8px;
+        box-shadow: rgba(black,0.25);
+        color: #f1f1f1;
+        padding: 12px;
+        :last-child {
+            margin-bottom: 0px;
+        }
+    }
+    .title {
+        color: #58A5DC;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .s2-badge {
+        vertical-align: middle;
+        text-align: center;
+        font-size: 30px;
+        min-height: 60px;
+        width: 78px;
+        .s2-icon::before {
+            content: "";
+            line-height: 100%;
+            display: inline-block;
+        }
+    }
+}

@@ -198,7 +198,7 @@ $websymbol-icons: (
     font-size: 1em;
     display: inline-block;
     @each $name, $symbol in $websymbol-icons {
-        &-#{$name}::before {
+        &-#{$name}::after {
             content: $symbol;
             @extend %s2-websymbols-before;
         }
