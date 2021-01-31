@@ -52,12 +52,12 @@ table.s2-table {
     }
     &.table-fixed {
         table-layout: fixed;
-        @for $i from 1 to 12 {
+        @for $i from 1 through 12 {
             .col-#{$i} { display: table-cell; width: $i * (100% / 12); }
         }
         @each $brk, $size in $grid-breakpoints {
             @media screen and (max-width: $size) {
-                @for $i from 1 to 12 {
+                @for $i from 1 through 12 {
                     .col-#{$brk}-#{$i} { display: table-cell; width: $i * (100% / 12); }
                 }
             }
