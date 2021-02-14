@@ -109,6 +109,10 @@ $(function(ev) {
         let chkId = $this.data('autocheck-fill');
         let $chk = $('#'+chkId);
         $chk.prop('checked', this.value.trim() !== '');
+    }).on('change', ':checkbox[data-toggle=disable]', function() {
+        let target = $(this).data('target');
+        let $target = $(target);
+        $target.prop('disabled', !this.checked);
     });
 
     $(document).on('submit.ajax', 'form.ajax', function(ev) {

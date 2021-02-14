@@ -3,7 +3,7 @@
         &-#{$i} { column-count: $i; }
     }
     @each $brk, $size in $grid-breakpoints {
-        @media screen and (max-width: $size) {
+        @media screen and (min-width: $size) {
             @for $i from 1 through 12 {
                 &-#{$brk}-#{$i} { column-count: $i; }
             }
@@ -12,5 +12,5 @@
 }
 .s2-list-none {
     list-style: none;
-    padding: none;
+    padding: 0px;
 }

@@ -131,3 +131,7 @@ select:focus {
     &[rows="7"] { --rows: 7; }
     &[rows="8"] { --rows: 8; }
 }
+
+.hide-disabled:disabled {
+    display: none;
+}
