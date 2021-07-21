@@ -9,7 +9,7 @@ const
     rename      = require('gulp-rename'),
     sass        = require('gulp-sass'),
     sourcemaps  = require('gulp-sourcemaps'),
-    svgstore    = require('gulp-svgstore');
+    svgSprite   = require('gulp-svg-sprite');
 
 sass.compiler = require('sass');
 
@@ -30,21 +30,8 @@ gulp.task('watch:styles', function() {
     gulp.watch('./src/styles/**/*.scss', gulp.series('compile:styles'));
 });
 
-gulp.task('compile:graphics', function() {
-    return gulp
-        .src('./src/graphics/**/*.svg', { base: './src/graphics' })
-        .pipe(rename(function(file) {
-            var name = file.dirname.split(path.sep);
-            name.push(file.basename);
-            file.basename = name.join('-');
-        }))
-        .pipe(svgstore())
-        .pipe(rename({ basename: 'graphics' }))
-        .pipe(gulp.dest(DIST_PATH));
-});
-
-gulp.task('watch:graphics', function() {
-    gulp.watch('./src/graphics/**/*.svg', gulp.series('compile:graphics'));
+gulp.task('watch:svg', function() {
+    gulp.watch('./src/graphics/**/*.svg', gulp.series('svgsprite'));
 });
 
 gulp.task('copy:fonts', function() {
@@ -55,4 +42,14 @@ gulp.task('copy:fonts', function() {
 
 gulp.task('watch:fonts', function() {
     gulp.watch('./scr/fonts/**/*.*', gulp.series('copy:fonts'));
+});
+
+gulp.task('svgsprite', function() {
+    return gulp
+        .src('**/*.svg', { cwd: 'src/graphics'})
+        .pipe(svgSprite({
+            shape: { id: { separator: '-' }, transform: ['svgo'] },
+            mode: { symbol: { dest:"", sprite:'graphics.svg' } }
+        }))
+        .pipe(gulp.dest('dist'));
 });
