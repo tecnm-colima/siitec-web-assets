@@ -4,7 +4,7 @@
         color: #ccc;
         --text-color: white;
     }
-    input, textarea {
+    input, textarea, select, .form-control {
         background: #111;
         border-color: #444;
         color: white;
@@ -18,6 +18,11 @@
             }
 
         }
+    }
+    .input-group-text {
+        background: #444;
+        border-width: 2px;
+        border-color: #444;
     }
     .btn, .btn-action, button, input[type=submit],input[type=reset],input[type=button] {
         background: #444;
