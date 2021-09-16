@@ -1,0 +1,13 @@
+.sitesearch {
+    font-size: 1rem;
+    &__searchbox {
+        display: block;
+        width: 100%;
+        padding: .5em;
+        
+        border-radius: .3em;
+        font-size: 1em;
+
+        border: 1px solid #222;
+    }
+}

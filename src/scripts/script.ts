@@ -2,6 +2,35 @@
 import * as $ from 'jquery';
 import 'bootstrap';
 
+$(function() {
+    let top= 0, topXs = 0, topSm = 0, topMd = 0, topLg = 0, topXl = 0;
+    $('.autostick, .autostick-xs').each(function(_i, el) {
+        topXs += $(el).css('--top-xs', topXs+'px').outerHeight();
+    });
+    $('.autostick, .autostick-xs, .autostick-sm').each(function(_i, el) {
+        topSm += $(el).css('--top-sm', topSm+'px').outerHeight();
+    });
+    $('.autostick, .autostick-xs, .autostick-sm, .autostick-md').each(function(_i, el) {
+        topMd += $(el).css('--top-md', topMd+'px').outerHeight();
+    });
+    $('.autostick, .autostick-xs, .autostick-sm, .autostick-md, .autostick-lg').each(function(_i, el) {
+        topLg += $(el).css('--top-lg', topLg+'px').outerHeight();
+    });
+    $('.autostick, .autostick-xs, .autostick-sm, .autostick-md, .autostick-lg, .autostick-xl').each(function(_i, el) {
+        el.dataset.offsetTop = el.offsetTop.toString();
+        topXl += $(el).css('--top-xl', topXl+'px').outerHeight();
+    });
+});
+$(window).on('scroll', function() {
+    let originalTop = 0;
+    let offsetTop = 0;
+    $('.autostick, .autostick-xs, .autostick-sm, .autostick-md, .autostick-lg, .autostick-xl').each(function(_i, el) {
+        originalTop = Number.parseFloat(el.dataset.offsetTop);
+        offsetTop = el.offsetTop;
+        el.classList.toggle('autostick--sticked', offsetTop != originalTop);
+    });
+});
+
 $.extend({
     cookie: function(name) {
         function getCookies() {

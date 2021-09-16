@@ -1,0 +1,80 @@
+@use '../colors';
+
+.topbar {
+    overflow: hidden;
+    z-index: 9999;
+    top: 0px;
+
+    background: colors.$dark-bg-default;
+    height: 4rem;
+    color: #fffa;
+    box-shadow:
+        0 0 .5em #0004,
+        0 .5em 2em #0002;
+
+    & &__item {
+        display: inline-flex;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+        border: 1px solid transparent;
+        vertical-align: bottom;
+        transition:
+            background-color 200ms ease-in-out,
+            border-color 200ms ease-in-out,
+            color 50ms ease-in-out;
+        &:hover {
+            background-color: #8884;
+            border-color: #8886;
+            color: white;
+        }
+        &:active {
+            color: colors.$dark-fg-accent;
+        }
+    }
+    & &__logo {
+        display: inline-block;
+        height: 2.5rem;
+        width: 12.5rem;
+        --text-color: white;
+    }
+    & &__icon {
+        font-size: 1.5rem;
+        margin: .5rem;
+    }
+
+    & &__searchbox {
+        font-size: 1.2em;
+        display: block;
+        background-color: #8886;
+        border: none;
+        border-radius: .5em;
+        margin: .7em 0;
+        padding: .5em;
+        width: 100%;
+        justify-self: right;
+        transition: background-color 300ms;
+        &:focus {
+            outline: none;
+            background: white;
+        }
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+        &:link { color: inherit; }
+        &:visited { color: inherit; }
+    }
+
+    > .container {
+        height: 100%;
+    }
+
+    @supports (backdrop-filter: blur(12px)) {
+        & {
+            background-color: colors.$glass-dark-bg-default;
+            backdrop-filter: blur(12px);
+        }
+    }
+}

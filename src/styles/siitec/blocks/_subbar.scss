@@ -1,0 +1,32 @@
+@use '../colors';
+
+.subbar {
+    z-index: 9998;
+    padding: .25em;
+    text-align: center;
+
+    color: colors.$dark-fg-default;
+    background: colors.$dark-bg-blue;
+    box-shadow:
+        0 0 .2em #0006,
+        0 .2em .5em #0002;
+    
+    @for $i from 1 through 100 {
+        &:nth-of-type(#{$i}) {
+            z-index: #{9998 - $i};
+        }
+    }
+
+    &--error {
+        background-color: colors.$dark-bg-red;
+    }
+    &--danger {
+        background-color: colors.$dark-bg-orange;
+    }
+    &--warning {
+        background-color: colors.$dark-bg-yellow;
+    }
+    &--success {
+        background-color: colors.$dark-bg-green;
+    }
+}

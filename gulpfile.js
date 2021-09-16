@@ -13,7 +13,7 @@ const
 
 sass.compiler = require('sass');
 
-gulp.task('compile:styles', function() {
+gulp.task('compile:css', function() {
     return gulp
         .src('./src/styles/**/*.scss')
         .pipe(sourcemaps.init())
@@ -26,8 +26,8 @@ gulp.task('compile:styles', function() {
         .pipe(sourcemaps.write(''))
         .pipe(gulp.dest(DIST_PATH));
 });
-gulp.task('watch:styles', function() {
-    gulp.watch('./src/styles/**/*.scss', gulp.series('compile:styles'));
+gulp.task('watch:css', function() {
+    gulp.watch('./src/styles/**/*.scss', gulp.series('compile:css'));
 });
 
 gulp.task('watch:svg', function() {
@@ -40,7 +40,7 @@ gulp.task('copy:fonts', function() {
         .pipe(gulp.dest(path.join(DIST_PATH, 'fonts')));
 });
 
-gulp.task('watch:fonts', function() {
+gulp.task('watch:font', function() {
     gulp.watch('./scr/fonts/**/*.*', gulp.series('copy:fonts'));
 });
 

@@ -1,0 +1,22 @@
+@use './variables';
+
+.autostick {
+    position: sticky;
+    @each $size, $min-width in  variables.$grid-breakpoints {
+        @media (min-width: $min-width) {
+            top: var(--top-#{$size});
+            &-#{$size} {
+                position: sticky;
+                top: var(--top-#{$size});
+            }
+        }
+    }
+    &--sticked {
+        background: red;
+        @for $i from 1 through 100 {
+            &:nth-child(#{$i}) {
+                z-index: #{8999 - $i};
+            }
+        }
+    }
+}

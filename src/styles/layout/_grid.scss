@@ -1,0 +1,34 @@
+@use './variables';
+@use 'sass:math';
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    &--nowrap {
+        flex-wrap: nowrap;
+    }
+}
+.col {
+    flex-grow: 999999;
+    max-width: 100%;
+    &-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+    }
+    @for $col from 12 through 1 {
+        @each $size, $min-width in variables.$grid-breakpoints {
+            @media (min-width: $min-width) {
+                &-#{$size}-#{$col} {
+                    flex: 0 0 percentage(math.div($col, 12));
+                    max-width: percentage(math.div($col, 12));
+                }
+            }
+        }
+        &-#{$col} {
+            flex: 0 0 percentage(math.div($col, 12));
+            max-width: percentage(math.div($col, 12));
+        }
+    }
+}

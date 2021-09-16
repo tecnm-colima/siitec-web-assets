@@ -1,0 +1,38 @@
+@use './websymbols_glyphs';
+
+@font-face{
+    font-family: 'WebSymbolsLigaRegular';
+        src: url('./fonts/websymbols/websymbolsligaregular.eot');
+        src: url('./fonts/websymbols/websymbolsligaregular.eot?#iefix') format('embedded-opentype'),
+            url('./fonts/websymbols/websymbolsligaregular.woff') format('woff'),
+            url('./fonts/websymbols/websymbolsligaregular.ttf') format('truetype'),
+            url('./fonts/websymbols/websymbolsligaregular.svg#WebSymbolsRegular') format('svg');
+}
+
+%ws-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 100%;
+    vertical-align: middle;
+}
+
+%ws-icon-after {
+    font-family: 'WebSymbolsLigaRegular';
+    text-align: center;
+    display: inline;
+    line-height: 100%;
+    vertical-align: top;
+    width: 1em;
+    height: 1em;
+}
+
+@each $name, $glyph in websymbols_glyphs.$glyphs {
+    .icon-ws-#{$name} {
+        @extend %ws-icon;
+        &::after {
+            content: $glyph;
+            @extend %ws-icon-after;
+        }
+    }
+}

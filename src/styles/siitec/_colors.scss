@@ -1,0 +1,39 @@
+@use 'sass:color';
+
+$banner-backcolor: #222 !default;
+
+$info-backcolor: #EBEBEB !default;
+$info-forecolor: #3e3e3e !default;
+
+$fg-default:    #000000 !default;
+$fg-accent:     hsl(44, 100%, 48%) !default;
+$fg-red:        #b80000 !default;
+$fg-orange:     #fa6800 !default;
+$fg-yellow:     #ffaa00 !default;
+$fg-green:      #157b00 !default;
+$fg-blue:       #0067a3 !default;
+
+$bg-default:    #ffffff !default;
+$bg-red:        #fca19a !default;
+$bg-orange:     #ffbf80 !default;
+$bg-yellow:     #fff599 !default;
+$bg-green:      #d5ffb3 !default;
+$bg-blue:       #80d0ff !default;
+$bg-light:      #f0f0f0 !default;
+
+$dark-fg-default:   #ffffff !default;
+$dark-fg-accent:    #f5b300 !default;
+$dark-fg-red:       #ff5c5c !default;
+$dark-fg-orange:    #ff8e3d !default;
+$dark-fg-yellow:    hsl(45, 85%, 50%) !default;
+$dark-fg-green:     #65c551 !default;
+$dark-fg-blue:      #74ccff !default;
+
+$dark-bg-default:   #222222 !default;
+$dark-bg-red:       #a11912 !default;
+$dark-bg-orange:    #C25700 !default;
+$dark-bg-yellow:    #cc8800 !default;
+$dark-bg-green:     #157b00 !default;
+$dark-bg-blue:      #0067a3 !default;
+
+$glass-dark-bg-default: #000c !default;

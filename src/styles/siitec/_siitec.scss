@@ -1,0 +1,13 @@
+@forward './blocks/topbar';
+@forward './blocks/subbar';
+@forward './blocks/session_info';
+@forward './blocks/breadcrumbs';
+@forward './blocks/banner';
+@forward './blocks/titlebar';
+@forward './blocks/sitesearch';
+@forward './blocks/menulist';
+
+:root {
+    font: normal 16px/1.4 Arial;
+    font-size: var(--font-size, 16px);
+}

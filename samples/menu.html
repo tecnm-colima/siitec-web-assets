@@ -9,104 +9,107 @@
     <title>Menu</title>
 </head>
 <body>
-	<header id="shell-header">
-		<div class="container">
-            <di class="flex">
-                <div class="fill">
-                    <a class="item logo-siitec reveal-container" role="button" title="Página principal"
-                        href="https://siitec2.colima.tecnm.mx" target="_blank">
-                        <svg>
-                            <use href="../dist/graphics.svg#logo-siitec" />
-                        </svg>
-                    </a>
-                </div>
-                <div>
-                    <li class="reveal-container item">
-                        <a href="#" title="Salir (Cerrar sesión)" role="button">
-                            <span class="s2-ws" data-char="Í"></span>
-                        </a>
-                    </li>
-                </div>
-            </di>
-		</div>
-    </header>
-    <div class="container">
-        <div class="user-info">
-            Periodo: <em>ENE-JUN 2021</em>
-            <span class="sep"></span>
-            Usuario: <em>19460807</em>
-        </div>
-        <ul class="breadcrumbs" tabindex="0" title="ubicación">
-            <li><a href="#" tabindex="-1">Menú principal</a></li>
-            <li><a href="#" tabindex="-1">Mis Calificaciones</a></li>
-            <li><a href="#" tabindex="-1">Kardex en lista</a></li>
-        </ul>
-        <a class="s2-banner row">
-            <div class="s2-panel col">
-                <h2 class="title">Banner header</h2>
-                <p>Banner content inside header</p>
+    <div class="topbar autostick">
+        <div class="container row row--nowrap">
+            <div class="col-auto">
+                <a class="topbar__item" title="Menú principal" href="#https://siitec.colima.tecnm.mx">
+                    <svg class="topbar__logo">
+                        <use href="../dist/graphics.svg#logo-siitec" />
+                    </svg>
+                </a>
             </div>
-            <div class="s2-panel s2-badge col-auto">
-                <span class="s2-icon s2-icon-arrow-right-circle"></span>
+            <div class="col">
+                <!-- <input class="col-12 col-md-8 col-lg-6 topbar__searchbox" type="search" name="term" id="pageSearch" placeholder="Escribir el texto a buscar"> -->
+            </div>
+            <div class="col-auto">
+                <a class="topbar__item" title="Cerrar sesión" href="#https://siitec.colima.tecnm.mx/index.php/logout">
+                    <span class="topbar__icon icon-ws-x-circle-fill"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="subbar">
+        <div class="container">info | info | info | info | info | info</div>
+    </div>
+    <div class="subbar subbar--error autostick-sm">
+        <div class="container">error | error | error | error | error | error</div>
+    </div>
+    <div class="subbar subbar--danger autostick-md">
+        <div class="container">danger | danger | danger | danger | danger | danger</div>
+    </div>
+    <div class="subbar subbar--warning autostick-lg">
+        <div class="container">warning | warning | warning | warning | warning | warning</div>
+    </div>
+    <div class="subbar subbar--success autostick-xl">
+        <div class="container">success | success | success | success | success | success</div>
+    </div>
+    <div class="container">
+        <dl class="session-info">
+            <div class="session-info__group">
+                <dt class="session-info__label">Periodo</dt>
+                <dd class="session-info__data">ENE-JUN 2021</dd>
+            </div>
+            <div class="session-info__separator"></div>
+            <div class="session-info__group">
+                <dt class="session-info__label">Usuario</dt>
+                <dd class="session-info__data">19460807</dd>
+            </div>
+        </dl>
+        <ul class="breadcrumbs">
+            <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="#">Menú principal</a>
+            </li>
+            <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="#">Mis calificaciones</a>
+            </li>
+            <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link breadcrumbs__link--active" href="#">Kardex en lista</a>
+            </li>
+        </ul>
+        <a class="banner banner--error row row--nowrap autostick" href="#">
+            <div class="col banner__content">
+                <div class="banner__title">Banner header</div>
+                <div class="banner__description">Banner content inside header</div>
+            </div>
+            <div class="col-auto banner__icon">
+                <span class="icon-ws-arrow-right-circle"></span>
             </div>
         </a>
-        <h1 class="page-title">Menú principal</h1>
-        <div class="s2-menu-list row">
-            <div class="col-sm-12 col-lg-6">
-                <a class="btn btn-menu" aria-label="Buzón de quejas y sugerencias">
-                    <span class="s2-icon s2-icon-mail"></span>
-                    <p class="title">Buzón de quejas y sugerencias</p>
-                    <p class="desc">Buzón de quejas y sugerencias</p>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-6">
-                <a class="btn btn-menu" aria-label="Actividades de Formación Integral">
-                    <span class="s2-icon s2-icon-sports"></span>
-                    <p class="title">Actividades de Formación Integral</p>
-                    <p class="desc">Acceso al sistema de Actividades de Formación Integral</p>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-6">
-                <a class="btn btn-menu" aria-label="Mis calificaciones">
-                    <span class="s2-icon s2-icon-check-circle"></span>
-                    <p class="title">Mis calificaciones</p>
-                    <p class="desc">Mis calificaciones, kárdex y reportes</p>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-6">
-                <a class="btn btn-menu" aria-label="Mis datos y correo institucional">
-                    <span class="s2-icon s2-icon-lock-close"></span>
-                    <p class="title">Mis datos y correo institucional</p>
-                    <p class="desc">Datos personales, cambiar contraseña, verificar estado de la cuenta de correo
-                        institucional
-                    </p>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-6">
-                <a class="btn btn-menu" aria-label="Mis grupos">
-                    <span class="s2-icon s2-icon-people"></span>
-                    <p class="title">Mis grupos</p>
-                    <p class="desc">Mis grupos actuales</p>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-6">
-                <a class="btn btn-menu" aria-label="Mis pagos">
-                    <p class="title">Mis pagos</p>
-                    <p class="desc">Pagos y recibos</p>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-6">
-                <a class="btn btn-menu" aria-label="Moodle">
-                    <p class="title">Moodle</p>
-                    <p class="desc">Acceso a la plataforma moodle del Instituto</p>
-                </a>
-            </div>
-            <div class="col-sm-12 col-lg-6">
-                <a class="btn btn-menu" aria-label="Servicios bibliotecarios">
-                    <p class="title">Servicios bibliotecarios</p>
-                    <p class="desc">Acceso a servicios bibliotecarios</p>
-                </a>
-            </div>
+        <div class="titlebar">
+            <h1 class="titlebar__title">Menú principal</h1>
+        </div>
+        <div class="sitesearch">
+            <label for="inpSearch" class="sr-only">Buscar en SIITEC</label>
+            <input id="inpSearch" type="search" class="sitesearch__searchbox" placeholder="Escribir para buscar en SIITEC" autofocus />
+        </div>
+        <div class="menulist">
+            <a href="#menu-option-0" class="menulist__item" title="Buzón de quejas y sugerencias">
+                <div class="menulist__item-icon">
+                    <span class="icon-ws-mail"></span>
+                </div>
+                <div class="menulist__item-content">
+                    <div class="menulist__item-title">Buzón de quejas y sugerencias</div>
+                    <div class="menulist__item-description">Buzón de quejas y sugerencias</div>
+                </div>
+            </a>
+            <a href="#menu-option-1" class="menulist__item" title="Actividades de Formación Integral">
+                <div class="menulist__item-icon">
+                    <span class="icon-ws-sport"></span>
+                </div>
+                <div class="menulist__item-content">
+                    <div class="menulist__item-title">Actividades de Formación Integral</div>
+                    <div class="menulist__item-description">Acceso al sistema de Actividades de Formación Integral</div>
+                </div>
+            </a>
+            <a href="#menu-option-2" class="menulist__item" title="Mis calificaciones actuales">
+                <div class="menulist__item-icon">
+                    <span class="icon-ws-check-circle"></span>
+                </div>
+                <div class="menulist__item-content">
+                    <div class="menulist__item-title">Mis calificaciones actuales</div>
+                    <div class="menulist__item-description">Mis calificaciones, kárdex y reportes</div>
+                </div>
+            </a>
         </div>
     </div>
 </body>

@@ -9,12 +9,12 @@
     "scripts": {
         "postinstall": "run-s build",
         "watch": "run-p watch:*",
-        "watch:styles": "gulp watch:styles",
+        "watch:css": "gulp watch:css",
         "watch:fonts": "gulp watch:fonts",
         "watch:graphics": "gulp watch:svg",
         "watch:scripts": "webpack --watch",
         "build": "run-p build:*",
-        "build:styles": "gulp compile:styles",
+        "build:css": "gulp compile:css",
         "build:fonts": "gulp copy:fonts",
         "build:graphics": "gulp svgsprite",
         "build:scripts": "webpack"

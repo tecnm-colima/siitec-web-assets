@@ -1,0 +1,57 @@
+@use '../colors';
+
+.banner {
+    display: flex;
+    min-height: 5rem;
+    margin: .5em 0;
+    overflow: hidden;
+    
+    border-radius: .5em;
+    color: #fff;
+    background: colors.$dark-bg-default;
+    box-shadow:
+        0 0 .1rem #0002,
+        .2rem .2rem .3rem #0004;
+
+    font-size: 1rem;
+    text-shadow: 1px 1px 1px black;
+    text-decoration: none;
+
+
+    &__content {
+        padding: .5em .75em;
+    }
+    &__title {
+        margin: 0;
+        font-weight: bold;
+        font-size: 1.4em;
+        color: colors.$dark-fg-blue;
+    }
+    &__description {
+        margin: 0;
+        font-size: 1em;
+    }
+    &__icon {
+        background-color: #8884;
+        display: flex;
+        min-width: 5rem;
+        align-items: center;
+        justify-content: center;
+        font-size: 2em;
+    }
+
+    
+    &--error &__title {
+        color: colors.$dark-fg-red;
+    }
+    &--warning &__title {
+        color: colors.$dark-fg-yellow;
+    }
+    &--success &__title {
+        color: colors.$dark-fg-green;
+    }
+    
+    &:hover &__icon {
+        color: colors.$dark-fg-yellow;
+    }
+}

@@ -1,0 +1,19 @@
+@forward './autostick';
+@forward './grid';
+@forward './forms';
+
+@use './variables';
+
+:root { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+body { margin: 0; }
+
+.container {
+    @each $size, $min-width in variables.$grid-breakpoints {
+        @media (min-width: $min-width) {
+            max-width: map-get(variables.$container-max-widths, $size);
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
