@@ -20,7 +20,7 @@ jobs:
         with:
           type: 'zip'
           directory: './dist/'
-          filename: 'siitec.zip'
+          filename: 'siitec-assets.zip'
       - name: Attach release files
         uses: ncipollo/release-action@v1
         with:
