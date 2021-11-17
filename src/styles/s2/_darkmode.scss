@@ -56,12 +56,12 @@
         color: #aaa;
         &:hover {
             color: #f2b90d;
-            @supports (-webkit-background-clip: text) {
+            @supports (background-clip: text) {
                 .s2-icon {
                     transition: -webkit-text-fill-color 300ms ease-in-out;
                     background: linear-gradient(#00c3d1, #0a36fd);
                     -webkit-text-fill-color: transparent;
-                    -webkit-background-clip: text;
+                    background-clip: text;
                     filter: drop-shadow(1q 1q 1q #0008);
                 }
             }
@@ -69,5 +69,24 @@
     }
     .btn-siitec2, .btn-siitec {
         background: #745004;
+    }
+    .s2 {
+        &-fg {
+            &-red { color: hsl(0, 100%, 36%) !important; }
+            &-green { color: hsl(83, 60%, 46%) !important; }
+            &-blue { color: hsl(189, 98%, 36%) !important; }
+            &-gray { color: hsl(0, 0%, 50%) !important; }
+            &-yellow { color: hsl(60, 100%, 50%) !important; }
+            &-orange { color: hsl(30, 100%, 47%) !important; }
+            &-black { color: black !important; }
+        }
+        &-bg {
+            &-red { background-color: hsl(4, 47%, 40%) !important; }
+            &-green { background-color: #3e6221 !important; }
+            &-blue { background-color: hsl(189, 49%, 18%) !important; }
+            &-gray { background-color: hsl(0, 0%, 40%) !important; }
+            &-yellow { background-color: hsl(61, 47%, 40%) !important; }
+            &-black { background-color: hsl(0, 0%, 10%) !important; }
+        }
     }
 }
