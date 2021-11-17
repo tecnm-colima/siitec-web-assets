@@ -13,16 +13,16 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - name: Generate Assets
+      - name: Install and Generate Assets
         run: npm install
-      - name: Zip assets
-        uses: papeloto/action-zip@v1
+      - name: Archive Assets
+        uses: thedoctor0/zip-release@master
         with:
-          files: dist/*
-          dest: dist/siitec.zip
-      - name: Attach release files.
-        uses: alexellis/upload-assets@0.2.2
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+          type: 'zip'
+          directory: './dist/'
+          filename: 'siitec-assets.zip'
+      - name: Attach release files
+        uses: ncipollo/release-action@v1
         with:
-          asset_paths: '["./dist/siitec.zip"]'
+          artifacts: "./dist/siitec-assets.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
