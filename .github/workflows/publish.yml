@@ -19,11 +19,10 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
-          directory: ./dist/
-          filename: siitec.zip
-      - name: Attach release files.
-        uses: alexellis/upload-assets@0.2.2
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+          directory: './dist/'
+          filename: 'siitec.zip'
+      - name: Attach release files
+        uses: ncipollo/release-action@v1
         with:
-          asset_paths: '["./dist/siitec.zip"]'
+          artifacts: "./dist/siitec-assets.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
