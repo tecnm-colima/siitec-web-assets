@@ -19,8 +19,8 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
-          path: ./dist/
-          filename: ./dist/siitec.zip
+          directory: ./dist/
+          filename: siitec.zip
       - name: Attach release files.
         uses: alexellis/upload-assets@0.2.2
         env:
