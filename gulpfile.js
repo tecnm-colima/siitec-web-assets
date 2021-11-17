@@ -7,11 +7,9 @@ const
     gulp        = require('gulp'),
     path        = require('path'),
     rename      = require('gulp-rename'),
-    sass        = require('gulp-sass'),
+    sass        = require('gulp-sass')(require('sass')),
     sourcemaps  = require('gulp-sourcemaps'),
     svgSprite   = require('gulp-svg-sprite');
-
-sass.compiler = require('sass');
 
 gulp.task('compile:css', function() {
     return gulp
