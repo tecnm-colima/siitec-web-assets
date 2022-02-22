@@ -1,0 +1,25 @@
+@use '../colors';
+
+::-webkit-scrollbar {
+    width: 18px;
+    height: 18px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 1in;
+    background: #4444;
+    border: 6px solid transparent;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 1in;
+    border: 6px solid transparent;
+    -webkit-background-clip: content-box;
+    background-clip: content-box;
+    background-color: #4448;
+    transition: background-color 200ms, border-width 200ms;
+    &:hover {
+        border-width: 4px;
+        background-color: #666F;
+    }
+}

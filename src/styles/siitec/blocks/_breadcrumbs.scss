@@ -1,30 +1,30 @@
 @use '../colors';
 
+$_backcolor: #EBEBEB !default;
+
 .breadcrumbs {
     display: block;
     font-size: .75rem;
     padding: 0;
     margin: 0;
-    & &__item {
-        display: inline-block;
-        &:not(:last-of-type)::after {
-            content: "|";
-        }
-    }
-    & &__link {
+    &-link {
         display: inline-block;
         text-decoration: none;
         padding: .5em 1em;
         color: inherit;
         border-radius: .25em;
-        &--first {
-            padding-left: 0;
-        }
         &--active {
-            background: colors.$info-backcolor;
+            @extend .breadcrumbs-link;
+            background: $_backcolor;
         }
     }
-    & &__item:first-of-type &__link {
+    &-item {
+        display: inline-block;
+        &:not(:last-of-type)::after {
+            content: "|";
+        }
+    }
+    &-item:first-of-type &-link {
         padding-left: 0;
     }
 }

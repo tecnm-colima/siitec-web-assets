@@ -1,0 +1,34 @@
+.text {
+    &--nowrap {
+        white-space: nowrap;
+    }
+    &--left {
+        text-align: left;
+    }
+    &--right {
+        text-align: right;
+    }
+    &--center {
+        text-align: center;
+    }
+    &--justify {
+        text-align:  justify;
+    }
+
+    [dir=ltr] &--start,
+    &--start[dir=ltr] {
+        text-align: left;
+    }
+    [dir=ltr] &--end,
+    &--end[dir=ltr] {
+        text-align: right;
+    }
+    [dir=rtl] &--start,
+    &--start[dir=rtl] {
+        text-align: right;
+    }
+    [dir=rtl] &--end,
+    &--end[dir=rtl] {
+        text-align: end;
+    }
+}

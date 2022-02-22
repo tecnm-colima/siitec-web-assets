@@ -5,65 +5,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Página de ejemplo de datos tabulares en SIITEC 2">
     <title>Tablas de datos - SIITEC 2</title>
-    <link rel="stylesheet" href="../dist/style.min.css" />
+    <link rel="stylesheet" media="screen" href="../dist/style.min.css" />
     <script src="../dist/script.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <h1 class="col page-title">Tablas de datos</h1>
+        <div class="titlebar row">
+            <h1 class="titlebar-title col">Tablas de datos</h1>
             <div class="col-auto s2-toolbar">
-                <a href="#" class="s2-item"><span class="s2-icon s2-icon-plus-circle"></span></a>
-                <a href="#" class="s2-item"><span class="s2-icon s2-icon-pencil"></span></a>
-                <a href="#" class="s2-item"><span class="s2-icon s2-icon-pencil-square"></span></a>
-                <a href="#" class="s2-item"><span class="s2-icon s2-icon-check-circle"></span></a>
-                <a href="#" class="s2-item"><span class="s2-icon s2-icon-arrow-up-circle"></span></a>
-                <a href="#" class="s2-item"><span class="s2-icon s2-icon-list"></span></a>
-                <a href="#" class="s2-item"><span class="s2-icon s2-icon-arrow-back"></span></a>
+                <a href="#" class="s2-item" title="Agregar">
+                    <span class="icon-ws-plus-circle"></span>
+                </a>
+                <a href="#" class="s2-item" title="Modificar">
+                    <span class="icon-ws-pencil"></span>
+                </a>
+                <a href="#" class="s2-item" title="Alterar">
+                    <span class="icon-ws-pencil-square"></span>
+                </a>
+                <a href="#" class="s2-item" title="Verificar">
+                    <span class="icon-ws-check-circle"></span>
+                </a>
+                <a href="#" class="s2-item" title="Subir">
+                    <span class="icon-ws-arrow-up-circle"></span>
+                </a>
+                <a href="#" class="s2-item" title="Listar">
+                    <span class="icon-ws-list"></span>
+                </a>
+                <a href="#" class="s2-item" title="Regresar">
+                    <span class="icon-ws-arrow-back"></span>
+                </a>
             </div>
         </div>
-        <table class="s2-table wide numerated">
-            <thead>
+        <div class="table-responsive">
+            <table class="table table--wide text-nowrap">
+                <thead>
+                    <tr>
+                        <th scope="col">Núm. Control</th>
+                        <th scope="col">Nombre Completo</th>
+                        <th scope="col">Carrera</th>
+                        <th scope="col">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">20460001</td>
+                        <td>Juan Pérez González</td>
+                        <td>Ingeniería Industrial</td>
+                        <td>Vigente</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">20460002</td>
+                        <td>María Guadalupe Rodríguez Hernández</td>
+                        <td>Arquitectura</td>
+                        <td>Vigente</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">17460001</td>
+                        <td>Dylan Cobián López</td>
+                        <td>Licenciatura en Administración</td>
+                        <td>Baja Definitiva</td>
+                    </tr>
+                    <tr class="reset-counter">
+                        <td scope="row">14460001</td>
+                        <td>Claudia Judith Fernández Mancilla</td>
+                        <td>Ingeniería Bioquímica</td>
+                        <td>Egresada</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">13460423</td>
+                        <td>Carol Andrés Lima Serrano</td>
+                        <td>Maestría en Arquitectura Sostenible y Gestión Urbana</td>
+                        <td>Vigente</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table--fixed table--wide min-sm">
+                <thead>
+                    <tr>
+                        <th class="col-1 bg-blue">1</th>
+                        <th class="col-2 bg-orange">2</th>
+                        <th class="col-3 bg-green">3</th>
+                        <th class="col-4 bg-red">4</th>
+                        <th class="col-2 bg-yellow">2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, rerum. </td>
+                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab, placeat. </td>
+                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum fuga voluptas molestias animi esse quaerat!</td>
+                        <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, voluptas sit rerum in molestiae incidunt est eligendi vitae, quibusdam iusto officiis? Vero illum tempora amet.</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vel a excepturi quia saepe necessitatibus!</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table--fixed table--wide">
                 <tr>
-                    <th>Núm. Control</th>
-                    <th>Nombre completo</th>
-                    <th>Carrera</th>
-                    <th>Estado</th>
+                    <th class="col-6 bg-yellow">6</th>
+                    <th class="col-5 bg-blue">5</th>
+                    <th class="col-1 bg-orange">1</th>
                 </tr>
-            </thead>
-            <tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table--fixed table--wide table--grid">
                 <tr>
-                    <td>20460001</td>
-                    <td>Juan Pérez González</td>
-                    <td>Ingeniería Industrial</td>
-                    <td>Vigente</td>
-                </tr>
-                <tr>
-                    <td>20460002</td>
-                    <td>María Guadalupe Rodríguez Hernández</td>
-                    <td>Arquitectura</td>
-                    <td>Vigente</td>
-                </tr>
-                <tr>
-                    <td>17460001</td>
-                    <td>Dylan Cobián López</td>
-                    <td>Licenciatura en Administración</td>
-                    <td>Baja Definitiva</td>
-                </tr>
-                <tr class="reset-counter">
-                    <td>14460001</td>
-                    <td>Claudia Judith Fernández Mancilla</td>
-                    <td>Ingeniería Bioquímica</td>
-                    <td>Egresada</td>
+                    <td class="col-4">ASDF ASDF ASDF</td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
                 </tr>
                 <tr>
-                    <td>13460423</td>
-                    <td>Carol Andrés Lima Serrano</td>
-                    <td>Maestría en Arquitectura Sostenible y Gestión Urbana</td>
-                    <td>Vigente</td>
+                    <td class="col-4">ASDF ASDF ASDF</td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
                 </tr>
-            </tbody>
-        </table>
+                <tr>
+                    <td class="col-4">ASDF ASDF ASDF</td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                    <td class="col cell--hover"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table--wide table--fixed">
+                <thead>
+                    <tr>
+                        <th class="col-6">Estudiante</th>
+                        <th class="col-1">Ponderación</th>
+                        <th class="col-1">Calificación</th>
+                        <th class="col-4">Observación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ASDFGHIJKL</td>
+                        <td>20%</td>
+                        <td class="cell--input"><input type="number" name="calificacion"/></td>
+                        <td><textarea></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>

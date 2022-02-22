@@ -1,18 +1,25 @@
 @use './variables';
 @use 'sass:math';
 
-.row {
+.row, %row {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    &--nowrap {
-        flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    &--wrap {
+        @extend %row;
+        flex-wrap: wrap;
     }
 }
-.col {
+@mixin col {
     flex-grow: 999999;
     max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+.col, %col {
+    @include col();
     &-auto {
+        @extend %col;
         flex: 0 0 auto;
         width: auto;
         max-width: 100%;
@@ -21,14 +28,48 @@
         @each $size, $min-width in variables.$grid-breakpoints {
             @media (min-width: $min-width) {
                 &-#{$size}-#{$col} {
+                    @include col();
                     flex: 0 0 percentage(math.div($col, 12));
                     max-width: percentage(math.div($col, 12));
                 }
             }
         }
         &-#{$col} {
+            @extend %col;
             flex: 0 0 percentage(math.div($col, 12));
             max-width: percentage(math.div($col, 12));
+        }
+    }
+}
+
+.min {
+    @each $size, $min-width in variables.$container-max-widths {
+        &-#{$size} {
+            min-width: $min-width !important;
+        }
+    }
+}
+
+.upto {
+    $prev-size: null;
+    @each $size, $min-width in variables.$grid-breakpoints {
+        @if $prev-size {
+            @media (min-width: $min-width) {
+                &-#{$prev-size} {
+                    display: none !important;
+                }
+            }
+        }
+        $prev-size: $size;
+    }
+}
+.from {
+    $prev-size: null;
+    @each $size, $min-width in variables.$grid-breakpoints {
+        @media (max-width: #{$min-width - 1}) {
+            &-#{$size} {
+                display: none !important;
+            }
         }
     }
 }

@@ -1,0 +1,9 @@
+@use './input';
+textarea {
+    @extend %input-box !optional;
+    resize: none;
+    &:focus {
+        border-color: input.$input-bordercolor--focus;
+        outline: none;
+    }
+}

@@ -1,7 +1,20 @@
-@forward './layout/index';
-@forward './siitec/siitec';
-@forward './icons/websymbols';
+@forward './blocks/tables';
+@forward './blocks/text';
+@forward './blocks/form';
 
-.container {
-    // background-color: #f004;
-}
+@forward './controls/button';
+@forward './controls/flyouts/dropdown';
+@forward './controls/input';
+@forward './controls/input_radio';
+@forward './controls/input_checkbox';
+@forward './controls/scrollbar';
+@forward './controls/select';
+@forward './controls/textarea';
+
+@forward './layout/autostick';
+@forward './layout/display';
+@forward './layout/grid';
+@forward './layout/main';
+
+@forward './icons/websymbols';
+@forward './siitec/siitec';

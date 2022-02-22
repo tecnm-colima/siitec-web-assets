@@ -1,0 +1,33 @@
+@use '../colors';
+@use './input';
+
+input[type=radio] {
+    font-size: 1em;
+    appearance: none;
+    border: .125rem solid input.$input-bordercolor;
+    border-radius: 9999in;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .1s;
+    &::after {
+        content: "";
+        border-radius: 9999in;
+        display: inline-block;
+        padding: .2em;
+        transition: background-color .1s;
+    }
+    &:checked {
+        background-color: input.$input-bordercolor--focus;
+        border-color: transparent;
+        &::after {
+            background-color: white;
+        }
+    }
+    &:focus {
+        box-shadow: .125rem .125rem .125rem rgba(0,0,0,0.4);
+    }
+}

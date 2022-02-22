@@ -1,0 +1,79 @@
+@use '../siitec/colors';
+@use 'sass:math';
+
+$_thead-backcolor: #e0e0e0 !default;
+$_thead-forecolor: #000 !default;
+
+$_bordercolor: hsl(0, 0%, 80%) !default;
+$_hovercolor: hsla(40, 0%, 50%, 15%);
+
+.table, %table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    border: 1px solid $_bordercolor;
+    border-radius: 4px;
+    padding: 1ex;
+
+    &--wide {
+        @extend %table;
+        min-width: 100%;
+    }
+    thead {
+        background-color: $_thead-backcolor;
+        color: $_thead-forecolor;
+        text-align: left;
+    }
+    tbody tr {
+        transition: background-color .2s;
+        border-bottom: 1px solid $_bordercolor;
+        &:hover {
+            background-color: $_hovercolor;
+        }
+    }
+    th, td {
+        font-weight: normal;
+        padding: .5ex 1ex;
+    }
+    [scope] {
+        font-weight: normal;
+    }
+
+    &-responsive {
+        overflow-x: auto;
+        box-shadow: 0px 0px 1px #0008;
+    }
+    &--fixed {
+        @extend %table;
+        table-layout: fixed;
+        .col {
+            max-width: 100%;
+            @for $col from 12 through 1 {
+                &-#{$col} {
+                    width: percentage(math.div($col, 12));
+                }
+            }
+        }
+    }
+    &--grid {
+        @extend %table;
+        td {
+            border-right: 1px solid $_bordercolor;
+        }
+    }
+}
+
+.cell, %cell {
+    &--hover:hover {
+        background-color: $_hovercolor;
+    }
+    &--input {
+        @extend %cell;
+        padding: 0px !important;
+        input {
+            &[type=text] {
+                border: none;
+            }
+        }
+    }
+}

@@ -1,8 +1,10 @@
 .titlebar {
     font-size: 1rem;
-    &__title {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    &-title {
         margin: 0;
-        font-size: 1.75em;
+        font-size: 1.5em;
         font-weight: bold;
     }
 }

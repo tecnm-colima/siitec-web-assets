@@ -1,9 +1,9 @@
 'use strict'
 import * as $ from 'jquery';
-import 'bootstrap';
+import SplitButton from './controls/SplitButton';
 
 $(function() {
-    let top= 0, topXs = 0, topSm = 0, topMd = 0, topLg = 0, topXl = 0;
+    let top = 0, topXs = 0, topSm = 0, topMd = 0, topLg = 0, topXl = 0;
     $('.autostick, .autostick-xs').each(function(_i, el) {
         topXs += $(el).css('--top-xs', topXs+'px').outerHeight();
     });
@@ -79,6 +79,10 @@ $.extend({
             timer = setTimeout(fn.bind(this, ...args), ms || 0);
         }
     }
+});
+
+document.addEventListener('DOMContentLoaded', function(e) {
+    SplitButton.fromSelector('.split-button');
 });
 
 $(function(ev) {

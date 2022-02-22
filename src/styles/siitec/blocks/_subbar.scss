@@ -8,8 +8,8 @@
     color: colors.$dark-fg-default;
     background: colors.$dark-bg-blue;
     box-shadow:
-        0 0 .2em #0006,
-        0 .2em .5em #0002;
+        0 0 .2em #0004,
+        0 .2em .5em #0001;
     
     @for $i from 1 through 100 {
         &:nth-of-type(#{$i}) {
@@ -18,15 +18,26 @@
     }
 
     &--error {
+        @extend .subbar;
         background-color: colors.$dark-bg-red;
     }
     &--danger {
+        @extend .subbar;
         background-color: colors.$dark-bg-orange;
     }
     &--warning {
+        @extend .subbar;
         background-color: colors.$dark-bg-yellow;
+        text-shadow:
+            0 0 4px #0006,
+            0 0 8px #0005,
+            0 0 12px #0004,
+            0 0 16px #0003,
+            0 0 20px #0002,
+            0 0 24px #0001;
     }
     &--success {
+        @extend .subbar;
         background-color: colors.$dark-bg-green;
     }
 }

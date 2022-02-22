@@ -1,0 +1,50 @@
+$button-backcolor: #bbb;
+$button-forecolor: black;
+$button-bordercolor: transparent;
+
+$button-backcolor--hover: #888;
+
+%button {
+    cursor: pointer;
+    display: inline-block;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    background-color: $button-backcolor;
+    border: 1px solid $button-bordercolor;
+    &:hover {
+        background-color: $button-backcolor--hover;
+    }
+}
+button {
+    @extend %button;
+}
+
+input {
+    &[type=button],
+    &[type=submit],
+    &[type=reset] {
+        @extend %button;
+    }
+}
+.split-button {
+    display: inline-flex;
+    align-items: stretch;
+    vertical-align:text-bottom;
+
+    > button,
+    > .button,
+    > input[type=submit],
+    > input[type=reset],
+    > input[type=button] {
+        &:not(:first-child) {
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-left: 1px solid rgba(black, 0.3);
+            border-width: 0q 0q 0q 1px;
+        }
+        &:not(:last-child) {
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+    }
+}

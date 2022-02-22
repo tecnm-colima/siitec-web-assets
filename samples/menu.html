@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../dist/style.min.css" media="screen" />
     <script async src="../dist/script.min.js"></script>
     <title>Menu</title>
 </head>
 <body>
     <div class="topbar autostick">
-        <div class="container row row--nowrap">
+        <div class="container row">
             <div class="col-auto">
-                <a class="topbar__item" title="Menú principal" href="#https://siitec.colima.tecnm.mx">
-                    <svg class="topbar__logo">
+                <a class="topbar-item topbar-logo" title="Menú principal" href="#https://siitec.colima.tecnm.mx">
+                    <svg class="topbar-logo-graphic">
                         <use href="../dist/graphics.svg#logo-siitec" />
                     </svg>
                 </a>
@@ -22,8 +21,8 @@
                 <!-- <input class="col-12 col-md-8 col-lg-6 topbar__searchbox" type="search" name="term" id="pageSearch" placeholder="Escribir el texto a buscar"> -->
             </div>
             <div class="col-auto">
-                <a class="topbar__item" title="Cerrar sesión" href="#https://siitec.colima.tecnm.mx/index.php/logout">
-                    <span class="topbar__icon icon-ws-x-circle-fill"></span>
+                <a class="topbar-item" title="Cerrar sesión" href="#https://siitec.colima.tecnm.mx/index.php/logout">
+                    <span class="topbar-icon icon-ws-x-circle-fill"></span>
                 </a>
             </div>
         </div>
@@ -31,83 +30,111 @@
     <div class="subbar">
         <div class="container">info | info | info | info | info | info</div>
     </div>
-    <div class="subbar subbar--error autostick-sm">
+    <div class="subbar--error autostick-sm">
         <div class="container">error | error | error | error | error | error</div>
     </div>
-    <div class="subbar subbar--danger autostick-md">
+    <div class="subbar--danger autostick-md">
         <div class="container">danger | danger | danger | danger | danger | danger</div>
     </div>
-    <div class="subbar subbar--warning autostick-lg">
+    <div class="subbar--warning autostick-lg">
         <div class="container">warning | warning | warning | warning | warning | warning</div>
     </div>
-    <div class="subbar subbar--success autostick-xl">
+    <div class="subbar--success autostick-xl">
         <div class="container">success | success | success | success | success | success</div>
     </div>
     <div class="container">
         <dl class="session-info">
-            <div class="session-info__group">
-                <dt class="session-info__label">Periodo</dt>
-                <dd class="session-info__data">ENE-JUN 2021</dd>
+            <div class="session-info-group">
+                <dt class="session-info-label">Periodo</dt>
+                <dd class="session-info-content">ENE-JUN 2021</dd>
             </div>
-            <div class="session-info__separator"></div>
-            <div class="session-info__group">
-                <dt class="session-info__label">Usuario</dt>
-                <dd class="session-info__data">19460807</dd>
+            <div class="session-info-separator"></div>
+            <div class="session-info-group">
+                <dt class="session-info-label">Usuario</dt>
+                <dd class="session-info-content">19460807</dd>
             </div>
         </dl>
         <ul class="breadcrumbs">
-            <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#">Menú principal</a>
+            <li class="breadcrumbs-item">
+                <a class="breadcrumbs-link" href="#">Menú principal</a>
             </li>
-            <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#">Mis calificaciones</a>
+            <li class="breadcrumbs-item">
+                <a class="breadcrumbs-link" href="#">Mis calificaciones</a>
             </li>
-            <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link breadcrumbs__link--active" href="#">Kardex en lista</a>
+            <li class="breadcrumbs-item">
+                <a class="breadcrumbs-link--active" href="#">Kardex en lista</a>
             </li>
         </ul>
-        <a class="banner banner--error row row--nowrap autostick" href="#">
-            <div class="col banner__content">
-                <div class="banner__title">Banner header</div>
-                <div class="banner__description">Banner content inside header</div>
+        <a class="banner row" href="#">
+            <div class="col banner-content">
+                <div class="banner-title">Banner header</div>
+                <div class="banner-description">Banner content inside header</div>
             </div>
-            <div class="col-auto banner__icon">
+            <div class="col-auto banner-icon">
+                <span class="icon-ws-arrow-right-circle"></span>
+            </div>
+        </a>
+        <a class="banner--success row" href="#">
+            <div class="col banner-content">
+                <div class="banner-title">Banner header</div>
+                <div class="banner-description">Banner content inside header</div>
+            </div>
+            <div class="col-auto banner-icon">
+                <span class="icon-ws-arrow-right-circle"></span>
+            </div>
+        </a>
+        <a class="banner--warning row" href="#">
+            <div class="col banner-content">
+                <div class="banner-title">Banner header</div>
+                <div class="banner-description">Banner content inside header</div>
+            </div>
+            <div class="col-auto banner-icon">
+                <span class="icon-ws-arrow-right-circle"></span>
+            </div>
+        </a>
+        </a>
+        <a class="banner--error row autostick" href="#">
+            <div class="col banner-content">
+                <div class="banner-title">Banner header</div>
+                <div class="banner-description">Banner content inside header</div>
+            </div>
+            <div class="col-auto banner-icon">
                 <span class="icon-ws-arrow-right-circle"></span>
             </div>
         </a>
         <div class="titlebar">
-            <h1 class="titlebar__title">Menú principal</h1>
+            <h1 class="titlebar-title">Menú principal</h1>
         </div>
         <div class="sitesearch">
             <label for="inpSearch" class="sr-only">Buscar en SIITEC</label>
-            <input id="inpSearch" type="search" class="sitesearch__searchbox" placeholder="Escribir para buscar en SIITEC" autofocus />
+            <input id="inpSearch" type="search" class="sitesearch-searchbox" placeholder="Escribir para buscar en SIITEC" autofocus />
         </div>
         <div class="menulist">
-            <a href="#menu-option-0" class="menulist__item" title="Buzón de quejas y sugerencias">
-                <div class="menulist__item-icon">
+            <a href="#menu-option-0" class="menuitem" title="Buzón de quejas y sugerencias">
+                <div class="menuitem-icon">
                     <span class="icon-ws-mail"></span>
                 </div>
-                <div class="menulist__item-content">
-                    <div class="menulist__item-title">Buzón de quejas y sugerencias</div>
-                    <div class="menulist__item-description">Buzón de quejas y sugerencias</div>
+                <div class="menuitem-content">
+                    <div class="menuitem-title">Buzón de quejas y sugerencias</div>
+                    <div class="menuitem-description">Buzón de quejas y sugerencias</div>
                 </div>
             </a>
-            <a href="#menu-option-1" class="menulist__item" title="Actividades de Formación Integral">
-                <div class="menulist__item-icon">
+            <a href="#menu-option-1" class="menuitem" title="Actividades de Formación Integral">
+                <div class="menuitem-icon">
                     <span class="icon-ws-sport"></span>
                 </div>
-                <div class="menulist__item-content">
-                    <div class="menulist__item-title">Actividades de Formación Integral</div>
-                    <div class="menulist__item-description">Acceso al sistema de Actividades de Formación Integral</div>
+                <div class="menuitem-content">
+                    <div class="menuitem-title">Actividades de Formación Integral</div>
+                    <div class="menuitem-description">Acceso al sistema de Actividades de Formación Integral</div>
                 </div>
             </a>
-            <a href="#menu-option-2" class="menulist__item" title="Mis calificaciones actuales">
-                <div class="menulist__item-icon">
+            <a href="#menu-option-2" class="menuitem" title="Mis calificaciones actuales">
+                <div class="menuitem-icon">
                     <span class="icon-ws-check-circle"></span>
                 </div>
-                <div class="menulist__item-content">
-                    <div class="menulist__item-title">Mis calificaciones actuales</div>
-                    <div class="menulist__item-description">Mis calificaciones, kárdex y reportes</div>
+                <div class="menuitem-content">
+                    <div class="menuitem-title">Mis calificaciones actuales</div>
+                    <div class="menuitem-description">Mis calificaciones, kárdex y reportes</div>
                 </div>
             </a>
         </div>

@@ -38,7 +38,7 @@ gulp.task('copy:fonts', function() {
         .pipe(gulp.dest(path.join(DIST_PATH, 'fonts')));
 });
 
-gulp.task('watch:font', function() {
+gulp.task('watch:fonts', function() {
     gulp.watch('./scr/fonts/**/*.*', gulp.series('copy:fonts'));
 });
 

@@ -1,6 +1,8 @@
 @use '../colors';
 
-.banner {
+$_backcolor: #222 !default;
+
+.banner, %banner {
     display: flex;
     min-height: 5rem;
     margin: .5em 0;
@@ -8,30 +10,32 @@
     
     border-radius: .5em;
     color: #fff;
-    background: colors.$dark-bg-default;
+    background: $_backcolor;
     box-shadow:
         0 0 .1rem #0002,
         .2rem .2rem .3rem #0004;
 
     font-size: 1rem;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 1px #000C;
     text-decoration: none;
 
-
-    &__content {
+    &-content {
         padding: .5em .75em;
     }
-    &__title {
+
+    &-title {
         margin: 0;
         font-weight: bold;
         font-size: 1.4em;
         color: colors.$dark-fg-blue;
     }
-    &__description {
+
+    &-description {
         margin: 0;
         font-size: 1em;
     }
-    &__icon {
+    
+    &-icon {
         background-color: #8884;
         display: flex;
         min-width: 5rem;
@@ -39,19 +43,52 @@
         justify-content: center;
         font-size: 2em;
     }
+    &:hover &-icon {
+        transition: color 150ms;
+        color: colors.$dark-fg-blue;
+    }
 
-    
-    &--error &__title {
+    &--error, &--warning, &--success {
+        @extend %banner;
+    }
+
+    &--error &-title {
         color: colors.$dark-fg-red;
     }
-    &--warning &__title {
+    &--warning &-title {
         color: colors.$dark-fg-yellow;
     }
-    &--success &__title {
+    &--success &-title {
         color: colors.$dark-fg-green;
     }
-    
-    &:hover &__icon {
+
+    &--error:hover &-icon,
+    &--error:focus &-icon {
+        color: colors.$dark-fg-red;
+    }
+    &--warning:hover &-icon,
+    &--warning:focus &-icon {
         color: colors.$dark-fg-yellow;
+    }
+    &--success:hover &-icon,
+    &--success:focus &-icon {
+        color: colors.$dark-fg-green;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 8px 4px colors.$dark-fg-blue;
+    }
+    &--error:focus {
+        outline: none;
+        box-shadow: 0 0 8px 4px colors.$dark-fg-red;
+    }
+    &--warning:focus {
+        outline: none;
+        box-shadow: 0 0 8px 4px colors.$dark-fg-yellow;
+    }
+    &--success:focus {
+        outline: none;
+        box-shadow: 0 0 8px 4px colors.$dark-fg-green;
     }
 }

@@ -1,0 +1,10 @@
+%flyout {
+    position: absolute;
+    background-color: rgba(white, 0.6);
+    box-shadow:
+        .1rem .1rem .5rem rgba(black, 0.2),
+        .4rem .4rem 2rem rgba(black, 0.1);
+    border-radius: .5rem;
+    -webkit-backdrop-filter: blur(2rem);
+    backdrop-filter: blur(2rem);
+}

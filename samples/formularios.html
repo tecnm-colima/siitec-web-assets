@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h1 class="page-title">Estilos de formularios</h1>
-        <p>Para brindar a los formularios una apariencia al estilo SIITEC 2
+        <p>Para brindar a los formularios una apariencia al estilo SIITEC
         se debe utilizar la clase <code>s2-form</code> en la etiqueta
         <code>&lt;form&gt;</code> o cualquier otro elemento que sea el
         contenedor que lo represente.
@@ -22,62 +22,61 @@
                 <a href="#" class="s2-item"><span class="s2-icon s2-icon-plus-circle"></span></a>
             </div>
         </div>
-        <form class="s2-form" action="">
-            <div class="form-row">
-                <div class="form-group col-sm-4 col-md-3">
+        <form class="form" action="">
+            <div class="row--wrap row--gap-half">
+                <div class="form-group col-12 col-lg-3">
                     <label for="txtNumControl">Número de control</label>
-                    <input type="text" name="num_control" placeholder="Ej. 17460832" />
+                    <input id="txtNumControl" type="text" name="num_control" placeholder="Ej. 17460832" />
                 </div>
-                <div class="form-group col-sm-8 col-md-6">
+                <div class="form-group col-12 col-lg-6">
                     <label for="txtNombre">Nombre</label>
-                    <input type="text" name="nombre" placeholder="Ejemplo: Carolina Fuentes" aria-describedby="txtHelpNombre" />
-                    <small id="txtHelpNombre" class="form-text text-muted">Nombre de el o la estudiante a buscar.</small>
+                    <input id="txtNombre" type="text" name="nombre" placeholder="Ejemplo: Carolina Fuentes" aria-describedby="txtHelpNombre" />
+                    <div id="txtHelpNombre" class="input-hint">Nombre de el o la estudiante a buscar.</div>
                 </div>
-                <fieldset class="form-group col-sm-4 col-md-3">
+                <fieldset class="form-group col-12 col-lg-3">
                     <legend class="form-label">Visibilidad</legend>
-                    <div class="form-check">
-                        <input type="radio" name="visible" id="rdbVisibleYes" class="form-check-input" />
-                        <label for="rdbVisibleYes" class="form-check-label">Visible para los estudiantes</label>
+                    <div class="check-item">
+                        <input type="radio" name="visible" id="rdbVisibleYes"/>
+                        <label for="rdbVisibleYes">Visible para los estudiantes</label>
                     </div>
-                    <div class="form-check">
-                        <input type="radio" name="visible" id="rdbVisibleNo" class="form-check-input" />
-                        <label for="rdbVisibleNo" class="form-check-label">Sólo visible en plantillas</label>
+                    <div class="check-item">
+                        <input type="radio" name="visible" id="rdbVisibleNo"/>
+                        <label for="rdbVisibleNo">Sólo visible en plantillas</label>
                     </div>
                 </fieldset>
-                <input type="checkbox" name="chk" id="chk" data-toggle="disable" data-target="#btnSubmit">
-            </div>
-            <div class="form-buttons">
-                <button type="submit" class="btn-siitec2" id="btnSubmit">Buscar</button>
-            </div>
-        </form>
-        <div class="section-title">
-            <h2>Formulario en línea</h2>
-        </div>
-        <p>Este formulario se caracteriza por ser más compacto y presentar la mayor
-        cantidad posible de controles en una sola línea de la interfaz.
-        </p>
-        <p>Para hacer un formulario en una línea hay que usar la clase
-            <code>form-inline</code> en la etiqueta <code>form</code>.
-        </p>
-        <p>Adicionalmente también se pueden ocultar las etiquetas, sin perder
-            la funcionalidad de lectores en pantalla utilizando la clase
-            <code>form-hide-labels</code>.
-        </p>
-        <form class="s2-form form-inline" action="">
-            <div class="form-row">
-                <div class="form-group col-sm-4 col-md-3">
-                    <label for="txtNumControl">Número de control</label>
-                    <input type="text" name="num_control" placeholder="Ej. 17460832" />
+                <div class="form-group col-12 col-lg-6">
+                    <label for="selOpciones">Etiqueta select</label>
+                    <select name="opciones" id="selOpciones">
+                        <option value="First">Primer elemento</option>
+                        <option value="Second">Segundo elemento</option>
+                        <optgroup label="Letras">
+                            <option value="A">Letra A</option>
+                            <option value="B">Letra B</option>
+                            <option value="C">Letra C</option>
+                        </optgroup>
+                        <optgroup label="Números">
+                            <option value="1">Número 1</option>
+                            <option value="2">Número 2</option>
+                        </optgroup>
+                    </select>
                 </div>
-                <div class="form-group col-sm-8 col-md-6">
-                    <label for="txtNombre">Nombre</label>
-                    <input type="text" name="nombre" placeholder="Ejemplo: Carolina Fuentes" aria-describedby="txtHelpNombre" />
-                    <small id="txtHelpNombre" class="form-text text-muted">Nombre de el o la estudiante a buscar.</small>
+                <div class="form-group col-12">
+                    <label for="txtDescripcion">Descripción</label>
+                    <textarea name="descripcion" id="txtDescripcion" cols="30" rows="10"></textarea>
                 </div>
             </div>
-            <div class="form-buttons">
-                <button type="submit" class="btn-siitec2">Buscar</button>
+            <div class="form-group">
+                <button type="submit" class="button--primary">Enviar</button>
+                <button type="submit" class="button--secondary">Enviar</button>
+                <div class="check-item d-inline-block">
+                    <input type="checkbox" name="chk" id="chk" data-toggle="disable" data-target="#btnSubmit">
+                    <label for="chk">Habilitar el botón Buscar</label>
+                </div>
             </div>
+            <script>
+                $('#chk').prop('indeterminate', true);
+                $('#btnEnviar').click(function() { alert('Enviando'); });
+            </script>
         </form>
     </div>
 </body>

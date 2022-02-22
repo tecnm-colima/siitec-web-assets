@@ -1,0 +1,50 @@
+@use '../colors';
+$input-bordercolor: #888 !default;
+$input-backcolor: #fff !default;
+$input-forecolor: #000 !default;
+
+$input-bordercolor--focus: colors.$fg-accent;
+$input--focus-shadow:
+    .1rem .1rem .1rem .1rem rgba(0,0,0,0.2) inset,
+    .125rem .125rem .4rem rgba(0,0,0,0.2);
+
+$input-border: .125rem solid $input-bordercolor;
+$input-border-radius: .25rem;
+
+%input-box {
+    border-radius: $input-border-radius;
+    padding: .5rem;
+    width: 100%;
+    color: $input-forecolor;
+    border: $input-border;
+    background-color: $input-backcolor;
+    transition: border-color .2s, box-shadow .2s;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    &:focus {
+        border-color: $input-bordercolor--focus;
+        box-shadow: $input--focus-shadow;
+        outline: none;
+    }
+}
+input {
+    &[type=date],
+    &[type=datetime-local],
+    &[type=email],
+    &[type=file],
+    &[type=month],
+    &[type=number],
+    &[type=password],
+    &[type=search],
+    &[type=tel],
+    &[type=text],
+    &[type=time],
+    &[type=url],
+    &[type=week] {
+        @extend %input-box;
+    }
+}
+textarea {
+    @extend %input-box;
+}

@@ -12,7 +12,7 @@
         0 0 .5em #0004,
         0 .5em 2em #0002;
 
-    & &__item {
+    &-item {
         display: inline-flex;
         align-items: center;
         height: 100%;
@@ -32,18 +32,20 @@
             color: colors.$dark-fg-accent;
         }
     }
-    & &__logo {
-        display: inline-block;
-        height: 2.5rem;
-        width: 12.5rem;
-        --text-color: white;
+    &-logo {
+        &-graphic {
+            display: inline-block;
+            height: 2.5rem;
+            width: 12.5rem;
+            --text-color: white;
+        }
     }
-    & &__icon {
+    &-icon {
         font-size: 1.5rem;
         margin: .5rem;
     }
 
-    & &__searchbox {
+    &-searchbox {
         font-size: 1.2em;
         display: block;
         background-color: #8886;

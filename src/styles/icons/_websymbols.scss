@@ -7,24 +7,27 @@
             url('./fonts/websymbols/websymbolsligaregular.woff') format('woff'),
             url('./fonts/websymbols/websymbolsligaregular.ttf') format('truetype'),
             url('./fonts/websymbols/websymbolsligaregular.svg#WebSymbolsRegular') format('svg');
+    font-display: swap;
 }
 
 %ws-icon {
     display: inline-block;
     width: 1em;
     height: 1em;
-    line-height: 100%;
     vertical-align: middle;
+    line-height: 100%;
+    // background-color: #00f4;
 }
 
 %ws-icon-after {
     font-family: 'WebSymbolsLigaRegular';
     text-align: center;
     display: inline;
-    line-height: 100%;
+    line-height: 84.9999999999499990521734105186624219641089439392089843%;
     vertical-align: top;
     width: 1em;
     height: 1em;
+    // background-color: #0F02;
 }
 
 @each $name, $glyph in websymbols_glyphs.$glyphs {

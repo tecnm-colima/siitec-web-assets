@@ -8,15 +8,13 @@ process.traceDeprecation = true;
 module.exports = {
     name: 'client',
     mode: 'development',
-    entry: ['regenerator-runtime', './src/scripts/script.ts'],
+    entry: './src/scripts/script.ts',
     devtool: 'source-map',
     module: {
         rules: [
             {
                 test: /\.(js|ts)x?$/,
-                use: {
-                    loader: 'babel-loader'
-                }
+                loader: 'babel-loader'
             },
             {
                 test: require.resolve('jquery'),
@@ -32,8 +30,7 @@ module.exports = {
     },
     output: {
         filename: 'script.min.js',
-        path: DIST_PATH,
-        library: 's2'
+        path: DIST_PATH
     },
     optimization: {
         minimize: true,

@@ -1,0 +1,44 @@
+@use '../colors';
+@use './input';
+
+input[type=checkbox] {
+    font-size: 1em;
+    appearance: none;
+    border: .125rem solid input.$input-bordercolor;
+    border-radius: .1875rem;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    &:checked {
+        background-color: input.$input-bordercolor--focus;
+        border-color: transparent;
+        &::after {
+            content: "";
+            position: relative;
+            border: .18em solid white;
+            border-top-width: 0px;
+            border-right-width: 0px;
+            transform: translate(0em, -.08em) rotate(-45deg);
+            width: .7em;
+            height: .4em;
+        }
+    }
+    &:indeterminate {
+        background-color: input.$input-bordercolor--focus;
+        border-color: transparent;
+        &::after {
+            content: "";
+            position: relative;
+            border-radius: .125em;
+            width: .6em;
+            height: .125em;
+            background-color: white;
+        }
+    }
+    &:focus {
+        box-shadow: .125rem .125rem .2rem rgba(0,0,0,0.4);
+    }
+}

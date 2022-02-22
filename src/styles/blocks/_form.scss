@@ -1,0 +1,39 @@
+@use '../colors';
+
+label {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+fieldset {
+    border-radius: .5rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+    &:focus-within {
+        border-color: colors.$fg-accent;
+    }
+}
+legend {
+    @extend label;
+    display: block;
+}
+
+.check-item {
+    padding: .5em .5em 0q 2em;
+    input[type=radio],
+    input[type=checkbox] {
+        margin-top: -.2em;
+        margin-left: -1.5em;
+    }
+}
+.input-hint {
+    font-size: .75rem;
+    color: #595959;
+}
+
+.form {
+    &-group {
+        padding: .25rem;
+    }
+}
