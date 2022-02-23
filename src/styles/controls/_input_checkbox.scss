@@ -4,8 +4,9 @@
 input[type=checkbox] {
     font-size: 1em;
     appearance: none;
-    border: .125rem solid input.$input-bordercolor;
+    border: .125rem solid transparent;
     border-radius: .1875rem;
+    background-color: input.$input-bordercolor;
     width: 1em;
     height: 1em;
     vertical-align: middle;

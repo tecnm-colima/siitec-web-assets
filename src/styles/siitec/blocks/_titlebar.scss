@@ -1,3 +1,6 @@
+@use '../colors';
+@use 'sass:color';
+
 .titlebar {
     font-size: 1rem;
     padding-top: .5rem;
@@ -6,5 +9,50 @@
         margin: 0;
         font-size: 1.5em;
         font-weight: bold;
+    }
+}
+
+.titlebar-section {
+    background-color: colors.$dark-bg-default;
+    border-radius: 4px;
+    color: colors.$dark-fg-default;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    &-title {
+        margin: 0px;
+        padding: .7rem;
+        line-height: 1.4em;
+        font-size: 1.2em;
+    }
+    &-data {
+        border-radius: 4px;
+        align-self: center;
+        background-color: color.scale(colors.$dark-bg-default, $lightness: 15%);
+        margin: 0.5rem;
+        margin-left: 0;
+        padding: 0.4rem;
+        height: 100%;
+        position: relative;
+    }
+    &-button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: color.scale(colors.$dark-bg-default, $lightness: 15%);
+        min-width: 2.8rem;
+        margin: 2px;
+        color: colors.$dark-fg-default;
+        text-align: center;
+        position: relative;
+        &:hover {
+            background-color: colors.$dark-accent;
+            color: colors.$dark-accent-contrast;
+        }
+        [class*="icon-ws-"] {
+            padding-top: 0.8rem
+        }
+    }
+    &-button + &-button {
+        margin-left: 0px;
     }
 }

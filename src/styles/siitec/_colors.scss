@@ -5,34 +5,24 @@ $banner-backcolor: #222 !default;
 
 $glass-dark-bg-default: #000c !default;
 
-.fg-red {
-    color: colors.$fg-red;
-}
-.fg-orange {
-    color: colors.$fg-orange;
-}
-.fg-yellow {
-    color: colors.$fg-yellow;
-}
-.fg-green {
-    color: colors.$fg-green;
-}
-.fg-blue {
-    color: colors.$fg-blue;
-}
+.fg-red { color: colors.$fg-red !important; }
+.fg-orange { color: colors.$fg-orange !important; }
+.fg-yellow { color: colors.$fg-yellow !important; }
+.fg-green { color: colors.$fg-green !important; }
+.fg-blue { color: colors.$fg-blue !important; }
 
-.bg-red {
-    background-color: colors.$bg-red;
-}
-.bg-orange {
-    background-color: colors.$bg-orange;
-}
-.bg-yellow {
-    background-color: colors.$bg-yellow;
-}
-.bg-green {
-    background-color: colors.$bg-green;
-}
-.bg-blue {
-    background-color: colors.$bg-blue;
-}
+.bg-red { background-color: colors.$bg-red !important; }
+.bg-orange { background-color: colors.$bg-orange !important; }
+.bg-yellow { background-color: colors.$bg-yellow !important; }
+.bg-green { background-color: colors.$bg-green !important; }
+.bg-blue { background-color: colors.$bg-blue !important; }
+
+.dark-fg-red { color: colors.$dark-fg-red !important; }
+.dark-fg-orange { color: colors.$dark-fg-orange !important; }
+.dark-fg-green { color: colors.$dark-fg-green !important; }
+
+.dark-bg-red { background-color: colors.$dark-bg-red !important; }
+.dark-bg-orange { background-color: colors.$dark-bg-orange !important; }
+.dark-bg-yellow { background-color: colors.$dark-bg-yellow !important; }
+.dark-bg-green { background-color: colors.$dark-bg-green !important; }
+.dark-bg-blue { background-color: colors.$dark-bg-blue !important; }

@@ -11,7 +11,7 @@ fieldset {
     padding: 0;
     border: none;
     &:focus-within {
-        border-color: colors.$fg-accent;
+        border-color: colors.$accent;
     }
 }
 legend {
@@ -30,10 +30,11 @@ legend {
 .input-hint {
     font-size: .75rem;
     color: #595959;
+    margin: .5rem 0;
 }
 
 .form {
     &-group {
-        padding: .25rem;
+        padding: .5rem .25rem;
     }
 }

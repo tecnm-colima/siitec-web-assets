@@ -1,9 +1,9 @@
 @use '../colors';
-$input-bordercolor: #888 !default;
-$input-backcolor: #fff !default;
-$input-forecolor: #000 !default;
+$input-bordercolor: colors.$bd-default !default;
+$input-backcolor: colors.$bg-default !default;
+$input-forecolor: colors.$fg-default !default;
 
-$input-bordercolor--focus: colors.$fg-accent;
+$input-bordercolor--focus: colors.$accent;
 $input--focus-shadow:
     .1rem .1rem .1rem .1rem rgba(0,0,0,0.2) inset,
     .125rem .125rem .4rem rgba(0,0,0,0.2);

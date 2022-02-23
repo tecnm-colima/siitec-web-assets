@@ -15,22 +15,40 @@
         <code>&lt;form&gt;</code> o cualquier otro elemento que sea el
         contenedor que lo represente.
         </p>
-        <div class="section-title row">
-            <h2 class="col">Formulario regular</h2>
-            <div class="s2-toolbar col-auto">
-                <span class="s2-item s2-fg-green">100.00</span>
-                <a href="#" class="s2-item"><span class="s2-icon s2-icon-plus-circle"></span></a>
+        <div class="titlebar-section row">
+            <h2 class="titlebar-section-title col">Formulario regular</h2>
+            <div class="titlebar-section-data col-auto dark-bg-green">
+                100.00
             </div>
+            <div class="titlebar-section-data col-auto dark-bg-red">
+                35%
+            </div>
+            <a class="titlebar-section-button col-auto" href="#agregar" title="Agregar">
+                <span class="icon-ws-plus-circle"></span>
+            </a>
+            <a class="titlebar-section-button col-auto" href="#modificar" title="Modificar">
+                <span class="icon-ws-pencil"></span>
+            </a>
         </div>
-        <form class="form" action="">
+        <form class="form form--neumorph" action="">
             <div class="row--wrap row--gap-half">
                 <div class="form-group col-12 col-lg-3">
-                    <label for="txtNumControl">Número de control</label>
-                    <input id="txtNumControl" type="text" name="num_control" placeholder="Ej. 17460832" />
+                    <label for="txtNumControl" class="form-label">Número de control</label>
+                    <input id="txtNumControl" type="text" name="num_control" placeholder="Ej. 17460832" autocomplete />
                 </div>
                 <div class="form-group col-12 col-lg-6">
-                    <label for="txtNombre">Nombre</label>
-                    <input id="txtNombre" type="text" name="nombre" placeholder="Ejemplo: Carolina Fuentes" aria-describedby="txtHelpNombre" />
+                    <label for="txtNombre" class="form-label">Nombre</label>
+                    <input id="txtNombre" type="text" name="nombre" placeholder="Ejemplo: Irma Carolina" aria-describedby="txtHelpNombre" />
+                    <div id="txtHelpNombre" class="input-hint">Nombre de el o la estudiante a buscar.</div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="txtNombre" class="form-label">Primer apellido</label>
+                    <input id="txtNombre" type="text" name="nombre" placeholder="Ejemplo: Fuentes" aria-describedby="txtHelpNombre" />
+                    <div id="txtHelpNombre" class="input-hint">Nombre de el o la estudiante a buscar.</div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="txtNombre" class="form-label">Segundo apellido</label>
+                    <input id="txtNombre" type="text" name="nombre" placeholder="Ejemplo: González" aria-describedby="txtHelpNombre" />
                     <div id="txtHelpNombre" class="input-hint">Nombre de el o la estudiante a buscar.</div>
                 </div>
                 <fieldset class="form-group col-12 col-lg-3">
@@ -45,7 +63,7 @@
                     </div>
                 </fieldset>
                 <div class="form-group col-12 col-lg-6">
-                    <label for="selOpciones">Etiqueta select</label>
+                    <label for="selOpciones" class="form-label">Etiqueta select</label>
                     <select name="opciones" id="selOpciones">
                         <option value="First">Primer elemento</option>
                         <option value="Second">Segundo elemento</option>
@@ -61,13 +79,14 @@
                     </select>
                 </div>
                 <div class="form-group col-12">
-                    <label for="txtDescripcion">Descripción</label>
+                    <label for="txtDescripcion" class="form-label">Descripción</label>
                     <textarea name="descripcion" id="txtDescripcion" cols="30" rows="10"></textarea>
                 </div>
             </div>
             <div class="form-group">
                 <button type="submit" class="button--primary">Enviar</button>
-                <button type="submit" class="button--secondary">Enviar</button>
+                <button type="submit" class="button--secondary">Otro enviar</button>
+                <button type="submit" class="button">Uno extra</button>
                 <div class="check-item d-inline-block">
                     <input type="checkbox" name="chk" id="chk" data-toggle="disable" data-target="#btnSubmit">
                     <label for="chk">Habilitar el botón Buscar</label>

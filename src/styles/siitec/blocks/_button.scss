@@ -1,0 +1,12 @@
+@use '../colors';
+
+.button {
+    &--primary {
+        background-color: colors.$dark-accent;
+        color: colors.$dark-accent-contrast;
+    }
+    &--secondary {
+        background-color: colors.$accent2;
+        color: colors.$accent2-contrast;
+    }
+}
