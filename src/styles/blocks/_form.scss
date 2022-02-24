@@ -26,6 +26,16 @@ legend {
         margin-top: -.2em;
         margin-left: -1.5em;
     }
+    &--vertical {
+        @extend .check-item;
+        padding: .5em;
+        text-align: center;
+        input[type=radio],
+        input[type=checkbox] {
+            margin: 0px auto;
+            display: flex;
+        }
+    }
 }
 .input-hint {
     font-size: .75rem;

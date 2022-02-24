@@ -44,7 +44,9 @@
         color: colors.$dark-fg-default;
         text-align: center;
         position: relative;
-        &:hover {
+        &:hover,
+        &:focus {
+            outline: none;
             background-color: colors.$dark-accent;
             color: colors.$dark-accent-contrast;
         }
