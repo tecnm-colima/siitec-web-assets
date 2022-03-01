@@ -2,11 +2,16 @@
 
 .button {
     &--primary {
-        background-color: colors.$dark-accent;
-        color: colors.$dark-accent-contrast;
+        background-color: colors.$dark-primary;
+        color: colors.$dark-primary-contrast;
+        &:hover,
+        &:focus {
+            background-color: colors.$dark-primary;
+            color: colors.$dark-primary-contrast;
+        }
     }
     &--secondary {
-        background-color: colors.$accent2;
-        color: colors.$accent2-contrast;
+        background-color: colors.$secondary;
+        color: colors.$secondary-contrast;
     }
 }

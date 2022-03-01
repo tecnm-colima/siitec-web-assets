@@ -3,7 +3,7 @@ $input-bordercolor: colors.$bd-default !default;
 $input-backcolor: colors.$bg-default !default;
 $input-forecolor: colors.$fg-default !default;
 
-$input-bordercolor--focus: colors.$accent;
+$input-bordercolor--focus: colors.$primary;
 $input--focus-shadow:
     .1rem .1rem .1rem .1rem rgba(0,0,0,0.2) inset,
     .125rem .125rem .4rem rgba(0,0,0,0.2);
@@ -21,6 +21,7 @@ $input-border-radius: .25rem;
     transition: border-color .2s, box-shadow .2s;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: inherit;
 
     &:focus {
         border-color: $input-bordercolor--focus;

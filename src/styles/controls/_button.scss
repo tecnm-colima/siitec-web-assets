@@ -9,8 +9,10 @@ $button-backcolor--hover: #888;
     display: inline-block;
     padding: .5rem 1rem;
     border-radius: .25rem;
+    color: $button-forecolor;
     background-color: $button-backcolor;
     border: 1px solid $button-bordercolor;
+    text-decoration: none;
     &:hover {
         background-color: $button-backcolor--hover;
     }
@@ -25,6 +27,9 @@ input {
     &[type=reset] {
         @extend %button;
     }
+}
+.button {
+    @extend %button;
 }
 .split-button {
     display: inline-flex;

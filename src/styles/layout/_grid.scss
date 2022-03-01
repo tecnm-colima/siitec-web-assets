@@ -9,6 +9,38 @@
         @extend %row;
         flex-wrap: wrap;
     }
+    &--center {
+        @extend .row;
+        justify-content: center;
+    }
+    &--between {
+        @extend .row;
+        justify-content: space-between;
+    }
+    &--around {
+        @extend .row;
+        justify-content: space-around;
+    }
+    &--end {
+        @extend .row;
+        justify-content: end;
+    }
+    &--full-height {
+        @extend .row;
+        height: 100vh;
+    }
+    &--vcenter {
+        @extend .row;
+        align-items: center;
+    }
+    &--gap1 {
+        @extend .row;
+        gap: 1rem;
+    }
+    &--gap2 {
+        @extend .row;
+        gap: 2rem;
+    }
 }
 @mixin col {
     flex-grow: 999999;

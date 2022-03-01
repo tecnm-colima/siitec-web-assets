@@ -1,0 +1,49 @@
+@use '../../colors';
+
+%navbar-item {
+    padding: .7rem;
+    line-height: 1.2em;
+    font-size: 0.95em;
+    text-align: center;
+    color: colors.$dark-fg-default;
+    text-decoration: none;
+    transition: background-color .2s;
+    display: flex;
+    align-items: center;
+}
+.navbar {
+    display: flex;
+    background-color: colors.$dark-bg-default;
+    padding: 0 12px;
+    border-radius: 8px;
+    align-items: stretch;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 3rem;
+    text-shadow:
+        0 0 4px #0008,
+        0 0 12px #000d;
+    border: .5px solid transparent;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    &-item {
+        @extend %navbar-item;
+        &:hover,
+        &:focus {
+            outline: none;
+            background-color: colors.$dark-bg-light;
+        }
+        &--active {
+            @extend %navbar-item;
+            background-color: colors.$dark-primary;
+            box-shadow:
+                0q 12px 24px #0002 inset,
+                0q 0q 8px #0004 inset;
+            &:hover,
+            &:focus {
+                outline: none;
+                background-color: colors.$dark-primary;
+            }
+        }
+    }
+}

@@ -1,10 +1,10 @@
 $fg-default:        #000000 !default;
-$bg-default:        #f4f4f4 !default;
+$bg-default:        #f2f2f2 !default;
 $bd-default:        #c0c0c0 !default;
-$accent:            #2704c4 !default;
-$accent-contrast:   #f4f4f4 !default;
-$accent2:           hsl(218, 70%, 33%) !default;
-$accent2-contrast:  #ffffff !default;
+$primary:           #2704c4 !default;
+$primary-contrast:  #f2f2f2 !default;
+$secondary:         #19448f !default;
+$secondary-contrast:#ffffff !default;
 
 $fg-red:            #b80000 !default;
 $fg-orange:         #fa6800 !default;
@@ -20,8 +20,9 @@ $bg-blue:           #80d0ff !default;
 
 $dark-fg-default:       #f0f0f0 !default;
 $dark-bg-default:       #222222 !default;
-$dark-accent:           #f5b400 !default;
-$dark-accent-contrast:  #222222 !default;
+$dark-bg-light:         #444444 !default;
+$dark-primary:          #f5b400 !default;
+$dark-primary-contrast: #222222 !default;
 
 $dark-fg-red:           #ff5c5c !default;
 $dark-fg-orange:        #ff7e3d !default;

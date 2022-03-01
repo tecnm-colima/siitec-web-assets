@@ -11,7 +11,7 @@ fieldset {
     padding: 0;
     border: none;
     &:focus-within {
-        border-color: colors.$accent;
+        border-color: colors.$primary;
     }
 }
 legend {
