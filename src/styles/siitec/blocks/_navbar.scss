@@ -4,12 +4,13 @@
     padding: .7rem;
     line-height: 1.2em;
     font-size: 0.95em;
-    text-align: center;
     color: colors.$dark-fg-default;
     text-decoration: none;
     transition: background-color .2s;
     display: flex;
     align-items: center;
+    flex-grow: 1;
+    justify-content: center;
 }
 .navbar {
     display: flex;
@@ -32,6 +33,7 @@
         &:focus {
             outline: none;
             background-color: colors.$dark-bg-light;
+            background-image: radial-gradient(ellipse at 50% 100%, #fff3, #fff0 75%);
         }
         &--active {
             @extend %navbar-item;
@@ -45,5 +47,8 @@
                 background-color: colors.$dark-primary;
             }
         }
+    }
+    &-item + &-item {
+        border-left: 1px solid #80808080;
     }
 }
