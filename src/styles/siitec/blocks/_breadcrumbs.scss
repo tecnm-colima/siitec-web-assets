@@ -1,6 +1,6 @@
 @use '../colors';
 
-$_backcolor: #EBEBEB !default;
+$active-backcolor: colors.$bg-dimmed-10 !default;
 
 .breadcrumbs {
     display: block;
@@ -15,7 +15,7 @@ $_backcolor: #EBEBEB !default;
         border-radius: .25em;
         &--active {
             @extend .breadcrumbs-link;
-            background: $_backcolor;
+            background: $active-backcolor;
         }
     }
     &-item {

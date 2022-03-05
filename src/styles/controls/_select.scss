@@ -5,5 +5,5 @@
 select {
     @extend %input-box;
     border-color: transparent;
-    background-color: color.scale(colors.$bd-default, $lightness: 40%);
+    background-color: colors.$bg-dimmed-10;
 }

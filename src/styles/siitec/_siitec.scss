@@ -1,6 +1,6 @@
 @forward './blocks/topbar';
 @forward './blocks/subbar';
-@forward './blocks/session_info';
+@forward './blocks/sessionbar';
 @forward './blocks/breadcrumbs';
 @forward './blocks/banner';
 @forward './blocks/titlebar';
@@ -9,6 +9,8 @@
 @forward './blocks/button';
 @forward './blocks/form';
 @forward './blocks/navbar';
+@forward './blocks/infobar';
+@forward './blocks/userinfobar';
 @use '../colors';
 
 :root {

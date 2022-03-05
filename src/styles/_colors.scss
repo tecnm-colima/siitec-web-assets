@@ -1,14 +1,29 @@
+@use 'sass:color';
+
 $fg-default:        #000000 !default;
+$fg-dimmed-10:      color.scale($fg-default, $lightness: 10%);
+$fg-dimmed-20:      color.scale($fg-default, $lightness: 20%);
+$fg-dimmed-30:      color.scale($fg-default, $lightness: 30%);
+$fg-dimmed-40:      color.scale($fg-default, $lightness: 40%);
+$fg-dimmed-50:      color.scale($fg-default, $lightness: 50%);
+
 $bg-default:        #f2f2f2 !default;
-$bd-default:        #c0c0c0 !default;
+$bg-dimmed-3:       color.scale($bg-default, $lightness: -3%);
+$bg-dimmed-4:       color.scale($bg-default, $lightness: -4%);
+$bg-dimmed-5:       color.scale($bg-default, $lightness: -5%);
+$bg-dimmed-10:      color.scale($bg-default, $lightness: -10%);
+$bg-dimmed-20:      color.scale($bg-default, $lightness: -20%);
+$bg-dimmed-30:      color.scale($bg-default, $lightness: -30%);
+$bg-dimmed-40:      color.scale($bg-default, $lightness: -40%);
+
 $primary:           #2704c4 !default;
 $primary-contrast:  #f2f2f2 !default;
 $secondary:         #19448f !default;
 $secondary-contrast:#ffffff !default;
 
 $fg-red:            #b80000 !default;
-$fg-orange:         #fa6800 !default;
-$fg-yellow:         #ffaa00 !default;
+$fg-orange:         #fa6000 !default;
+$fg-yellow:         #ffb31a !default;
 $fg-green:          #157b00 !default;
 $fg-blue:           #0067a3 !default;
 

@@ -29,12 +29,11 @@
         @extend .subbar;
         background-color: colors.$dark-bg-yellow;
         text-shadow:
-            0 0 4px #0006,
-            0 0 8px #0005,
-            0 0 12px #0004,
-            0 0 16px #0003,
-            0 0 20px #0002,
-            0 0 24px #0001;
+            0 0 12px #0005,
+            0 0 16px #0004,
+            0 0 20px #0003,
+            0 0 28px #0002,
+            0 0 32px #0001;
     }
     &--success {
         @extend .subbar;

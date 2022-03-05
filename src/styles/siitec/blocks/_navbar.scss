@@ -16,10 +16,10 @@
     display: flex;
     background-color: colors.$dark-bg-default;
     padding: 0 12px;
-    border-radius: 8px;
+    border-radius: 4px;
     align-items: stretch;
-    justify-content: center;
     overflow: hidden;
+    overflow-x: auto;
     min-height: 3rem;
     text-shadow:
         0 0 4px #0008,

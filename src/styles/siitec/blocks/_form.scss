@@ -3,8 +3,13 @@
 
 .form {
     padding: 2rem;
-    border: 1px solid colors.$bd-default;
+    border: 1px solid colors.$bg-dimmed-20;
     border-radius: .5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    &-label {
+        line-height: 1.4em;
+    }
 
     &--neumorph {
         @extend .form;
@@ -14,7 +19,6 @@
             4px 4px 4px #0001,
             -12px -12px 12px #fff8,
             -4px -4px 4px 2px #fff4;
-        margin-bottom: 24px;
         label {
             font-size: 0.9em;
         }
@@ -38,13 +42,13 @@
             &[type=radio],
             &[type=checkbox] {
                 &:not(:checked, :indeterminate) {
-                    background-color:  colors.$bd-default;
+                    background-color:  colors.$bg-dimmed-20;
                     border-color: transparent;
                 }
             }
         }
         select {
-            background-color: color.scale(colors.$bd-default, $lightness: 45%);
+            background-color: colors.$bg-dimmed-10;
             &:not(:focus) {
                 border-color: transparent;
             }

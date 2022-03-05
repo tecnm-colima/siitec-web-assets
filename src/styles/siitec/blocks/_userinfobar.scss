@@ -1,0 +1,36 @@
+@use '../../colors';
+
+.userinfobar {
+    min-height: 80px;
+    border-radius: 4px;
+    border: 1px solid colors.$bg-dimmed-20;
+    background-image: linear-gradient(colors.$bg-default, colors.$bg-dimmed-10);
+    padding: 6px 12px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    &-photo {
+        $photo-size: 72px;
+
+        background-color: colors.$bg-dimmed-20;
+        height: $photo-size;
+        width: $photo-size;
+        border: 2px solid colors.$bg-default;
+        border-radius: 4px;
+        box-shadow: 2px 2px 1px #4442;
+        overflow: hidden;
+    }
+    &-title {
+        text-align: right;
+        text-align: end;
+        margin: 0;
+        font-size: 1.1em;
+        font-weight: bold;
+        color: colors.$fg-dimmed-40;
+    }
+    &-subtitle {
+        text-align: right;
+        text-align: end;
+        margin: 0;
+        color: colors.$fg-dimmed-40;
+    }
+}

@@ -14,6 +14,7 @@ $_hovercolor: hsla(40, 0%, 50%, 15%);
     border: 1px solid $_bordercolor;
     border-radius: 4px;
     padding: 1ex;
+    font-size: 0.92rem;
 
     &--wide {
         @extend %table;

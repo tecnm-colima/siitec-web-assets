@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <h1 class="page-title">Estilos de formularios</h1>
-        <div class="navbar">
+        <div class="navbar autostick">
             <a href="#1" class="navbar-item">Primer elemento</a>
             <a href="#2" class="navbar-item--active">Segundo elemento</a>
             <a href="#3" class="navbar-item">Tercer elemento</a>
@@ -21,12 +21,36 @@
             <!-- <a href="#8" class="navbar-item">Octavo elemento</a> -->
             <!-- <a href="#9" class="navbar-item">Noveno elemento</a> -->
         </div>
+        <div class="userinfobar row--vcenter">
+            <div class="userinfobar-photo col-auto">
+                <img title="Foto de perfil" src="." />
+            </div>
+            <div class="col">
+                <p class="userinfobar-title">Irma Carolina Fuentes González</p>
+                <p class="userinfobar-subtitle">Departamento de Sistemas y Computación</p>
+            </div>
+        </div>
+        <div class="infobar row">
+            <div class="col">
+                <div class="infobar-group">
+                    <span class="infobar-label">Etiqueta</span>
+                    <span class="infobar-text">Contenido</span>
+                </div>
+                <div class="infobar-group">
+                    <span class="infobar-label">Etiqueta</span>
+                    <span class="infobar-text">Contenido</span>
+                </div>
+            </div>
+            <div class="col-auto">
+                <a class="infobar-link" href="#">Más información</a>
+            </div>
+        </div>
         <p>Para brindar a los formularios una apariencia al estilo SIITEC
         se debe utilizar la clase <code>form</code> para cualquier elemento que
         sea el contenedor que represente un formulario.
         </p>
         <div class="titlebar-section row">
-            <h2 class="titlebar-section-title col">Formulario regular</h2>
+            <h2 class="titlebar-section-title col">Formulario normal</h2>
             <div class="titlebar-section-data col-auto dark-bg-green">
                 100.00
             </div>
@@ -40,26 +64,24 @@
                 <span class="icon-ws-pencil"></span>
             </a>
         </div>
-        <form class="form form--neumorph" action="">
+        <form class="form" action="">
             <div class="row--wrap row--gap-half">
                 <div class="form-group col-12 col-lg-3">
                     <label for="txtNumControl" class="form-label">Número de control</label>
                     <input id="txtNumControl" type="text" name="num_control" placeholder="Ej. 17460832" autocomplete />
                 </div>
                 <div class="form-group col-12 col-lg-6">
-                    <label for="txtNombre" class="form-label">Nombre</label>
+                    <label for="txtNombre" class="form-label">Nombre(s)</label>
                     <input id="txtNombre" type="text" name="nombre" placeholder="Ejemplo: Irma Carolina" aria-describedby="txtHelpNombre" />
-                    <div id="txtHelpNombre" class="input-hint">Nombre de el o la estudiante a buscar.</div>
                 </div>
                 <div class="form-group col-6">
-                    <label for="txtNombre" class="form-label">Primer apellido</label>
-                    <input id="txtNombre" type="text" name="nombre" placeholder="Ejemplo: Fuentes" aria-describedby="txtHelpNombre" />
-                    <div id="txtHelpNombre" class="input-hint">Nombre de el o la estudiante a buscar.</div>
+                    <label for="txtApellido1" class="form-label">Primer apellido</label>
+                    <input id="txtApellido1" type="text" name="nombre" placeholder="Ejemplo: Fuentes" aria-describedby="txtHelpNombre" />
                 </div>
                 <div class="form-group col-6">
-                    <label for="txtNombre" class="form-label">Segundo apellido</label>
-                    <input id="txtNombre" type="text" name="nombre" placeholder="Ejemplo: González" aria-describedby="txtHelpNombre" />
-                    <div id="txtHelpNombre" class="input-hint">Nombre de el o la estudiante a buscar.</div>
+                    <label for="txtApellido2" class="form-label">Segundo apellido</label>
+                    <input id="txtApellido2" type="text" name="nombre" placeholder="Ejemplo: González" aria-describedby="txtHelpNombre" />
+                    <div id="txtHelpNombre" class="input-hint">Omitir si no se cuenta con segundo apellido.</div>
                 </div>
                 <fieldset class="form-group col-12 col-lg-3">
                     <legend class="form-label">Visibilidad</legend>
@@ -145,6 +167,119 @@
                 <div class="check-item d-inline-block">
                     <input type="checkbox" name="chk" id="chk" data-toggle="disable" data-target="#btnSubmit">
                     <label for="chk">Habilitar el botón Buscar</label>
+                </div>
+            </div>
+            <script>
+                $('#chk').prop('indeterminate', true);
+                $('#btnEnviar').click(function() { alert('Enviando'); });
+            </script>
+        </form>
+        <div class="titlebar-section row">
+            <h2 class="titlebar-section-title col">Formulario Neumorphico</h2>
+        </div>
+        <form class="form--neumorph" action="">
+            <div class="row--wrap row--gap-half">
+                <div class="form-group col-12 col-lg-3">
+                    <label for="txtNumControl2" class="form-label">Número de control</label>
+                    <input id="txtNumControl2" type="text" name="num_control" placeholder="Ej. 17460832" autocomplete />
+                </div>
+                <div class="form-group col-12 col-lg-6">
+                    <label for="txtNombre2" class="form-label">Nombre(s)</label>
+                    <input id="txtNombre2" type="text" name="nombre" placeholder="Ejemplo: Irma Carolina" aria-describedby="txtHelpNombre" />
+                </div>
+                <div class="form-group col-6">
+                    <label for="txtApellido12" class="form-label">Primer apellido</label>
+                    <input id="txtApellido12" type="text" name="nombre" placeholder="Ejemplo: Fuentes" aria-describedby="txtHelpNombre" />
+                </div>
+                <div class="form-group col-6">
+                    <label for="txtApellido22" class="form-label">Segundo apellido</label>
+                    <input id="txtApellido22" type="text" name="nombre" placeholder="Ejemplo: González" aria-describedby="txtHelpNombre" />
+                    <div id="txtHelpNombre2" class="input-hint">Omitir si no se cuenta con segundo apellido.</div>
+                </div>
+                <fieldset class="form-group col-12 col-lg-3">
+                    <legend class="form-label">Visibilidad</legend>
+                    <div class="check-item">
+                        <input type="radio" name="visible" id="rdbVisibleYes2"/>
+                        <label for="rdbVisibleYes2">Visible para los estudiantes</label>
+                    </div>
+                    <div class="check-item">
+                        <input type="radio" name="visible" id="rdbVisibleNo2"/>
+                        <label for="rdbVisibleNo2">Sólo visible en plantillas</label>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group col-12">
+                    <legend class="form-label">Nivel de bienestar</legend>
+                    <div class="row">
+                        <div class="col-1 check-item--vertical">
+                            <input type="radio" name="bienestar" id="rdbBienestar12" value="1" required />
+                            <label for="rdbBienestar12">1</label>
+                        </div>
+                        <div class="col-1 check-item--vertical">
+                            <input type="radio" name="bienestar" id="rdbBienestar22" value="2" required />
+                            <label for="rdbBienestar22">2</label>
+                        </div>
+                        <div class="col-1 check-item--vertical">
+                            <input type="radio" name="bienestar" id="rdbBienestar32" value="3" required />
+                            <label for="rdbBienestar32">3</label>
+                        </div>
+                        <div class="col-1 check-item--vertical">
+                            <input type="radio" name="bienestar" id="rdbBienestar42" value="4" required />
+                            <label for="rdbBienestar42">4</label>
+                        </div>
+                        <div class="col-1 check-item--vertical">
+                            <input type="radio" name="bienestar" id="rdbBienestar52" value="5" required />
+                            <label for="rdbBienestar52">5</label>
+                        </div>
+                        <div class="col-1 check-item--vertical">
+                            <input type="radio" name="bienestar" id="rdbBienestar62" value="6" required />
+                            <label for="rdbBienestar62">6</label>
+                        </div>
+                        <div class="col-1 check-item--vertical">
+                            <input type="radio" name="bienestar" id="rdbBienestar72" value="7" required />
+                            <label for="rdbBienestar72">7</label>
+                        </div>
+                        <div class="col-1 check-item--vertical">
+                            <input type="radio" name="bienestar" id="rdbBienestar82" value="8" required />
+                            <label for="rdbBienestar82">8</label>
+                        </div>
+                        <div class="col-1 check-item--vertical">
+                            <input type="radio" name="bienestar" id="rdbBienestar92" value="9" required />
+                            <label for="rdbBienestar92">9</label>
+                        </div>
+                        <div class="col-1 check-item--vertical">
+                            <input type="radio" name="bienestar" id="rdbBienestar102" value="10" required />
+                            <label for="rdbBienestar102">10</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group col-12 col-lg-6">
+                    <label for="selOpciones2" class="form-label">Etiqueta select</label>
+                    <select name="opciones" id="selOpciones2">
+                        <option value="First">Primer elemento</option>
+                        <option value="Second">Segundo elemento</option>
+                        <optgroup label="Letras">
+                            <option value="A">Letra A</option>
+                            <option value="B">Letra B</option>
+                            <option value="C">Letra C</option>
+                        </optgroup>
+                        <optgroup label="Números">
+                            <option value="1">Número 1</option>
+                            <option value="2">Número 2</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group col-12">
+                    <label for="txtDescripcion2" class="form-label">Descripción</label>
+                    <textarea name="descripcion" id="txtDescripcion2" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="button--primary">Enviar</button>
+                <button type="submit" class="button--secondary">Otro enviar</button>
+                <button type="submit" class="button">Uno extra</button>
+                <div class="check-item d-inline-block">
+                    <input type="checkbox" name="chk" id="chk2" data-toggle="disable" data-target="#btnSubmit">
+                    <label for="chk2">Habilitar el botón Buscar</label>
                 </div>
             </div>
             <script>

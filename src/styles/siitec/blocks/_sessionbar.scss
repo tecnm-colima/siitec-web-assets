@@ -1,9 +1,9 @@
 @use '../colors';
 
-$_forecolor: #3e3e3e !default;
-$_backcolor: #EBEBEB !default;
+$_forecolor: colors.$fg-dimmed-20 !default;
+$_backcolor: colors.$bg-dimmed-10 !default;
 
-.session-info {
+.sessionbar {
     display: inline-block;
     padding: .25rem .75rem;
     margin: 1rem 0q .5rem;
@@ -36,7 +36,7 @@ $_backcolor: #EBEBEB !default;
         color: colors.$fg-green;
     }
     &--alert {
-        @extend .session-info;
+        @extend .sessionbar;
         .session-info-content {
             color: colors.$fg-red;
         }

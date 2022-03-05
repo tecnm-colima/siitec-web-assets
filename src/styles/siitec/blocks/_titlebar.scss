@@ -6,9 +6,33 @@
     padding-top: .5rem;
     padding-bottom: .5rem;
     &-title {
-        margin: 0;
+        margin: 1rem 0 0 0;
         font-size: 1.5em;
         font-weight: bold;
+    }
+    &-button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: transparent;
+        min-width: 2.8rem;
+        min-height: 2.8rem;
+        margin: 2px;
+        color: colors.$fg-default;
+        text-align: center;
+        position: relative;
+        transition: background-color .2s, color .2s;
+        &:hover,
+        &:focus {
+            outline: none;
+            background-color: colors.$dark-primary;
+            color: colors.$dark-primary-contrast;
+        }
+        [class*="icon-ws-"] {
+            padding-top: 0.8rem
+        }
+    }
+    &-button + &-button {
+        margin-left: 0px;
     }
 }
 

@@ -1,0 +1,53 @@
+@use '../../colors';
+
+%infobar-item {
+    display: flex;
+    align-items: center;
+    padding: 0 .4ex;
+    min-height: 2.2em;
+}
+%infobar-col {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.infobar {
+    border: 1px solid colors.$bg-dimmed-20;
+    border-radius: 4px;
+    padding: 0 12px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    > .col {
+        @extend %infobar-col;
+        &-auto {
+            @extend %infobar-col;
+        }
+        @for $col from 1 to 12 {
+            &-#{$col} {
+                @extend %infobar-col;
+            }
+        }
+    }
+    &-group {
+        display: flex;
+        align-items: stretch;
+        padding-right: 2ex;
+    }
+    &-label {
+        @extend %infobar-item;
+        color: colors.$fg-dimmed-50;
+    }
+    &-text,
+    &-data {
+        @extend %infobar-item;
+    }
+    &-link {
+        @extend %infobar-item;
+        padding: 0q .5em;    
+        &:hover {
+            background-color: colors.$bg-dimmed-10;
+        }
+    }
+}

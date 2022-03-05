@@ -2,6 +2,7 @@
 
 .button {
     &--primary {
+        @extend .button;
         background-color: colors.$dark-primary;
         color: colors.$dark-primary-contrast;
         &:hover,
@@ -11,6 +12,7 @@
         }
     }
     &--secondary {
+        @extend .button;
         background-color: colors.$secondary;
         color: colors.$secondary-contrast;
     }
