@@ -4,7 +4,7 @@ $button-bordercolor: transparent;
 
 $button-backcolor--hover: #888;
 
-%button {
+@mixin button {
     cursor: pointer;
     display: inline-block;
     padding: .5rem 1rem;
@@ -16,6 +16,10 @@ $button-backcolor--hover: #888;
     &:hover {
         background-color: $button-backcolor--hover;
     }
+}
+
+%button {
+    @include button;
 }
 button {
     @extend %button;

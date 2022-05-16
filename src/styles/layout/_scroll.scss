@@ -1,0 +1,11 @@
+.scroll {
+    &-auto {
+        overflow: auto;
+    }
+    &-x-auto {
+        overflow-x: auto;
+    }
+    &-y-auto {
+        overflow-y: auto;
+    }
+}

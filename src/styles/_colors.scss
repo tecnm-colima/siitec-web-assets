@@ -22,10 +22,10 @@ $secondary:         #19448f !default;
 $secondary-contrast:#ffffff !default;
 
 $fg-red:            #b80000 !default;
-$fg-orange:         #fa6000 !default;
-$fg-yellow:         #ffb31a !default;
-$fg-green:          #157b00 !default;
-$fg-blue:           #0067a3 !default;
+$fg-orange:         hsl(22, 100%, 49%) !default;
+$fg-yellow:         hsl(40, 100%, 50%) !default;
+$fg-green:          #008504 !default;
+$fg-blue:           #004ca3 !default;
 
 $bg-red:            #fca19a !default;
 $bg-orange:         #ffbf80 !default;
@@ -34,7 +34,19 @@ $bg-green:          #d5ffb3 !default;
 $bg-blue:           #80d0ff !default;
 
 $dark-fg-default:       #f0f0f0 !default;
+$dark-fg-dimmed-10:      color.scale($dark-fg-default, $lightness: -10%);
+$dark-fg-dimmed-20:      color.scale($dark-fg-default, $lightness: -20%);
+$dark-fg-dimmed-30:      color.scale($dark-fg-default, $lightness: -30%);
+$dark-fg-dimmed-40:      color.scale($dark-fg-default, $lightness: -40%);
+$dark-fg-dimmed-50:      color.scale($dark-fg-default, $lightness: -50%);
+
 $dark-bg-default:       #222222 !default;
+$dark-bg-dimmed-10:      color.scale($dark-bg-default, $lightness: 10%);
+$dark-bg-dimmed-20:      color.scale($dark-bg-default, $lightness: 20%);
+$dark-bg-dimmed-30:      color.scale($dark-bg-default, $lightness: 30%);
+$dark-bg-dimmed-40:      color.scale($dark-bg-default, $lightness: 40%);
+$dark-bg-dimmed-50:      color.scale($dark-bg-default, $lightness: 50%);
+
 $dark-bg-light:         #444444 !default;
 $dark-primary:          #f5b400 !default;
 $dark-primary-contrast: #222222 !default;
@@ -48,5 +60,5 @@ $dark-fg-blue:          #66b8ff !default;
 $dark-bg-red:           #a11912 !default;
 $dark-bg-orange:        #ae5913 !default;
 $dark-bg-yellow:        #b88114 !default;
-$dark-bg-green:         #1d6e0c !default;
+$dark-bg-green:         #357f24 !default;
 $dark-bg-blue:          #0067a3 !default;

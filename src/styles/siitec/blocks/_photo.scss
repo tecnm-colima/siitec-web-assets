@@ -1,0 +1,24 @@
+@use '../../colors';
+.photo {
+    $photo-size: 72px;
+
+    display: inline-block;
+    width: $photo-size;
+    height: $photo-size;
+    font-size: .8rem;
+    background-color: colors.$bg-dimmed-10;
+    border: 2px solid colors.$bg-default;
+    border-radius: 4px;
+    box-shadow: 2px 2px 1px #4442;
+    overflow: hidden;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    object-position: center;
+    &--tiny {
+        @extend .photo;
+        width: 2rem;
+        height: 2rem;
+    }
+}

@@ -1,8 +1,9 @@
+@use '../../controls/button';
 @use '../colors';
 
 .button {
     &--primary {
-        @extend .button;
+        @include button.button;
         background-color: colors.$dark-primary;
         color: colors.$dark-primary-contrast;
         &:hover,
@@ -12,7 +13,7 @@
         }
     }
     &--secondary {
-        @extend .button;
+        @include button.button;
         background-color: colors.$secondary;
         color: colors.$secondary-contrast;
     }

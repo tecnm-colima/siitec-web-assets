@@ -1,0 +1,15 @@
+@use '../colors';
+
+%link {
+    text-decoration: none;
+}
+a:link {
+    @extend %link;
+}
+a:hover {
+    @extend %link;
+    text-decoration: underline;
+}
+a:visited {
+    @extend %link;
+}

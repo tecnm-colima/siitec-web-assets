@@ -43,6 +43,7 @@ $_backcolor: colors.$bg-dimmed-4 !default;
             .1rem .15rem .2rem #0002,
             0 0 1rem #00000018;
         background-color: colors.$bg-default;
+        text-decoration: none;
         & .menuitem-icon {
             background: linear-gradient(#0ff, #00f);
             -webkit-text-fill-color: transparent;

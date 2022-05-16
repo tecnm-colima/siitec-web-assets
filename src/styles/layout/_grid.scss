@@ -5,9 +5,23 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    &--column {
+        flex-direction: column;
+    }
     &--wrap {
         @extend %row;
         flex-wrap: wrap;
+    }
+    &--nowrap {
+        @extend %row;
+        flex-wrap: nowrap;
+        @each $size, $min-width in variables.$grid-breakpoints {
+            @media (min-width: $min-width) {
+                &-#{$size} {
+                    flex-wrap: nowrap;
+                }
+            }
+        }
     }
     &--center {
         @extend .row;
@@ -57,7 +71,14 @@
         max-width: 100%;
     }
     @for $col from 12 through 1 {
-        @each $size, $min-width in variables.$grid-breakpoints {
+        &-#{$col} {
+            @extend %col;
+            flex: 0 0 percentage(math.div($col, 12));
+            max-width: percentage(math.div($col, 12));
+        }
+    }
+    @each $size, $min-width in variables.$grid-breakpoints {
+        @for $col from 12 through 1 {
             @media (min-width: $min-width) {
                 &-#{$size}-#{$col} {
                     @include col();
@@ -65,11 +86,6 @@
                     max-width: percentage(math.div($col, 12));
                 }
             }
-        }
-        &-#{$col} {
-            @extend %col;
-            flex: 0 0 percentage(math.div($col, 12));
-            max-width: percentage(math.div($col, 12));
         }
     }
 }

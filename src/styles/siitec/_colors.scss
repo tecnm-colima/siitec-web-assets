@@ -5,11 +5,22 @@ $banner-backcolor: #222 !default;
 
 $glass-dark-bg-default: #000c !default;
 
+.fg-default { color: colors.$fg-default !important; }
+.fg-dimmed-10 { color: colors.$fg-dimmed-10 !important; }
+.fg-dimmed-20 { color: colors.$fg-dimmed-20 !important; }
+.fg-dimmed-30 { color: colors.$fg-dimmed-30 !important; }
+.fg-dimmed-40 { color: colors.$fg-dimmed-40 !important; }
+.fg-dimmed-50 { color: colors.$fg-dimmed-50 !important; }
+
 .fg-red { color: colors.$fg-red !important; }
 .fg-orange { color: colors.$fg-orange !important; }
 .fg-yellow { color: colors.$fg-yellow !important; }
 .fg-green { color: colors.$fg-green !important; }
 .fg-blue { color: colors.$fg-blue !important; }
+
+.bg-default { background-color: colors.$bg-default !important; }
+.bg-dimmed-10 { background-color: colors.$bg-dimmed-10 !important; }
+.bg-dimmed-20 { background-color: colors.$bg-dimmed-20 !important; }
 
 .bg-red { background-color: colors.$bg-red !important; }
 .bg-orange { background-color: colors.$bg-orange !important; }
@@ -17,9 +28,22 @@ $glass-dark-bg-default: #000c !default;
 .bg-green { background-color: colors.$bg-green !important; }
 .bg-blue { background-color: colors.$bg-blue !important; }
 
+.dark-fg-default { color: colors.$dark-fg-default !important; }
+.dark-fg-dimmed-10 { color: colors.$dark-fg-dimmed-10 !important; }
+.dark-fg-dimmed-20 { color: colors.$dark-fg-dimmed-20 !important; }
+.dark-fg-dimmed-30 { color: colors.$dark-fg-dimmed-30 !important; }
+.dark-fg-dimmed-40 { color: colors.$dark-fg-dimmed-40 !important; }
+.dark-fg-dimmed-50 { color: colors.$dark-fg-dimmed-50 !important; }
+
 .dark-fg-red { color: colors.$dark-fg-red !important; }
 .dark-fg-orange { color: colors.$dark-fg-orange !important; }
 .dark-fg-green { color: colors.$dark-fg-green !important; }
+
+.dark-bg-default { background-color: colors.$dark-bg-default !important; }
+.dark-bg-dimmed-10 { background-color: colors.$dark-bg-dimmed-10 !important; }
+.dark-bg-dimmed-20 { background-color: colors.$dark-bg-dimmed-20 !important; }
+.dark-bg-dimmed-30 { background-color: colors.$dark-bg-dimmed-30 !important; }
+.dark-bg-dimmed-40 { background-color: colors.$dark-bg-dimmed-40 !important; }
 
 .dark-bg-red { background-color: colors.$dark-bg-red !important; }
 .dark-bg-orange { background-color: colors.$dark-bg-orange !important; }

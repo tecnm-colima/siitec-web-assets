@@ -1,0 +1,57 @@
+@use '../../colors';
+@use 'sass:color';
+
+.alert {
+    border: 1px solid colors.$bg-dimmed-40;
+    border-radius: 8px;
+    padding: 12px;
+    background-color: colors.$bg-dimmed-10;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    &--red {
+        @extend .alert;
+        $fg-color: color.scale(colors.$fg-red, $lightness: -25%, $saturation: 25%);
+        $bd-color: color.scale(colors.$bg-red, $lightness: 25%, $saturation: -25%);
+        $bg-color: color.scale(colors.$bg-red, $lightness: 50%, $saturation: -50%);
+        color: $fg-color;
+        border-color: $bd-color;
+        background-color: $bg-color;
+    }
+    &--orange {
+        @extend .alert;
+        color: colors.$fg-orange;
+        border-color: colors.$fg-orange;
+        background-color: colors.$bg-orange;
+    }
+    &--yellow {
+        @extend .alert;
+        color: #844303;
+        border-color: #BA8C1F;
+        background-color: #F6EBB0;
+    }
+    &--green {
+        @extend .alert;
+        color: colors.$fg-green;
+        border-color: colors.$fg-green;
+        background-color: colors.$bg-green;
+    }
+    &--blue {
+        @extend .alert;
+        color: colors.$fg-blue;
+        border-color: colors.$fg-blue;
+        background-color: colors.$bg-blue;
+    }
+    &-title {
+        margin: 0;
+        margin-bottom: .5em;
+        font-weight: bold;
+    }
+    &-message {
+        margin: 0;
+        margin-top: .5em;
+        margin-bottom: .5em;
+    }
+    &-link {
+        color: inherit !important;
+    }
+}

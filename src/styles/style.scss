@@ -1,6 +1,7 @@
 @forward './blocks/tables';
 @forward './blocks/text';
 @forward './blocks/form';
+@forward './blocks/link';
 
 @forward './controls/button';
 @forward './controls/flyouts/dropdown';
@@ -10,11 +11,14 @@
 @forward './controls/scrollbar';
 @forward './controls/select';
 @forward './controls/textarea';
+@forward './controls/iframe';
 
 @forward './layout/autostick';
 @forward './layout/display';
 @forward './layout/grid';
 @forward './layout/main';
+@forward './layout/padding';
+@forward './layout/scroll';
 
 @forward './icons/websymbols';
 @forward './siitec/siitec';

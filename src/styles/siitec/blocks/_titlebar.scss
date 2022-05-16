@@ -30,6 +30,9 @@
         [class*="icon-ws-"] {
             padding-top: 0.8rem
         }
+        [class*="badge"] {
+            margin-top: 0.8rem
+        }
     }
     &-button + &-button {
         margin-left: 0px;
@@ -78,8 +81,31 @@
         [class*="icon-ws-"] {
             padding-top: 0.8rem
         }
+        [class*="badge"] {
+            margin-top: 0.8rem;
+        }
     }
     &-button + &-button {
         margin-left: 0px;
+    }
+    &-badge {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: color.scale(colors.$dark-bg-default, $lightness: 15%);
+        min-width: 2.8rem;
+        margin: 2px;
+        color: colors.$dark-fg-default;
+        text-align: center;
+        position: relative;
+        [class*="icon-ws-"] {
+            padding-top: 0.8rem;
+        }
+        [class*="badge"] {
+            margin-top: 0.8rem;
+        }
+    }
+    &--disabled {
+        @extend .titlebar-section;
+        opacity: 0.3;
     }
 }

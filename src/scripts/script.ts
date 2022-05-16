@@ -4,21 +4,30 @@ import SplitButton from './controls/SplitButton';
 
 $(function() {
     let top = 0, topXs = 0, topSm = 0, topMd = 0, topLg = 0, topXl = 0;
+    $('.autostick').each(function (_i, el) {
+        top += $(el).css('--top', top+'px').outerHeight();
+        $(document.documentElement).css('--scroll-top', top+'px');
+    });
     $('.autostick, .autostick-xs').each(function(_i, el) {
         topXs += $(el).css('--top-xs', topXs+'px').outerHeight();
+        $(document.documentElement).css('--scroll-top-xs', topXs+'px');
     });
     $('.autostick, .autostick-xs, .autostick-sm').each(function(_i, el) {
         topSm += $(el).css('--top-sm', topSm+'px').outerHeight();
+        $(document.documentElement).css('--scroll-top-sm', topSm+'px');
     });
     $('.autostick, .autostick-xs, .autostick-sm, .autostick-md').each(function(_i, el) {
         topMd += $(el).css('--top-md', topMd+'px').outerHeight();
+        $(document.documentElement).css('--scroll-top-md', topMd+'px');
     });
     $('.autostick, .autostick-xs, .autostick-sm, .autostick-md, .autostick-lg').each(function(_i, el) {
         topLg += $(el).css('--top-lg', topLg+'px').outerHeight();
+        $(document.documentElement).css('--scroll-top-lg', topLg+'px');
     });
     $('.autostick, .autostick-xs, .autostick-sm, .autostick-md, .autostick-lg, .autostick-xl').each(function(_i, el) {
         el.dataset.offsetTop = el.offsetTop.toString();
         topXl += $(el).css('--top-xl', topXl+'px').outerHeight();
+        $(document.documentElement).css('--scroll-top-xl', topXl+'px');
     });
 });
 $(window).on('scroll', function() {
@@ -192,4 +201,11 @@ $(function(ev) {
             }
         })
     });
+});
+$(window.document.documentElement).on('click', '.copy-link', function(e) {
+    e.preventDefault();
+    let $this = $(this);
+    let copy = $this.data('copy');
+    navigator.clipboard.writeText(copy);
+    alert("Se copió '" + copy + "' al portapapeles.");
 });

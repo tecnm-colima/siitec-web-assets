@@ -1,0 +1,34 @@
+@use '../../colors';
+
+.badge {
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    display: inline-block;
+    // border: .2px solid #fffd;
+    background-color: colors.$bg-dimmed-30;
+    box-shadow:
+        0 0 6px #0002 inset,
+        0 0 1px 0.2px #0004;
+    &--red {
+        @extend .badge;
+        background-color: colors.$fg-red;
+    }
+    &--orange {
+        @extend .badge;
+        background-color: colors.$fg-orange;
+    }
+    &--yellow {
+        @extend .badge;
+        background-color: colors.$fg-yellow;
+    }
+    &--green {
+        @extend .badge;
+        background-color: colors.$fg-green;
+    }
+    &--blue {
+        @extend .badge;
+        background-color: colors.$fg-blue;
+    }
+}
