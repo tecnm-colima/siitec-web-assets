@@ -3,13 +3,12 @@
 const DIST_PATH = process.env.DIST_PATH || "./dist";
 
 const
-    fibers      = require('fibers'),
-    gulp        = require('gulp'),
-    path        = require('path'),
-    rename      = require('gulp-rename'),
-    sass        = require('gulp-sass')(require('sass')),
-    sourcemaps  = require('gulp-sourcemaps'),
-    svgSprite   = require('gulp-svg-sprite');
+    gulp = require('gulp'),
+    path = require('path'),
+    rename = require('gulp-rename'),
+    sass = require('gulp-sass')(require('sass')),
+    sourcemaps = require('gulp-sourcemaps'),
+    svgSprite = require('gulp-svg-sprite');
 
 gulp.task('compile:css', function() {
     return gulp
@@ -17,10 +16,9 @@ gulp.task('compile:css', function() {
         .pipe(sourcemaps.init())
         .pipe(
             sass.sync({
-                fiber: fibers,
                 outputStyle: 'compressed'
             }).on('error', sass.logError))
-        .pipe(rename({ suffix : '.min' }))
+        .pipe(rename({ suffix: '.min' }))
         .pipe(sourcemaps.write(''))
         .pipe(gulp.dest(DIST_PATH));
 });
@@ -44,10 +42,10 @@ gulp.task('watch:fonts', function() {
 
 gulp.task('svgsprite', function() {
     return gulp
-        .src('**/*.svg', { cwd: 'src/graphics'})
+        .src('**/*.svg', { cwd: 'src/graphics' })
         .pipe(svgSprite({
             shape: { id: { separator: '-' }, transform: ['svgo'] },
-            mode: { symbol: { dest:"", sprite:'graphics.svg' } }
+            mode: { symbol: { dest: "", sprite: 'graphics.svg' } }
         }))
         .pipe(gulp.dest('dist'));
 });

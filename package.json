@@ -1,11 +1,9 @@
 {
     "name": "itcolima-webapp-assets",
     "description": "Plantillas de interfaz para sistemas del Instituto Tecnológico de Colima",
-    "authors": [
-        {
-            "name": "Francisco Cervantes"
-        }
-    ],
+    "authors": [{
+        "name": "Francisco Cervantes"
+    }],
     "scripts": {
         "postinstall": "run-s build",
         "watch": "run-p watch:*",
@@ -19,35 +17,25 @@
         "build:graphics": "gulp svgsprite",
         "build:scripts": "webpack"
     },
-    "dependencies": {
+    "devDependencies": {
         "@babel/core": "^7.14.8",
         "@babel/plugin-proposal-class-properties": "^7.12.1",
-        "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
-        "@babel/plugin-transform-spread": "^7.12.1",
+        "@babel/preset-env": "^7.16.4",
         "@babel/preset-typescript": "^7.12.7",
         "@types/jquery": "^3.5.5",
         "babel-loader": "^8.2.2",
-        "bootstrap": "^4.6.0",
         "expose-loader": "^1.0.3",
-        "fibers": "^5.0.0",
         "gulp": "^4.0.2",
         "gulp-rename": "^2.0.0",
-        "gulp-sass": "^5.0.0",
-        "gulp-sourcemaps": "^2.6.5",
-        "gulp-svgstore": "^7.0.1",
+        "gulp-sass": "^5.1.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-svg-sprite": "^1.5.0",
         "jquery": "^3.5.1",
         "npm-run-all": "^4.1.5",
-        "popper.js": "1.16.1-lts",
-        "regenerator-runtime": "^0.13.7",
         "sass": "^1.32.4",
         "terser-webpack-plugin": "^4.2.3",
-        "ts-loader": "^8.0.14",
         "typescript": "^4.1.3",
         "webpack": "^5.64.1",
         "webpack-cli": "^4.9.1"
-    },
-    "devDependencies": {
-        "@babel/preset-env": "^7.16.4",
-        "gulp-svg-sprite": "^1.5.0"
     }
 }
