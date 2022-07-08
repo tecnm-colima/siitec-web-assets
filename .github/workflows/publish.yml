@@ -30,8 +30,7 @@ jobs:
       - name: Attach release files
         uses: ncipollo/release-action@v1
         with:
-          artifacts: [
-            "./dist/siitec-assets.zip",
-            "./samples/samples.zip"
-          ]
+          artifacts:
+            - "./dist/siitec-assets.zip"
+            - "./samples/samples.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
