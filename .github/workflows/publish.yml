@@ -21,8 +21,17 @@ jobs:
           type: 'zip'
           directory: './dist/'
           filename: 'siitec-assets.zip'
+      - name: Archive Samples
+        uses: thedoctor0/zip-release@master
+        with:
+          type: 'zip'
+          directory: './samples/'
+          filename: 'samples.zip'
       - name: Attach release files
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "./dist/siitec-assets.zip"
+          artifacts: [
+            "./dist/siitec-assets.zip",
+            "./samples/samples.zip"
+          ]
           token: ${{ secrets.GITHUB_TOKEN }}
