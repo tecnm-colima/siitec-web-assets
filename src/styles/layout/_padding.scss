@@ -1,17 +1,17 @@
 @for $size from 0 through 10 {
     .p-#{$size} {
-        padding: .25em * $size;
+        padding: .25em * $size !important;
     }
     .pt-#{$size} {
-        padding-top: .25em * $size;
+        padding-top: .25em * $size !important;
     }
     .pl-#{$size} {
-        padding-left: .25em * $size;
+        padding-left: .25em * $size !important;
     }
     .pr-#{$size} {
-        padding-right: .25em * $size;
+        padding-right: .25em * $size !important;
     }
     .pb-#{$size} {
-        padding-bottom: .25em * $size;
+        padding-bottom: .25em * $size !important;
     }
 }

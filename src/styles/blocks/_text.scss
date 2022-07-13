@@ -3,35 +3,35 @@
         white-space: nowrap;
     }
     &--left {
-        text-align: left;
+        text-align: left !important;
     }
     &--right {
-        text-align: right;
+        text-align: right !important;
     }
     &--center {
-        text-align: center;
+        text-align: center !important;
     }
     &--justify {
-        text-align:  justify;
+        text-align:  justify !important;
     }
     &--strong {
-        font-weight: bold;
+        font-weight: bold !important;
     }
 
     [dir=ltr] &--start,
     &--start[dir=ltr] {
-        text-align: left;
+        text-align: left !important;
     }
     [dir=ltr] &--end,
     &--end[dir=ltr] {
-        text-align: right;
+        text-align: right !important;
     }
     [dir=rtl] &--start,
     &--start[dir=rtl] {
-        text-align: right;
+        text-align: right !important;
     }
     [dir=rtl] &--end,
     &--end[dir=rtl] {
-        text-align: end;
+        text-align: end !important;
     }
 }

@@ -1,17 +1,17 @@
 @for $size from 0 through 10 {
     .m-#{$size} {
-        margin: .25em * $size;
+        margin: .25em * $size !important;
     }
     .mt-#{$size} {
-        margin-top: .25em * $size;
+        margin-top: .25em * $size !important;
     }
     .ml-#{$size} {
-        margin-left: .25em * $size;
+        margin-left: .25em * $size !important;
     }
     .mr-#{$size} {
-        margin-right: .25em * $size;
+        margin-right: .25em * $size !important;
     }
     .mb-#{$size} {
-        margin-bottom: .25em * $size;
+        margin-bottom: .25em * $size !important;
     }
 }
