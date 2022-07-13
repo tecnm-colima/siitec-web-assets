@@ -45,6 +45,11 @@ input {
     &[type=week] {
         @extend %input-box;
     }
+    &[type=number],
+    &[type=time] {
+        text-align: right;
+        text-align: end;
+    }
 }
 textarea {
     @extend %input-box;
