@@ -1,0 +1,17 @@
+@for $size from 0 through 10 {
+    .m-#{$size} {
+        margin: .25em * $size;
+    }
+    .mt-#{$size} {
+        margin-top: .25em * $size;
+    }
+    .ml-#{$size} {
+        margin-left: .25em * $size;
+    }
+    .mr-#{$size} {
+        margin-right: .25em * $size;
+    }
+    .mb-#{$size} {
+        margin-bottom: .25em * $size;
+    }
+}

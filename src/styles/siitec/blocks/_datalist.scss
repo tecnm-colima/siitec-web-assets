@@ -1,0 +1,65 @@
+%item {
+    border: 1px solid #d8d8d8;
+    border-radius: .5rem;
+    margin-bottom: .5rem;
+    padding: 1em;
+    transition:
+        background-color 200ms,
+        box-shadow 200ms;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px #00000020;
+    overflow: hidden;
+}
+%item-hoverable {
+    @extend %item;
+    &:hover {
+        background-color: #fff;
+        box-shadow: 1px 1px 3px #00000040;
+    }
+}
+%item-activable {
+    @extend %item;
+    &:active {
+        box-shadow: 1px 1px 12px #00000040 inset;
+    }
+}
+%item-description {
+    color: #808080;
+    text-align: justify;
+    position: relative;
+}
+
+.datalist {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    &-item {
+        @extend %item;
+        &--hoverable {
+            @extend %item-hoverable;
+        }
+        &--activable {
+            @extend %item-activable;
+        }
+        &--clickable {
+            @extend %item-hoverable;
+            @extend %item-activable;
+        }
+    }
+    &-title {
+        font-size: 1.6em;
+        font-weight: bold;
+        margin-top: .4em;
+        margin-bottom: .4em;
+    }
+    &-description, %item-description {
+        @extend %item-description;
+        &--overflowed {
+            @extend %item-description;
+            max-height: 7em;
+            overflow-y: hidden;
+            -webkit-mask-image: linear-gradient(#fff 50%, #fff0);
+            mask-image: linear-gradient(#fff 50%, #fff0);
+        }
+    }
+}

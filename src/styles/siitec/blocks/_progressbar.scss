@@ -1,0 +1,21 @@
+@use '../../colors';
+
+.progressbar, %progressbar {
+    position: relative;
+    overflow: hidden;
+    min-height: .5em;
+    border-radius: 99in;
+    &--visible {
+        @extend %progressbar;
+        background-color: #d0d0d0;
+    }
+}
+.progressbar-progress, %progress {
+    position: absolute;
+    height: 100%;
+    background-color: colors.$dark-bg-blue;
+    &--red {
+        @extend %progress;
+        background-color: colors.$dark-bg-red;
+    }
+}
