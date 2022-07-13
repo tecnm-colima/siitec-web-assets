@@ -209,3 +209,14 @@ $(window.document.documentElement).on('click', '.copy-link', function(e) {
     navigator.clipboard.writeText(copy);
     alert("Se copió '" + copy + "' al portapapeles.");
 });
+$(window.document.documentElement).on('click', '.post-link', function(e) {
+    console.log('TEST');
+    e.preventDefault();
+    let target = e.target as HTMLAnchorElement;
+    let form = document.createElement('form');
+    document.documentElement.appendChild(form);
+    form.method = 'POST';
+    form.action = target.href;
+    form.submit();
+    document.documentElement.removeChild(form);
+});
