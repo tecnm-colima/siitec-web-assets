@@ -210,7 +210,6 @@ $(window.document.documentElement).on('click', '.copy-link', function(e) {
     alert("Se copió '" + copy + "' al portapapeles.");
 });
 $(window.document.documentElement).on('click', '.post-link', function(e) {
-    console.log('TEST');
     e.preventDefault();
     let target = e.target as HTMLAnchorElement;
     let form = document.createElement('form');
