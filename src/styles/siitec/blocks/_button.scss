@@ -18,3 +18,35 @@
         color: colors.$secondary-contrast;
     }
 }
+
+.button-square, %button-square {
+    @include button.button;
+    background-color: transparent;
+    border-color: colors.$fg-dimmed-50;
+    text-align: center;
+    position: relative;
+    height: 1.6em;
+    width: 1.6em;
+    border-radius: .3em;
+    padding: 0;
+    &:hover {
+        background-color: white;
+        border-color: colors.$fg-blue;
+        color: colors.$fg-blue;
+    }
+    &:active {
+        background-color: colors.$fg-blue;
+        color: colors.$dark-fg-default;
+    }
+    &--red {
+        @extend %button-square;
+        &:hover {
+            border-color: colors.$fg-red;
+            color: colors.$fg-red;
+        }
+        &:active {
+            background-color: colors.$fg-red;
+            color: colors.$dark-fg-default;
+        }
+    }
+}

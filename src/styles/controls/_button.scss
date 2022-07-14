@@ -14,6 +14,7 @@ $button-backcolor--hover: #888;
     border: 1px solid $button-bordercolor;
     text-decoration: none;
     &:hover {
+        text-decoration: none;
         background-color: $button-backcolor--hover;
     }
 }
