@@ -1,78 +1,106 @@
 @use './variables';
 @use 'sass:math';
 
+@mixin properties ($properties) {
+    @each $p, $v in $properties {
+        #{$p}: $v;
+    }
+}
+@mixin upto ($properties, $media-properties) {
+    $prev-size: null;
+    @each $size, $min-width in variables.$grid-breakpoints {
+        @if $prev-size {
+            &-upto-#{$prev-size} {
+                @include properties($properties);
+                @media (max-width: #{$min-width - 1}) {
+                    @include properties($media-properties);
+                }
+            }
+        }
+        $prev-size: $size;
+    }
+}
+
+$row: (
+    display: flex,
+    flex-direction: row,
+    flex-wrap: nowrap
+);
+
 .row, %row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    @include properties($row);
     &--column {
+        @include properties($row);
         flex-direction: column;
+        @include upto($row, (flex-direction: column));
     }
     &--wrap {
-        @extend %row;
+        @include properties($row);
         flex-wrap: wrap;
     }
     &--nowrap {
-        @extend %row;
+        @include properties($row);
         flex-wrap: nowrap;
         @each $size, $min-width in variables.$grid-breakpoints {
             @media (min-width: $min-width) {
                 &-#{$size} {
+                    @include properties($row);
                     flex-wrap: nowrap;
                 }
             }
         }
     }
     &--center {
-        @extend .row;
+        @include properties($row);
         justify-content: center;
     }
     &--between {
-        @extend .row;
+        @include properties($row);
         justify-content: space-between;
     }
     &--around {
-        @extend .row;
+        @include properties($row);
         justify-content: space-around;
     }
     &--end {
-        @extend .row;
+        @include properties($row);
         justify-content: end;
     }
     &--full-height {
-        @extend .row;
+        @include properties($row);
         height: 100vh;
     }
     &--vcenter {
-        @extend .row;
+        @include properties($row);
         align-items: center;
     }
     &--gap1 {
-        @extend .row;
+        @include properties($row);
         gap: 1rem;
     }
     &--gap2 {
-        @extend .row;
+        @include properties($row);
         gap: 2rem;
     }
 }
-@mixin col {
-    flex-grow: 999999;
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-}
+$col: (
+    flex-grow: 999999,
+    max-width: 100%,
+    margin-left: 0,
+    margin-right: 0,
+);
+
 .col, %col {
-    @include col();
+    @include properties($col);
     &-auto {
-        @extend %col;
+        @include properties($col);
         flex: 0 0 auto;
         width: auto;
         max-width: 100%;
     }
     @for $col from 12 through 1 {
         &-#{$col} {
-            @extend %col;
+            @include properties($col);
             flex: 0 0 percentage(math.div($col, 12));
             max-width: percentage(math.div($col, 12));
         }
@@ -81,7 +109,7 @@
         @for $col from 12 through 1 {
             @media (min-width: $min-width) {
                 &-#{$size}-#{$col} {
-                    @include col();
+                    @include properties($col);
                     flex: 0 0 percentage(math.div($col, 12));
                     max-width: percentage(math.div($col, 12));
                 }
