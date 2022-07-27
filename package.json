@@ -5,7 +5,6 @@
         "name": "Francisco Cervantes"
     }],
     "scripts": {
-        "postinstall": "run-s build",
         "watch": "run-p watch:*",
         "watch:css": "gulp watch:css",
         "watch:fonts": "gulp watch:fonts",
