@@ -211,11 +211,17 @@ $(window.document.documentElement).on('click', '.copy-link', function(e) {
 });
 $(window.document.documentElement).on('click', '.post-link', function(e) {
     e.preventDefault();
-    let target = e.target as HTMLAnchorElement;
+    let target = this as HTMLAnchorElement;
     let form = document.createElement('form');
     document.documentElement.appendChild(form);
     form.method = 'POST';
     form.action = target.href;
     form.submit();
     document.documentElement.removeChild(form);
+});
+$(window.document.documentElement).on('click', '[type=submit]:not(.ajax)', function(e) {
+    let $this = $(this);
+    let $form = $this.closest('form');
+    $this.prop('disabled', true);
+    $form.trigger('submit');
 });

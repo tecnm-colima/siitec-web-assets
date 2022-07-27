@@ -13,9 +13,14 @@ $button-backcolor--hover: #888;
     background-color: $button-backcolor;
     border: 1px solid $button-bordercolor;
     text-decoration: none;
+    text-align: center;
+    font-size: .8em;
     &:hover {
         text-decoration: none;
         background-color: $button-backcolor--hover;
+    }
+    &:disabled {
+        opacity: 0.5;
     }
 }
 

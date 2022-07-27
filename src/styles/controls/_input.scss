@@ -28,6 +28,10 @@ $input-border-radius: .25rem;
         box-shadow: $input--focus-shadow;
         outline: none;
     }
+    &:disabled {
+        background-color: colors.$bg-dimmed-10 !important;
+        color: colors.$fg-dimmed-40 !important;
+    }
 }
 input {
     &[type=date],

@@ -17,6 +17,19 @@
     &--strong {
         font-weight: bold !important;
     }
+    &--long {
+        letter-spacing: .035ex;
+        line-height: 1.4em;
+    }
+    &--ucfirst::first-letter {
+        text-transform: uppercase !important;
+    }
+    &--upper {
+        text-transform: uppercase !important;
+    }
+    &--capitalize {
+        text-transform: capitalize !important;
+    }
 
     [dir=ltr] &--start,
     &--start[dir=ltr] {
