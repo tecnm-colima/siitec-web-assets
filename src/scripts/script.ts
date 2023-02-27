@@ -225,3 +225,7 @@ $(window.document.documentElement).on('click', '[type=submit]:not(.ajax)', funct
     $this.prop('disabled', true);
     $form.trigger('submit');
 });
+$(window.document.documentElement).on('blur', 'input:not(.no-trim)', function(e) {
+    this.value = this.value.trim();
+    this.value = this.value.replace(/\s+/g, ' ');
+});
