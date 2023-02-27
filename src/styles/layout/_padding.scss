@@ -2,6 +2,14 @@
     .p-#{$size} {
         padding: .25em * $size !important;
     }
+    .py-#{$size} {
+        padding-top: .25em * $size !important;
+        padding-bottom: .25em * $size !important;
+    }
+    .px-#{$size} {
+        padding-left: .25em * $size !important;
+        padding-right: .25em * $size !important;
+    }
     .pt-#{$size} {
         padding-top: .25em * $size !important;
     }

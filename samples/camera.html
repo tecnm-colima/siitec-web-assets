@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camara</title>
+    <link rel="stylesheet" href="../dist/style.min.css">
+    <script src="../dist/script.min.js"></script>
+</head>
+<body>
+    <div id="cameraViewport" class="camera">
+        <video id="videoElement" class="camera-video" autoplay></video>
+        <div class="camera-container row--full-height row--end row--column">
+            <div class="camera-bar p-4 row--gap1">
+                <select name="camera" id="selCamera" title="Camara seleccionada">
+                    <option>Camera seleccionada</option>
+                </select>
+                <button id="btnFullscreen" title="Pantalla completa">
+                    <span class="icon-ws-windows"></span>
+                </button>
+            </div>
+        </div>
+        <div class="camera-container d-none">
+            <div class="container row--full-height row--vcenter">
+                <div class="camera-card px-4 col-auto text--center">
+                    <p>ALGO PARA PROBAR</p>
+                    <p>ALGO PARA PROBAR</p>
+                    <p>ALGO PARA PROBAR</p>
+                    <p>ALGO PARA PROBAR</p>
+                    <p>ALGO PARA PROBAR</p>
+                    <p>ALGO PARA PROBAR</p>
+                    <p>ALGO PARA PROBAR</p>
+                    <p>ALGO PARA PROBAR</p>
+                    <p>ALGO PARA PROBAR</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        (async function() {
+            let videoElement = document.getElementById('videoElement');
+            try {
+                let stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio:false });
+                videoElement.srcObject = stream;
+            } catch (ex) {
+                console.error(ex);
+            }
+        })();
+        $('#btnFullscreen').on('click', function() {
+            let cameraViewport = document.getElementById('cameraViewport');
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            } else {
+                cameraViewport.requestFullscreen({ navigationUI: "show" });
+            }
+        });
+    </script>
+</body>
+</html>
