@@ -74,7 +74,46 @@ input {
 textarea {
     @extend %input-box;
 }
+select {
+    @extend %input-box;
+    border-color: transparent;
+    background-color: colors.$bg-dimmed-10;
+}
 .input {
+    &-box {
+        @extend %input-box;
+        &--dimmed{
+            @extend %input-box;
+            background-color: colors.$bg-dimmed-10;
+        }
+        &--borderless {
+            @extend %input-box;
+            border: none;
+        }
+    }
+    &-group {
+        @extend %input-box;
+        padding: 0;
+        overflow: hidden;
+        &:focus-within {
+            outline: none;
+            border-color: $input-bordercolor--focus;
+            box-shadow: $input--focus-shadow;
+        }
+        & > *:first-child {
+            border-radius: 0 !important;
+            border: 0 !important;
+        }
+        & > *:not(:first-child) {
+            border-radius: 0 !important;
+            border-top: 0 !important;
+            border-right: 0 !important;
+            border-bottom: 0 !important;
+        }
+        & > *:focus + * {
+            border-color: $input-bordercolor--focus;
+        }
+    }
     &--borderless {
         border: none !important;
     }

@@ -1,9 +1,0 @@
-@use './input';
-@use '../colors';
-@use 'sass:color';
-
-select {
-    @extend %input-box;
-    border-color: transparent;
-    background-color: colors.$bg-dimmed-10;
-}

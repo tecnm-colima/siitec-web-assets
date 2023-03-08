@@ -2,6 +2,7 @@
 @forward './blocks/text';
 @forward './blocks/form';
 @forward './blocks/link';
+@forward './blocks/font';
 
 @forward './controls/button';
 @forward './controls/flyouts/dropdown';
@@ -9,7 +10,6 @@
 @forward './controls/input_radio';
 @forward './controls/input_checkbox';
 @forward './controls/scrollbar';
-@forward './controls/select';
 @forward './controls/textarea';
 @forward './controls/iframe';
 

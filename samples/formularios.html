@@ -93,6 +93,36 @@
                     <label for="inpCurp" class="form-label">CURP (Sólo lectura)</label>
                     <input type="text" name="curp" id="inpCurp" value="XAXX010101XNEXXXA1" readonly class="input--borderless" />
                 </div>
+                <div class="form-group col-2">
+                    <label for="inpHorario" class="form-label">Horario</label>
+                    <div class="input-group row">
+                        <select class="col-5 text--end" name="hora" title="Hora">
+                            <option>07</option>
+                        </select>
+                        <div class="col-2 input-box text--center font--bold">:</div>
+                        <select class="col-5" name="minutos" title="Minutos">
+                            <option>00</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-2">
+                    <label for="inpHorario" class="form-label">Horario</label>
+                    <div class="input-group row">
+                        <input type="text" class="col-5 text--end" name="hora" title="Hora" value="07" />
+                        <div class="col-2 input-box text--center font--bold">:</div>
+                        <input type="text" class="col-5" name="minutos" title="Minutos" value="00" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inpTest" class="form-label">Multicombo</label>
+                    <div class="input-group row">
+                        <input type="text" name="fields[]" id="" class="col" title="Element">
+                        <input type="text" name="fields[]" id="" class="col" title="Element">
+                        <input type="text" name="fields[]" id="" class="col" title="Element">
+                        <input type="text" name="fields[]" id="" class="col" title="Element">
+                        <input type="text" name="fields[]" id="" class="col" title="Element">
+                    </div>
+                </div>
                 <fieldset class="form-group col-12 col-lg-3">
                     <legend class="form-label">Visibilidad</legend>
                     <div class="check-item">

@@ -31,6 +31,7 @@
         text-transform: capitalize !important;
     }
 
+    /** Left to Right **/
     [dir=ltr] &--start,
     &--start[dir=ltr] {
         text-align: left !important;
@@ -39,12 +40,13 @@
     &--end[dir=ltr] {
         text-align: right !important;
     }
+    /** Right to Left **/
     [dir=rtl] &--start,
     &--start[dir=rtl] {
         text-align: right !important;
     }
     [dir=rtl] &--end,
     &--end[dir=rtl] {
-        text-align: end !important;
+        text-align: left !important;
     }
 }
