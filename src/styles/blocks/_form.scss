@@ -36,6 +36,21 @@ legend {
             display: flex;
         }
     }
+    &--zone {
+        @extend .check-item;
+        border-radius: .2em;
+        padding: .5em .5em .5em 2em;
+        box-shadow:
+            .15em .15em .5em #00000008,
+            0q 0q .2em #00000010;
+        transition: box-shadow .2s ease-in-out;
+        &:hover, &:focus-within {
+            cursor: pointer;
+            box-shadow:
+                .15em .15em .5em #00000018,
+                0q 0q .2em #00000060;
+        }
+    }
 }
 .input-hint {
     font-size: .75rem;
