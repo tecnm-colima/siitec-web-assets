@@ -28,7 +28,7 @@ input[type=checkbox] {
         }
     }
     &:indeterminate {
-        background-color: input.$input-bordercolor--focus;
+        background-color: colors.$dark-primary;
         border-color: transparent;
         &::after {
             content: "";
@@ -36,7 +36,7 @@ input[type=checkbox] {
             border-radius: .125em;
             width: .6em;
             height: .125em;
-            background-color: white;
+            background-color: colors.$dark-primary-contrast;
         }
     }
     &:focus {
