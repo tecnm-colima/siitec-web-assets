@@ -1,3 +1,5 @@
+@use '../../colors';
+
 %item {
     border: 1px solid #d8d8d8;
     border-radius: .5rem;
@@ -9,6 +11,8 @@
     cursor: pointer;
     box-shadow: 1px 1px 3px #00000020;
     overflow: hidden;
+    display: block;
+    color: colors.$fg-default;
 }
 %item-hoverable {
     @extend %item;
