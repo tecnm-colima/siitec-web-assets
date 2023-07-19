@@ -1,0 +1,38 @@
+@use '../../colors';
+
+.infopanel {
+    border-radius: .5rem;
+    border: 1px solid colors.$bg-dimmed-20;
+    padding: 1rem;
+    margin: 1rem 0;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 1.5ex 1ex;
+    &-title {
+        font-size: 1.5em;
+    }
+    &-separator {
+        margin: .75rem 0;
+        border-bottom: 1px solid colors.$bg-dimmed-20;
+    }
+    &-group {
+        margin: .75rem 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &-label {
+        text-align: left;
+        font-weight: bold;
+        font-size: 0.8em;
+        vertical-align: baseline;
+        padding-right: 1ex;
+        padding-bottom: .5em;
+    }
+    &-text,
+    &-data {
+        vertical-align: baseline;
+    }
+    &--compact &-group {
+        margin: .5rem 0;
+    }
+}

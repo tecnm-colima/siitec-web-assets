@@ -14,7 +14,7 @@
 .infobar {
     border: 1px solid colors.$bg-dimmed-20;
     background-color: colors.$bg-default;
-    border-radius: 4px;
+    border-radius: .5rem;
     padding: 0 12px;
     display: flex;
     flex-wrap: wrap;
@@ -38,7 +38,7 @@
     }
     &-label {
         @extend %infobar-item;
-        color: colors.$fg-dimmed-50;
+        color: colors.$fg-dimmed-40;
     }
     &-text,
     &-data {
