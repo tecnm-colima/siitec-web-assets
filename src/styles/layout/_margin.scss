@@ -2,6 +2,14 @@
     .m-#{$size} {
         margin: .25em * $size !important;
     }
+    .my-#{$size} {
+        margin-top: .25em * $size !important;
+        margin-bottom: .25em * $size !important;
+    }
+    .mx-#{$size} {
+        margin-left: .25em * $size !important;
+        margin-right: .25em * $size !important;
+    }
     .mt-#{$size} {
         margin-top: .25em * $size !important;
     }
