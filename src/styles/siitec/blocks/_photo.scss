@@ -40,6 +40,7 @@
         &--#{$size}em {
             @include photo-circle();
             height: #{$size}em;
+            width: #{$size}em;
         }
     }
 }

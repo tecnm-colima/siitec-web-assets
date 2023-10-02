@@ -1,0 +1,44 @@
+$border-color: #c0c0c0;
+$hover-background-color: rgba(white, 0.8);
+$focus-border-color: rgba(#23a, 1);
+$border-radius: .5rem;
+
+.modern-list {
+    list-style: none;
+    padding: 0;
+}
+.modern-list__item, %modern-list__item {
+    border: 1px solid $border-color;
+    cursor: default;
+    margin-top: -1px;
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+        background-color: $hover-background-color;
+        text-decoration: none;
+    }
+    &:first-child {
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+    }
+    &:last-child {
+        border-bottom-left-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+    }
+    &--clickable {
+        @extend %modern-list__item;
+        cursor: pointer !important;
+    }
+    &:focus {
+        background-color: $hover-background-color;
+        border-color: $focus-border-color;
+        margin-top: -1;
+        outline: none;
+        z-index: 10;
+        box-shadow:
+            0 0 .1rem rgba(black, 0.2),
+            0 0 1rem rgba(black, 0.1);
+    }
+}
