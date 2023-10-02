@@ -1,11 +1,11 @@
 @use '../../colors';
 @use 'sass:color';
 
-$red: #d81f1f;
+$red: #e80018;
 $orange: #ff6000;
-$yellow: rgb(212, 150, 10);
-$green: #0d7235;
-$blue: #205bc7;
+$yellow: #ffae00;
+$green: #02983a;
+$blue: #0060d0;
 
 .badge {
     position: relative;
@@ -77,7 +77,7 @@ $blue: #205bc7;
         filter: drop-shadow(0 0 4px $red);
     }
     to {
-        background-color: color.scale($red, $saturation: -30%, $lightness: -10%);
+        background-color: color.scale($red, $saturation: -0%, $lightness: -10%);
         filter: drop-shadow(0 0 4px #ec6c0000);
     }
 }
@@ -87,7 +87,7 @@ $blue: #205bc7;
         filter: drop-shadow(0 0 4px $orange);
     }
     to {
-        background-color: color.scale($orange, $saturation: -25%, $lightness: -25%);
+        background-color: color.scale($orange, $saturation: -0%, $lightness: -25%);
         filter: drop-shadow(0 0 4px #ec6c0000);
     }
 }
@@ -97,7 +97,7 @@ $blue: #205bc7;
         filter: drop-shadow(0 0 4px $yellow);
     }
     to {
-        background-color: color.scale($yellow, $saturation: -10%, $lightness: -20%);
+        background-color: color.scale($yellow, $saturation: -0%, $lightness: -20%);
         filter: drop-shadow(0 0 4px #ec6c0000);
     }
 }
@@ -107,7 +107,7 @@ $blue: #205bc7;
         filter: drop-shadow(0 0 4px $green);
     }
     to {
-        background-color: color.scale($green, $saturation: -50%, $lightness: -10%);
+        background-color: color.scale($green, $saturation: -0%, $lightness: -10%);
         filter: drop-shadow(0 0 4px #ec6c0000);
     }
 }
@@ -117,7 +117,7 @@ $blue: #205bc7;
         filter: drop-shadow(0 0 4px $blue);
     }
     to {
-        background-color: color.scale($blue, $saturation: -30%, $lightness: -25%);
+        background-color: color.scale($blue, $saturation: -0%, $lightness: -25%);
         filter: drop-shadow(0 0 4px #ec6c0000);
     }
 }
