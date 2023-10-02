@@ -1,34 +1,123 @@
 @use '../../colors';
+@use 'sass:color';
+
+$red: #d81f1f;
+$orange: #ff6000;
+$yellow: rgb(212, 150, 10);
+$green: #0d7235;
+$blue: #205bc7;
 
 .badge {
     position: relative;
     width: 1rem;
     height: 1rem;
+    // min-width: 20px;
+    // min-height: 20px;
     border-radius: 50%;
     display: inline-block;
     // border: .2px solid #fffd;
     background-color: colors.$bg-dimmed-30;
-    box-shadow:
-        0 0 6px #0002 inset,
-        0 0 1px 0.2px #0004;
+    background-color: #8e9296;
+    box-shadow: 0 0 8px 0px #00000040 inset;
+    border: 1px solid #20202040;
+    background-clip: border-box;
     &--red {
         @extend .badge;
         background-color: colors.$fg-red;
+        background-color: $red;
+        // filter: drop-shadow(0 0 6px #c81f1f);
+        box-shadow: 0 0 8px 0px #ffffff80 inset;
+        &.badge--blink {
+            animation: red-glow .5s ease-in-out alternate infinite;
+        }
     }
-    &--orange {
+    &--orange, %badge-orange {
         @extend .badge;
         background-color: colors.$fg-orange;
+        background-color: $orange;
+        box-shadow: 0 0 8px 0px #ffffff80 inset;
+        &.badge--blink {
+            animation: orange-glow .5s ease-in-out alternate infinite;
+        }
     }
     &--yellow {
         @extend .badge;
         background-color: colors.$fg-yellow;
+        background-color: $yellow;
+        // filter: drop-shadow(0 0 6px #debb00);
+        box-shadow: 0 0 8px 0px #ffffff80 inset;
+        &.badge--blink {
+            animation: yellow-glow .5s ease-in-out alternate infinite;
+        }
     }
     &--green {
         @extend .badge;
         background-color: colors.$fg-green;
+        background-color: $green;
+        // filter: drop-shadow(0 0 6px #1B924A);
+        box-shadow: 0 0 8px 0px #ffffff80 inset;
+        &.badge--blink {
+            animation: green-glow .5s ease-in-out alternate infinite;
+        }
     }
     &--blue {
         @extend .badge;
         background-color: colors.$fg-blue;
+        background-color: $blue;
+        // filter: drop-shadow(0 0 6px #267AB8);
+        box-shadow: 0 0 8px 0px #ffffff80 inset;
+        &.badge--blink {
+            animation: blue-glow .5s ease-in-out alternate infinite;
+        }
+    }
+}
+@keyframes red-glow {
+    from {
+        background-color: $red;
+        filter: drop-shadow(0 0 4px $red);
+    }
+    to {
+        background-color: color.scale($red, $saturation: -30%, $lightness: -10%);
+        filter: drop-shadow(0 0 4px #ec6c0000);
+    }
+}
+@keyframes orange-glow {
+    from {
+        background-color: $orange;
+        filter: drop-shadow(0 0 4px $orange);
+    }
+    to {
+        background-color: color.scale($orange, $saturation: -25%, $lightness: -25%);
+        filter: drop-shadow(0 0 4px #ec6c0000);
+    }
+}
+@keyframes yellow-glow {
+    from {
+        background-color: $yellow;
+        filter: drop-shadow(0 0 4px $yellow);
+    }
+    to {
+        background-color: color.scale($yellow, $saturation: -10%, $lightness: -20%);
+        filter: drop-shadow(0 0 4px #ec6c0000);
+    }
+}
+@keyframes green-glow {
+    from {
+        background-color: $green;
+        filter: drop-shadow(0 0 4px $green);
+    }
+    to {
+        background-color: color.scale($green, $saturation: -50%, $lightness: -10%);
+        filter: drop-shadow(0 0 4px #ec6c0000);
+    }
+}
+@keyframes blue-glow {
+    from {
+        background-color: $blue;
+        filter: drop-shadow(0 0 4px $blue);
+    }
+    to {
+        background-color: color.scale($blue, $saturation: -30%, $lightness: -25%);
+        filter: drop-shadow(0 0 4px #ec6c0000);
     }
 }
