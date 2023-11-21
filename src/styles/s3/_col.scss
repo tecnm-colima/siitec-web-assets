@@ -1,0 +1,45 @@
+@use 'sass:math';
+@use '../mixins';
+@use '../functions';
+@use '../layout/variables';
+
+$_col: (
+    flex-grow: 999999,
+    max-width: 100%,
+    margin-left: 0,
+    margin-right: 0
+);
+
+.col1 {
+    @include mixins.properties($_col);
+    &-auto {
+         @include mixins.properties($_col);
+         flex: 0 0 auto;
+         width: auto;
+         max-width: 100%;
+    }
+    @for $c from 12 through 1 {
+        &-#{$c} {
+            @include mixins.properties($_col);
+            flex: 0 0 percentage($number: math.div($c, 12));
+            max-width: percentage($number: math.div($c, 12));
+        }
+    }
+    $gridBreakpoints: functions.map-reverse(variables.$grid-breakpoints);
+    $prev-min-width: null;
+    @each $size, $min-width in $gridBreakpoints {
+        @if $prev-min-width {
+            @for $c from 12 to 1 {
+                @media (max-width: #{$prev-min-width - 1})
+                {
+                    &-#{$size}-#{$c} {
+                        @include mixins.properties($_col);
+                        flex: 0 0 percentage($number: math.div($c, 12));
+                        max-width: percentage($number: math.div($c, 12));
+                    }
+                } // @media
+            } // @for
+        } // @if
+        $prev-min-width: $min-width;
+    }
+}

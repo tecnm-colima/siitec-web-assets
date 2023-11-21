@@ -1,0 +1,32 @@
+@use 'sass:map';
+@use 'sass:list';
+
+/**
+ * Based upon seanislegend snippet
+ * @url https://gist.github.com/seanislegend/107ccf9c81ec9fd1aae0
+ */
+@function map-reverse($map) {
+    $result: ();
+
+    @if type-of($map) == "map" {
+        $keys: map.keys($map);
+        $map-reversed: ();
+        
+        @for $i from length($keys) through 1 {
+            $map-reversed: map.merge(
+                $map-reversed,
+                (list.nth($keys, $i): map.get($map, list.nth($keys, $i)))
+            );
+        }
+
+        @if type-of($map-reversed) == "map" {
+            $result: $map-reversed;
+        } @else {
+            @warn 'There was an error reversing the order of "#{$map}"';
+        }
+    } @else {
+        @warn '"#{$map}" is not a valid map';
+    }
+
+    @return $result;
+}

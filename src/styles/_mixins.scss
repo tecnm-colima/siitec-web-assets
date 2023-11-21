@@ -1,0 +1,6 @@
+@mixin properties($properties)
+{
+    @each $p, $v in $properties {
+        #{$p}: $v;
+    }
+}

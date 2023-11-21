@@ -1,19 +1,15 @@
-@use './variables';
 @use 'sass:math';
+@use '../mixins';
+@use './variables';
 
-@mixin properties ($properties) {
-    @each $p, $v in $properties {
-        #{$p}: $v;
-    }
-}
 @mixin upto ($properties, $media-properties) {
     $prev-size: null;
     @each $size, $min-width in variables.$grid-breakpoints {
         @if $prev-size {
             &-upto-#{$prev-size} {
-                @include properties($properties);
+                @include mixins.properties($properties);
                 @media (max-width: #{$min-width - 1}) {
-                    @include properties($media-properties);
+                    @include mixins.properties($media-properties);
                 }
             }
         }
@@ -21,95 +17,95 @@
     }
 }
 
-$row: (
+$_row: (
     display: flex
 );
 
 .row, %row {
-    @include properties($row);
+    @include mixins.properties($_row);
     &--column {
-        @include properties($row);
+        @include mixins.properties($_row);
         flex-direction: column;
-        @include upto($row, (flex-direction: column));
+        @include upto($_row, (flex-direction: column));
     }
     &--wrap {
-        @include properties($row);
+        @include mixins.properties($_row);
         flex-wrap: wrap;
     }
     &--nowrap {
-        @include properties($row);
+        @include mixins.properties($_row);
         flex-wrap: nowrap;
         @each $size, $min-width in variables.$grid-breakpoints {
             @media (min-width: $min-width) {
                 &-#{$size} {
-                    @include properties($row);
+                    @include mixins.properties($_row);
                     flex-wrap: nowrap;
                 }
             }
         }
     }
     &--center {
-        @include properties($row);
+        @include mixins.properties($_row);
         justify-content: center;
     }
     &--between {
-        @include properties($row);
+        @include mixins.properties($_row);
         justify-content: space-between;
     }
     &--around {
-        @include properties($row);
+        @include mixins.properties($_row);
         justify-content: space-around;
     }
     &--end {
-        @include properties($row);
+        @include mixins.properties($_row);
         justify-content: end;
     }
     &--full-height {
-        @include properties($row);
+        @include mixins.properties($_row);
         height: 100vh;
     }
     &--vcenter {
-        @include properties($row);
+        @include mixins.properties($_row);
         align-items: center;
     }
     &--gap1 {
-        @include properties($row);
+        @include mixins.properties($_row);
         gap: 1rem;
     }
     &--gap2 {
-        @include properties($row);
+        @include mixins.properties($_row);
         gap: 2rem;
     }
 }
-$col: (
+$_col: (
     flex-grow: 999999,
     max-width: 100%,
     margin-left: 0,
     margin-right: 0,
 );
 
-.col, %col {
-    @include properties($col);
+.col {
+    @include mixins.properties($_col);
     &-auto {
-        @include properties($col);
+        @include mixins.properties($_col);
         flex: 0 0 auto;
         width: auto;
         max-width: 100%;
     }
-    @for $col from 12 through 1 {
-        &-#{$col} {
-            @include properties($col);
-            flex: 0 0 percentage(math.div($col, 12));
-            max-width: percentage(math.div($col, 12));
+    @for $c from 12 through 1 {
+        &-#{$c} {
+            @include mixins.properties($_col);
+            flex: 0 0 percentage(math.div($c, 12));
+            max-width: percentage(math.div($c, 12));
         }
     }
     @each $size, $min-width in variables.$grid-breakpoints {
-        @for $col from 12 through 1 {
+        @for $c from 12 through 1 {
             @media (min-width: $min-width) {
-                &-#{$size}-#{$col} {
-                    @include properties($col);
-                    flex: 0 0 percentage(math.div($col, 12));
-                    max-width: percentage(math.div($col, 12));
+                &-#{$size}-#{$c} {
+                    @include mixins.properties($_col);
+                    flex: 0 0 percentage(math.div($c, 12));
+                    max-width: percentage(math.div($c, 12));
                 }
             }
         }

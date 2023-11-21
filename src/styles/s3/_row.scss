@@ -1,0 +1,25 @@
+@use '../mixins';
+
+$_row: (
+    display: flex
+);
+.row1 {
+    @include mixins.properties($_row);
+    flex-wrap: wrap;
+    &--vertical {
+        @include mixins.properties($_row);
+        flex-direction: column;
+    }
+    &--nowrap {
+        @include mixins.properties($_row);
+        flex-wrap: nowrap;
+    }
+    &--center {
+        @include mixins.properties($_row);
+        justify-content: center;
+    }
+    &--middle {
+        @include mixins.properties($_row);
+        align-items: center;
+    }
+}
