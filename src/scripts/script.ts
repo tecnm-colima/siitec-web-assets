@@ -219,11 +219,52 @@ $(window.document.documentElement).on('click', '.post-link', function(e) {
     form.submit();
     document.documentElement.removeChild(form);
 });
-$(window.document.documentElement).on('click', '[type=submit]:not(.ajax)', function(e) {
+function groupInputsByName(inputs:HTMLInputElement[]) : Map<string, HTMLInputElement[]> {
+    let namesMap = new Map<string, HTMLInputElement[]>();
+    inputs.every(el => namesMap[el.name] = []);
+    for (const name in namesMap) {
+        namesMap.set(name, inputs.filter(v => v.name == name));
+    }
+    return namesMap;
+}
+$(function() {
+    let checkboxes = $(window.document.documentElement)
+        .find('input[type=checkbox][name$="[]"][required]')
+        .toArray() as HTMLInputElement[];
+    $(checkboxes)
+        .addClass('checkbox-group-required')
+        .removeAttr('required');
+});
+/**
+ * Disables submit buttons after form sent.
+ * 
+ * Checks first form validity to prevent disabling when form is uncompleted.
+ */
+$(window.document.documentElement).on('submit', 'form:not(.ajax-client)', function(e) {
     let $this = $(this);
     let $form = $this.closest('form');
-    $this.prop('disabled', true);
-    $form.trigger('submit');
+    let form = $form.get(0) as HTMLFormElement;
+    let checkboxes = $form.find('.checkbox-group-required').toArray() as HTMLInputElement[];
+    let checkboxGroups = groupInputsByName(checkboxes);
+    for (const name in checkboxGroups) {
+        const checked = checkboxGroups.get(name)?.filter(el => el.checked);
+        if (!checked || checked?.length < 1) {
+            checkboxGroups.get(name)?.at(0)?.setCustomValidity('Debe seleccionar al menos uno.');
+        }
+    }
+
+    let checkboxValidity = function (this:HTMLInputElement, e:Event) {
+        let chkbxgrp = checkboxGroups.get(this.name);
+        chkbxgrp?.at(0)?.setCustomValidity('');
+        chkbxgrp?.forEach(el => el.removeEventListener('input', checkboxValidity));
+    }
+
+    checkboxes.forEach(el => el.addEventListener('input', checkboxValidity));
+    if (!form.reportValidity()) {
+        e.preventDefault();
+        return false;
+    }
+    $(':submit').prop('disabled', true);
 });
 $(window.document.documentElement).on('blur', 'input:not(.no-trim)', function(e) {
     this.value = this.value.trim();

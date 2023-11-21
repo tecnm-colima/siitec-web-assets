@@ -108,15 +108,15 @@
             <div class="row--wrap row--gap-half">
                 <div class="form-group col-12 col-lg-3">
                     <label for="txtNumControl" class="form-label">Número de control</label>
-                    <input id="txtNumControl" type="text" name="num_control" placeholder="Ej. 17460832" autocomplete />
+                    <input id="txtNumControl" type="text" name="num_control" placeholder="Ej. 17460832" autocomplete required />
                 </div>
                 <div class="form-group col-12 col-lg-6">
                     <label for="txtNombre" class="form-label">Nombre(s)</label>
-                    <input id="txtNombre" type="text" name="nombre" placeholder="Ejemplo: Irma Carolina" aria-describedby="txtHelpNombre" />
+                    <input id="txtNombre" type="text" name="nombre" placeholder="Ejemplo: Irma Carolina" aria-describedby="txtHelpNombre" required />
                 </div>
                 <div class="form-group col-6">
                     <label for="txtApellido1" class="form-label">Primer apellido</label>
-                    <input id="txtApellido1" type="text" name="nombre" placeholder="Ejemplo: Fuentes" aria-describedby="txtHelpNombre" />
+                    <input id="txtApellido1" type="text" name="nombre" placeholder="Ejemplo: Fuentes" aria-describedby="txtHelpNombre" required />
                 </div>
                 <div class="form-group col-6">
                     <label for="txtApellido2" class="form-label">Segundo apellido</label>
@@ -125,16 +125,16 @@
                 </div>
                 <div class="form-group col-12">
                     <label for="inpCurp" class="form-label">CURP (Sólo lectura)</label>
-                    <input type="text" name="curp" id="inpCurp" value="XAXX010101XNEXXXA1" readonly class="input--borderless" />
+                    <input type="text" name="curp" id="inpCurp" value="XAXX010101XNEXXXA1" readonly class="input--borderless" required />
                 </div>
                 <div class="form-group col-2">
                     <label for="inpHorario" class="form-label">Horario</label>
                     <div class="input-group row">
-                        <select class="col-5 text--end" name="hora" title="Hora">
+                        <select class="col-5 text--end" name="hora" title="Hora" required>
                             <option>07</option>
                         </select>
                         <div class="col-2 input-box text--center font--bold">:</div>
-                        <select class="col-5" name="minutos" title="Minutos">
+                        <select class="col-5" name="minutos" title="Minutos" required>
                             <option>00</option>
                         </select>
                     </div>
@@ -155,36 +155,14 @@
                         <input type="text" name="fields[]" id="" class="col" title="Element">
                     </div>
                 </div>
-                <div class="form-group col-12 row--gap1">
-                    <label for="chkZone1" class="check-item--zone d-inline-block col">
-                        <input type="checkbox" name="zone" id="chkZone1">
-                        <label for="chkZone1">Lunes</label>
-                    </label>
-                    <label for="chkZone2" class="check-item--zone d-inline-block col">
-                        <input type="checkbox" name="zone" id="chkZone2">
-                        <label for="chkZone2">Martes</label>
-                    </label>
-                    <label for="chkZone3" class="check-item--zone d-inline-block col">
-                        <input type="checkbox" name="zone" id="chkZone3">
-                        <label for="chkZone3">Miércoles</label>
-                    </label>
-                    <label for="chkZone4" class="check-item--zone d-inline-block col">
-                        <input type="checkbox" name="zone" id="chkZone4">
-                        <label for="chkZone4">Jueves</label>
-                    </label>
-                    <label for="chkZone5" class="check-item--zone d-inline-block col">
-                        <input type="checkbox" name="zone" id="chkZone5">
-                        <label for="chkZone5">Viernes</label>
-                    </label>
-                </div>
                 <fieldset class="form-group col-12 col-lg-3">
                     <legend class="form-label">Visibilidad</legend>
                     <div class="check-item">
-                        <input type="radio" name="visible" id="rdbVisibleYes"/>
+                        <input type="radio" name="visible" id="rdbVisibleYes" required/>
                         <label for="rdbVisibleYes">Visible para los estudiantes</label>
                     </div>
                     <div class="check-item">
-                        <input type="radio" name="visible" id="rdbVisibleNo"/>
+                        <input type="radio" name="visible" id="rdbVisibleNo" required/>
                         <label for="rdbVisibleNo">Sólo visible en plantillas</label>
                     </div>
                 </fieldset>
@@ -233,6 +211,28 @@
                         </div>
                     </div>
                 </fieldset>
+                <div class="form-group col-12 row--gap1">
+                    <label for="chkZone1" class="check-item--zone d-inline-block col">
+                        <input type="checkbox" name="weekday[]" id="chkZone1" required>
+                        <label for="chkZone1">Lunes</label>
+                    </label>
+                    <label for="chkZone2" class="check-item--zone d-inline-block col">
+                        <input type="checkbox" name="weekday[]" id="chkZone2" required>
+                        <label for="chkZone2">Martes</label>
+                    </label>
+                    <label for="chkZone3" class="check-item--zone d-inline-block col">
+                        <input type="checkbox" name="weekday[]" id="chkZone3" required>
+                        <label for="chkZone3">Miércoles</label>
+                    </label>
+                    <label for="chkZone4" class="check-item--zone d-inline-block col">
+                        <input type="checkbox" name="weekday[]" id="chkZone4" required>
+                        <label for="chkZone4">Jueves</label>
+                    </label>
+                    <label for="chkZone5" class="check-item--zone d-inline-block col">
+                        <input type="checkbox" name="weekday[]" id="chkZone5" required>
+                        <label for="chkZone5">Viernes</label>
+                    </label>
+                </div>
                 <div class="form-group col-12 col-lg-6">
                     <label for="selOpciones" class="form-label">Etiqueta select</label>
                     <select name="opciones" id="selOpciones">
