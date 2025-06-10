@@ -10,8 +10,8 @@
     &-label {
         line-height: 1.4em;
     }
-
-    &--neumorph {
+    &--neumorph,
+    %form-neumorph {
         @extend .form;
         border: none;
         box-shadow:
@@ -19,11 +19,12 @@
             4px 4px 4px #0001,
             -12px -12px 12px #fff8,
             -4px -4px 4px 2px #fff4;
+        background-image: linear-gradient(-45deg, colors.$bg-default, colors.$bg-dimmed-3);
         label {
-            font-size: 0.9em;
+            font-size: 1em;
         }
         .form-label {
-            font-size: 0.7em;
+            font-size: 0.75em;
         }
         input {
             &[type=text],
@@ -33,6 +34,7 @@
                 border-top: 0px;
                 border-left: 0px;
                 border-right: 0px;
+                background: none;
                 &:focus {
                     box-shadow: 0px 4px 4px -2px #0002;
                 }
@@ -72,5 +74,11 @@
                     -8px -8px 16px #fff;
             }
         }
+    }
+    &--frameless {
+        @extend .form;
+        border: none;
+        background: none;
+        box-shadow: none;
     }
 }

@@ -1,15 +1,23 @@
+@use 'sass:color';
 @use '../colors';
+
+%subbar {
+    padding: .25em;
+    margin: 4px auto;
+    text-align: center;
+    color: colors.$dark-fg-default;
+    background: color.adjust(colors.$dark-bg-blue, $alpha: -0.15);
+    border-radius: 8px;
+    box-shadow:
+        0 1px 2px rgba(black, .4),
+        0 0 16px rgba(black, .1);
+    @supports (backdrop-filter: blur(1px)) {
+        backdrop-filter: blur(4in) brightness(200%);
+    }
+}
 
 .subbar {
     z-index: 9998;
-    padding: .25em;
-    text-align: center;
-
-    color: colors.$dark-fg-default;
-    background: colors.$dark-bg-blue;
-    box-shadow:
-        0 0 .2em #0004,
-        0 .2em .5em #0001;
     
     @for $i from 1 through 100 {
         &:nth-of-type(#{$i}) {
@@ -17,17 +25,21 @@
         }
     }
 
-    &--error {
-        @extend .subbar;
-        background-color: colors.$dark-bg-red;
+    .container {
+        @extend %subbar;
     }
-    &--danger {
-        @extend .subbar;
-        background-color: colors.$dark-bg-orange;
+
+    &--error .container {
+        @extend %subbar;
+        background-color: color.adjust(colors.$dark-bg-red, $alpha: -0.15);
     }
-    &--warning {
-        @extend .subbar;
-        background-color: colors.$dark-bg-yellow;
+    &--danger .container {
+        @extend %subbar;
+        background-color: color.adjust(colors.$dark-bg-orange, $alpha: -0.15);
+    }
+    &--warning .container {
+        @extend %subbar;
+        background-color: color.adjust(colors.$dark-bg-yellow, $alpha: -0.15);
         text-shadow:
             0 0 12px #0005,
             0 0 16px #0004,
@@ -35,8 +47,8 @@
             0 0 28px #0002,
             0 0 32px #0001;
     }
-    &--success {
-        @extend .subbar;
-        background-color: colors.$dark-bg-green;
+    &--success .container {
+        @extend %subbar;
+        background-color: color.adjust(colors.$dark-bg-green, $alpha: -0.15);
     }
 }

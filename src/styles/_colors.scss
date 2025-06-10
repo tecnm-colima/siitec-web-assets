@@ -7,7 +7,7 @@ $fg-dimmed-30:      color.scale($fg-default, $lightness: 30%);
 $fg-dimmed-40:      color.scale($fg-default, $lightness: 40%);
 $fg-dimmed-50:      color.scale($fg-default, $lightness: 50%);
 
-$bg-default:        #f2f2f2 !default;
+$bg-default:        #fafafa !default;
 $bg-dimmed-3:       color.scale($bg-default, $lightness: -3%);
 $bg-dimmed-4:       color.scale($bg-default, $lightness: -4%);
 $bg-dimmed-5:       color.scale($bg-default, $lightness: -5%);
@@ -25,13 +25,13 @@ $fg-red:            #b80000 !default;
 $fg-orange:         #fa5c00 !default;
 $fg-yellow:         #ffaa00 !default;
 $fg-green:          #008504 !default;
-$fg-blue:           #004ca3 !default;
+$fg-blue:           #003c80 !default;
 
 $bg-red:            #fca19a !default;
 $bg-orange:         #ffbf80 !default;
 $bg-yellow:         #fff599 !default;
 $bg-green:          #d5ffb3 !default;
-$bg-blue:           #80d0ff !default;
+$bg-blue:           #a8cef0 !default;
 
 $dark-fg-default:       #f0f0f0 !default;
 $dark-fg-dimmed-10:      color.scale($dark-fg-default, $lightness: -10%);

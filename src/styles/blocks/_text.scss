@@ -30,6 +30,12 @@
     &--capitalize {
         text-transform: capitalize !important;
     }
+    &--small {
+        font-size: 0.75em !important;
+    }
+    &--big {
+        font-size: 1.25em !important;
+    }
 
     /** Left to Right **/
     [dir=ltr] &--start,

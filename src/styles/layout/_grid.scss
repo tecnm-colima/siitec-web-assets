@@ -95,8 +95,8 @@ $_col: (
     @for $c from 12 through 1 {
         &-#{$c} {
             @include mixins.properties($_col);
-            flex: 0 0 percentage(math.div($c, 12));
-            max-width: percentage(math.div($c, 12));
+            flex: 0 0 math.percentage(math.div($c, 12));
+            max-width: math.percentage(math.div($c, 12));
         }
     }
     @each $size, $min-width in variables.$grid-breakpoints {
@@ -104,8 +104,8 @@ $_col: (
             @media (min-width: $min-width) {
                 &-#{$size}-#{$c} {
                     @include mixins.properties($_col);
-                    flex: 0 0 percentage(math.div($c, 12));
-                    max-width: percentage(math.div($c, 12));
+                    flex: 0 0 math.percentage(math.div($c, 12));
+                    max-width: math.percentage(math.div($c, 12));
                 }
             }
         }

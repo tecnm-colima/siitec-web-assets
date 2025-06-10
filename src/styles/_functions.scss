@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:meta';
 @use 'sass:list';
 
 /**
@@ -8,18 +9,18 @@
 @function map-reverse($map) {
     $result: ();
 
-    @if type-of($map) == "map" {
+    @if meta.type-of($map) == "map" {
         $keys: map.keys($map);
         $map-reversed: ();
         
-        @for $i from length($keys) through 1 {
+        @for $i from list.length($keys) through 1 {
             $map-reversed: map.merge(
                 $map-reversed,
                 (list.nth($keys, $i): map.get($map, list.nth($keys, $i)))
             );
         }
 
-        @if type-of($map-reversed) == "map" {
+        @if meta.type-of($map-reversed) == "map" {
             $result: $map-reversed;
         } @else {
             @warn 'There was an error reversing the order of "#{$map}"';

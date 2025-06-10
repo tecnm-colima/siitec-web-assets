@@ -4,13 +4,43 @@
     overflow: hidden;
     z-index: 9999;
     top: 0px;
+    padding-bottom: 8px;
 
-    background: colors.$dark-bg-default;
-    height: 4rem;
-    color: #fffa;
-    box-shadow:
-        0 0 .5em #0004,
-        0 .5em 2em #0002;
+    .container {
+        height: 4rem;
+        overflow: hidden;
+        // max-width: 100%;;
+        // max-width: 100vw;;
+        // max-width: calc(100vw - 4px);
+        // background: colors.$dark-bg-default;
+        // padding: 0px 12px;
+        background: #f2f2f2;
+        background-clip: padding-box;
+        border: 1px solid transparent;
+        border-top: none;
+        border-radius: 0px 0px 16px 16px;
+        color: rgba(black, .5);
+        box-shadow:
+            0px 1px 24px -4px rgba(#000, 0.1),
+            0px 1px 2px 1px rgba(#000, 0.15);
+        @supports (backdrop-filter: blur(1px)) {
+            background-color: rgba(#fff, 0);
+            backdrop-filter: saturate(150%) blur(4in);
+        }
+    }
+
+    .col-auto:first-of-type {
+        // background-color: red;
+        padding-right: 120px;
+        padding-left: 12px;
+        background-image: linear-gradient(to right, #fff5 calc(100% - 120px), #fff0 100%);
+    }
+    .col-auto:last-of-type {
+        padding-right: 12px;
+        padding-left: 120px;
+        background-image: linear-gradient(to left, #fff5 calc(100% - 120px), #fff0 100%);
+    }
+
 
     &-item {
         display: inline-flex;
@@ -37,7 +67,7 @@
             display: inline-block;
             height: 2.5rem;
             width: 12.5rem;
-            --text-color: white;
+            --text-color: black;
         }
     }
     &-icon {
@@ -46,7 +76,7 @@
     }
 
     &-searchbox {
-        font-size: 1.2em;
+        font-size: 1.25em;
         display: block;
         background-color: #8886;
         border: none;
@@ -69,14 +99,14 @@
         &:visited { color: inherit; }
     }
 
-    > .container {
-        height: 100%;
-    }
+    // > .container {
+    //     height: 100%;
+    // }
 
-    @supports (backdrop-filter: blur(12px)) {
-        & {
-            background-color: colors.$glass-dark-bg-default;
-            backdrop-filter: blur(12px);
-        }
-    }
+    // @supports (backdrop-filter: blur(12px)) {
+    //     & {
+    //         // background-color: colors.$glass-dark-bg-default;
+    //         backdrop-filter: blur(12px);
+    //     }
+    // }
 }

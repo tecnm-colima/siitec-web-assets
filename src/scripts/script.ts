@@ -274,3 +274,30 @@ $(window.document.documentElement).on('click', '.js-go-back', function(e) {
     e.preventDefault();
     window.history.back();
 });
+
+(function() {
+    const styles = [
+        'color: rgb(215, 27, 61)',
+        'font-size: 32px',
+        'font-weight: bold',
+        'background-color: rgb(250, 207, 20)',
+        'padding: 10px',
+        'border: 8px solid rgb(61, 63, 148)',
+        'border-radius: 16px',
+        'margin: 16px auto',
+        'text-shadow: 0px 0px 2px white',
+        'text-align: center'
+    ].join(';');
+
+    console.log('%c¡CUIDA TU CUENTA!', styles);
+    console.log(
+        '%cSi usas esta consola, podrían robarte tu cuenta y datos personales.\n' +
+        'No introduzcas códigos o scripts que no comprendas. ',
+        'font-size: 20px;color: red;background-color:white;display:block'
+    );
+    console.log(
+        '%cPara más información sobre los riesgos consulta lo siguiente:\n' +
+        'https://es.wikipedia.org/wiki/Self-XSS \n\n\n\n\n\n\n',
+        'font-weight:bold;font-size:16px'
+    );
+})();

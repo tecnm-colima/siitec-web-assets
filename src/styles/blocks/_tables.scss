@@ -14,7 +14,7 @@ $_hovercolor: hsla(40, 0%, 50%, 15%);
     border: 1px solid $_bordercolor;
     border-radius: 4px;
     padding: 1ex;
-    font-size: 0.92rem;
+    font-size: 1rem;
 
     &--wide {
         @extend %table;
@@ -51,7 +51,7 @@ $_hovercolor: hsla(40, 0%, 50%, 15%);
             max-width: 100%;
             @for $col from 12 through 1 {
                 &-#{$col} {
-                    width: percentage(math.div($col, 12));
+                    width: math.percentage(math.div($col, 12));
                 }
             }
         }

@@ -21,8 +21,8 @@ $_col: (
     @for $c from 12 through 1 {
         &-#{$c} {
             @include mixins.properties($_col);
-            flex: 0 0 percentage($number: math.div($c, 12));
-            max-width: percentage($number: math.div($c, 12));
+            flex: 0 0 math.percentage($number: math.div($c, 12));
+            max-width: math.percentage($number: math.div($c, 12));
         }
     }
     $gridBreakpoints: functions.map-reverse(variables.$grid-breakpoints);
@@ -34,8 +34,8 @@ $_col: (
                 {
                     &-#{$size}-#{$c} {
                         @include mixins.properties($_col);
-                        flex: 0 0 percentage($number: math.div($c, 12));
-                        max-width: percentage($number: math.div($c, 12));
+                        flex: 0 0 math.percentage($number: math.div($c, 12));
+                        max-width: math.percentage($number: math.div($c, 12));
                     }
                 } // @media
             } // @for

@@ -14,10 +14,7 @@ gulp.task('compile:css', function() {
     return gulp
         .src('./src/styles/**/*.scss')
         .pipe(sourcemaps.init())
-        .pipe(
-            sass.sync({
-                outputStyle: 'compressed'
-            }).on('error', sass.logError))
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(rename({ suffix: '.min' }))
         .pipe(sourcemaps.write(''))
         .pipe(gulp.dest(DIST_PATH));
@@ -38,6 +35,15 @@ gulp.task('copy:fonts', function() {
 
 gulp.task('watch:fonts', function() {
     gulp.watch('./scr/fonts/**/*.*', gulp.series('copy:fonts'));
+});
+
+gulp.task('copy:img', function() {
+    return gulp
+        .src('./src/img/**/*.*')
+        .pipe(gulp.dest(path.join(DIST_PATH, 'img')));
+});
+gulp.task('watch:img', function() {
+    gulp.watch('./scr/img/**/*.*', gulp.series('copy:img'));
 });
 
 gulp.task('svgsprite', function() {

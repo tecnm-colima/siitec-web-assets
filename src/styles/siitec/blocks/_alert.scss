@@ -41,6 +41,10 @@
         border-color: colors.$fg-blue;
         background-color: colors.$bg-blue;
     }
+    &--frameless {
+        @extend .alert;
+        border: none;
+    }
     &-title {
         margin: 0;
         margin-bottom: .5em;
